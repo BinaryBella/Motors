@@ -21,18 +21,18 @@
         margin-right: 5px;
     }
 
-.customers-table th {
+.Vendors-table th {
     background-color: #000;
     color: white;
     font-weight: normal;
     text-align: left;
 }
 
-.customers-table tr:nth-child(odd) td {
+.Vendors-table tr:nth-child(odd) td {
     background-color: #e0e0e0;
 }
 
-.customers-table tr:nth-child(even) td {
+.Vendors-table tr:nth-child(even) td {
     background-color: #fff;
 }
 

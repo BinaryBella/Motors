@@ -143,6 +143,7 @@
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Pages\MasterFiles\Broker.aspx" />
     <Content Include="Pages\MasterFiles\RetailCustomer.aspx" />
+    <Content Include="Pages\MasterFiles\StockItem.aspx" />
     <Content Include="Pages\MasterFiles\Vendor.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -211,6 +212,10 @@
     </Compile>
     <Compile Include="Pages\MasterFiles\RetailCustomer.aspx.cs">
       <DependentUpon>RetailCustomer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\MasterFiles\StockItem.aspx.cs">
+      <DependentUpon>StockItem.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\MasterFiles\Vendor.aspx.cs">
