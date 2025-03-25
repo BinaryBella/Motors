@@ -23,18 +23,18 @@
 
 
 
-.Items-table th {
+.brand-table th {
     background-color: #000;
     color: white;
     font-weight: normal;
     text-align: left;
 }
 
-.Items-table tr:nth-child(odd) td {
+.brand-table tr:nth-child(odd) td {
     background-color: #e0e0e0;
 }
 
-.Items-table tr:nth-child(even) td {
+.brand-table tr:nth-child(even) td {
     background-color: #fff;
 }
 

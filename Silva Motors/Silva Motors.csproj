@@ -112,7 +112,12 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\CustomCSS\MasterFiles\BranchCSS.css" />
+    <Content Include="Content\CustomCSS\MasterFiles\BrandCSS.css" />
     <Content Include="Content\CustomCSS\MasterFiles\BrokerCSS.css" />
+    <Content Include="Content\CustomCSS\MasterFiles\CategoryCSS.css" />
+    <Content Include="Content\CustomCSS\MasterFiles\ModelCSS.css" />
+    <Content Include="Content\CustomCSS\MasterFiles\RackCSS.css" />
     <Content Include="Content\CustomCSS\MasterFiles\RetailCustomerCSS.css" />
     <Content Include="Content\CustomCSS\MasterFiles\StockItemCSS.css" />
     <Content Include="Content\CustomCSS\MasterFiles\VendorCSS.css" />
@@ -142,7 +147,12 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Pages\MasterFiles\Branch.aspx" />
+    <Content Include="Pages\MasterFiles\Brand.aspx" />
     <Content Include="Pages\MasterFiles\Broker.aspx" />
+    <Content Include="Pages\MasterFiles\Category.aspx" />
+    <Content Include="Pages\MasterFiles\Model.aspx" />
+    <Content Include="Pages\MasterFiles\Rack.aspx" />
     <Content Include="Pages\MasterFiles\RetailCustomer.aspx" />
     <Content Include="Pages\MasterFiles\StockItem.aspx" />
     <Content Include="Pages\MasterFiles\Vendor.aspx" />
@@ -207,8 +217,28 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Pages\MasterFiles\Branch.aspx.cs">
+      <DependentUpon>Branch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\MasterFiles\Brand.aspx.cs">
+      <DependentUpon>Brand.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Pages\MasterFiles\Broker.aspx.cs">
       <DependentUpon>Broker.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\MasterFiles\Category.aspx.cs">
+      <DependentUpon>Category.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\MasterFiles\Model.aspx.cs">
+      <DependentUpon>Model.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\MasterFiles\Rack.aspx.cs">
+      <DependentUpon>Rack.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\MasterFiles\RetailCustomer.aspx.cs">

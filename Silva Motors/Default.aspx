@@ -205,6 +205,9 @@
                                 <li><a class="dropdown-item" runat="server" href="~/Pages/MasterFiles/Broker">Broker Master File</a></li>
                                 <li><a class="dropdown-item" runat="server" href="~/Pages/MasterFiles/Vendor">Vendor Master File</a></li>
                                 <li><a class="dropdown-item" runat="server" href="~/Pages/MasterFiles/StockItem">Stock Item Master File</a></li>
+                                <li><a class="dropdown-item" runat="server" href="~/Pages/MasterFiles/Category">Category Master File</a></li>
+                                <li><a class="dropdown-item" runat="server" href="~/Pages/MasterFiles/Brand">Brand Master File</a></li>
+                                <li><a class="dropdown-item" runat="server" href="~/Pages/MasterFiles/Model">Model Master File</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">

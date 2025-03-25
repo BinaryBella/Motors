@@ -21,20 +21,18 @@
         margin-right: 5px;
     }
 
-
-
-.Items-table th {
+.branch-table th {
     background-color: #000;
     color: white;
     font-weight: normal;
     text-align: left;
 }
 
-.Items-table tr:nth-child(odd) td {
+.branch-table tr:nth-child(odd) td {
     background-color: #e0e0e0;
 }
 
-.Items-table tr:nth-child(even) td {
+.branch-table tr:nth-child(even) td {
     background-color: #fff;
 }
 
