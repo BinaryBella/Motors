@@ -1,4 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" %>
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -10,14 +11,14 @@
         :root {
             --primary-color: #dc3545;
         }
-        
+
         /* Top red bar */
         .top-red-bar {
             height: 5px;
             background-color: var(--primary-color);
             width: 100%;
         }
-        
+
         /* Base Navbar Styles */
         .navbar {
             background-color: #ffffff;
@@ -25,53 +26,53 @@
             position: relative;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-        
-        /* Container styles */
-        .navbar .container-fluid {
-            display: flex;
-            align-items: center;
-        }
-        
+
+            /* Container styles */
+            .navbar .container-fluid {
+                display: flex;
+                align-items: center;
+            }
+
         .navbar-brand {
             font-weight: bold;
             color: var(--primary-color) !important;
             font-size: 1.2rem;
             margin-right: 2rem;
         }
-        
+
         .nav-link {
             color: #212529 !important;
             font-weight: 500;
             padding: 8px 15px !important;
             text-transform: uppercase;
         }
-        
-        .nav-link:hover {
-            color: var(--primary-color) !important;
-        }
-        
+
+            .nav-link:hover {
+                color: var(--primary-color) !important;
+            }
+
         .logout-btn {
             color: var(--primary-color) !important;
             font-weight: bold;
             text-decoration: none;
             text-transform: uppercase;
         }
-        
+
         /* Dropdown Styles */
         .dropdown-menu {
             background-color: #ffffff;
             border: 1px solid #e9ecef;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
-        
+
         .dropdown-item {
             color: #212529 !important;
         }
-        
-        .dropdown-item:hover {
-            background-color: #f8f9fa !important;
-            color: var(--primary-color) !important;
-        }
+
+            .dropdown-item:hover {
+                background-color: #f8f9fa !important;
+                color: var(--primary-color) !important;
+            }
 
         .module-card {
             background-color: #f0f0f0;
@@ -86,27 +87,29 @@
             margin: 0 auto;
         }
 
-        .module-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
+            .module-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            }
 
-        .module-card img {
-            max-width: 80px;
-            height: 80px;
-            margin-bottom: 10px;
-        }
+            .module-card img {
+                max-width: 80px;
+                height: 80px;
+                margin-bottom: 10px;
+            }
 
-        .module-card h3 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 0;
-        }
+            .module-card h3 {
+                font-size: 1.25rem;
+                font-weight: 600;
+                margin-bottom: 0;
+            }
 
         .modules-row {
             margin-bottom: 20px;
+            margin-left:0px;
+            margin-right:0px;
         }
-        
+
         .modules-container {
             padding: 0 15px;
         }
@@ -122,21 +125,22 @@
             background-position: center;
             position: relative;
             overflow: hidden;
-            height: 300px;
+            height: 400px;
+            width: 100%;
             display: flex;
             align-items: center;
         }
 
-        .banner::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 1;
-        }
+            .banner::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.5);
+                z-index: 1;
+            }
 
         .banner-content {
             position: relative;
@@ -157,10 +161,23 @@
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
             letter-spacing: 0.5px;
         }
-        
+
         /* Module spacing fixes */
         .col-lg-2 {
             padding: 0 10px;
+        }
+
+        .footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #000000;
+            color: #fff;
+            font-size: 14px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 50px;
         }
     </style>
 </head>
@@ -168,7 +185,7 @@
     <form id="form1" runat="server">
         <!-- Top red bar -->
         <div class="top-red-bar"></div>
-        
+
         <!-- Main navigation bar -->
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
@@ -181,17 +198,17 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="filesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                FILES
+                            <a class="nav-link dropdown-toggle" href="#" id="filesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">FILES
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="filesDropdown">
-                                <li><a class="dropdown-item" href="#">Option 1</a></li>
-                                <li><a class="dropdown-item" href="#">Option 2</a></li>
+                                <li><a class="dropdown-item" runat="server" href="~/Pages/MasterFiles/RetailCustomer">Retail Customer Master File</a></li>
+                                <li><a class="dropdown-item" runat="server" href="~/Pages/MasterFiles/Broker">Broker Master File</a></li>
+                                <li><a class="dropdown-item" runat="server" href="~/Pages/MasterFiles/Vendor">Vendor Master File</a></li>
+                                <li><a class="dropdown-item" runat="server" href="~/Pages/MasterFiles/StockItem">Stock Item Master File</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="viewDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                VIEW
+                            <a class="nav-link dropdown-toggle" href="#" id="viewDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">VIEW
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="viewDropdown">
                                 <li><a class="dropdown-item" href="#">Option 1</a></li>
@@ -199,8 +216,7 @@
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="customerDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                CUSTOMER'S TRANSACTIONS
+                            <a class="nav-link dropdown-toggle" href="#" id="customerDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">CUSTOMER'S TRANSACTIONS
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="customerDropdown">
                                 <li><a class="dropdown-item" href="#">Option 1</a></li>
@@ -208,8 +224,7 @@
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="vendorDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                VENDOR'S TRANSACTIONS
+                            <a class="nav-link dropdown-toggle" href="#" id="vendorDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">VENDOR'S TRANSACTIONS
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="vendorDropdown">
                                 <li><a class="dropdown-item" href="#">Option 1</a></li>
@@ -217,8 +232,7 @@
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="reportDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                REPORT
+                            <a class="nav-link dropdown-toggle" href="#" id="reportDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">REPORT
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="reportDropdown">
                                 <li><a class="dropdown-item" href="#">Option 1</a></li>
@@ -226,8 +240,7 @@
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="itemDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                ITEM
+                            <a class="nav-link dropdown-toggle" href="#" id="itemDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">ITEM
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="itemDropdown">
                                 <li><a class="dropdown-item" href="#">Option 1</a></li>
@@ -316,6 +329,9 @@
                 </div>
             </div>
         </div>
+        <footer class="footer">
+            <p>&copy; <%: DateTime.Now.Year %> - Developed by G3 Technologies (Pvt) Ltd</p>
+        </footer>
     </form>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

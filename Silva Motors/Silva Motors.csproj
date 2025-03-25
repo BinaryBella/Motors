@@ -114,6 +114,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\CustomCSS\MasterFiles\BrokerCSS.css" />
     <Content Include="Content\CustomCSS\MasterFiles\RetailCustomerCSS.css" />
+    <Content Include="Content\CustomCSS\MasterFiles\StockItemCSS.css" />
     <Content Include="Content\CustomCSS\MasterFiles\VendorCSS.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\src\banner-background.jpg" />

@@ -9,28 +9,56 @@
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href='<%= ResolveUrl("~/Content/CustomCSS/MasterFiles/StockItemsCSS.css") %>' />
+    <link rel="stylesheet" href='<%= ResolveUrl("~/Content/CustomCSS/MasterFiles/StockItemCSS.css") %>' />
     <div class="container-fluid main">
         <div class="header">STOCK ITEMS</div>
 
         <div class="d-flex justify-content-between mb-3">
             <asp:Button ID="btnFilters" runat="server" Text="Filters" CssClass="filters-button" />
-            <asp:Button ID="btnAdd" runat="server" Text=" ADD" CssClass="add-button" />
+            <asp:Button ID="Button1" runat="server" Text="LOAD BIN CARD" CssClass="bin-button" />
+            <asp:Button ID="btnAdd" runat="server" Text="ADD" CssClass="add-button" />
         </div>
 
         <div class="table-responsive">
             <asp:GridView ID="gvStockItems" runat="server" AutoGenerateColumns="false"
-                CssClass="table table-bordered customers-table" Width="100%">
+                CssClass="table table-bordered Items-table" Width="100%">
                 <Columns>
                     <asp:BoundField DataField="Code" HeaderText="CODE" />
                     <asp:BoundField DataField="PartNumber" HeaderText="PART NUMBER" />
-                    <asp:BoundField DataField="Address" HeaderText="ADDRESS" />
-                    <asp:BoundField DataField="Telephone" HeaderText="TELEPHONE" />
-                    <asp:BoundField DataField="CreditLimit" HeaderText="CREDIT LIMIT" />
-                    <asp:BoundField DataField="Outstanding" HeaderText="OUTSTANDING" />
+                    <asp:BoundField DataField="BrandName" HeaderText="BRAND NAME" />
+                    <asp:BoundField DataField="Catagory" HeaderText="CATAGORY" />
+                    <asp:BoundField DataField="Rack" HeaderText="RACK" />
+                    <asp:BoundField DataField="Make" HeaderText="MAKE" />
+                    <asp:BoundField DataField="ItemDescription" HeaderText="ITEM DESCRIPTION" />
+                    <asp:BoundField DataField="Qty" HeaderText="QTY" />
+                    <asp:BoundField DataField="Price" HeaderText="PRICE" />
+                    <asp:TemplateField HeaderText="STATUS">
+                        <HeaderTemplate>
+                            Status
+                    <select id="statusFilter" class="filter-input" onchange="filterTable()">
+                        <option value="">All</option>
+                        <option value="active">Active</option>
+                        <option value="inactive">Inactive</option>
+                    </select>
+                        </HeaderTemplate>
+                        <ItemTemplate>
+                            <span class='<%# Convert.ToBoolean(Eval("ActiveState")) ? "status-badge status-active" : "status-badge status-inactive" %>'>
+                                <i class='<%# Convert.ToBoolean(Eval("ActiveState")) ? "bi bi-check-circle-fill" : "bi bi-x-circle-fill" %> me-1'></i>
+                                <%# Convert.ToBoolean(Eval("ActiveState")) ? "Active" : "Inactive" %>
+                            </span>
+                        </ItemTemplate>
+                    </asp:TemplateField>
                     <asp:TemplateField HeaderText="ACTIONS">
                         <ItemTemplate>
-                            <!-- Action buttons -->
+                            <asp:LinkButton ID="btnEdit" runat="server" CssClass="btn btn-warning btn-sm"
+                                CommandName="EditRecord" CommandArgument='<%# Eval("Id") %>'>
+                        <i class="bi bi-pencil-fill"></i>
+                            </asp:LinkButton>
+                            <asp:LinkButton ID="btnDelete" runat="server"
+                                CssClass='<%# Convert.ToBoolean(Eval("ActiveState")) ? "btn btn-danger btn-sm" : "btn btn-success btn-sm" %>'
+                                OnClientClick='<%# "return confirmDelete(" + Eval("Id") + ");" %>'>
+                        <i class='<%# Convert.ToBoolean(Eval("ActiveState")) ? "bi bi-toggle-off" : "bi bi-toggle-on" %>'></i>
+                            </asp:LinkButton>
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>
@@ -61,7 +89,6 @@
     <div class="checkbox-container">
         <asp:CheckBox ID="chkShowDebtor" runat="server" Text="Show Debtor" CssClass="checkbox-label" />
         <asp:CheckBox ID="chkShowCreditor" runat="server" Text="Show Creditor" CssClass="checkbox-label" />
-    </div>
     </div>
 
     <%-- Modal Markup --%>

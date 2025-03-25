@@ -28,9 +28,62 @@
                     <asp:BoundField DataField="Telephone" HeaderText="TELEPHONE" />
                     <asp:BoundField DataField="CreditLimit" HeaderText="CREDIT LIMIT" />
                     <asp:BoundField DataField="Outstanding" HeaderText="OUTSTANDING" />
+                    <asp:TemplateField HeaderText="STATUS">
+                        <HeaderTemplate>
+                            Status
+                    <select id="statusFilter" class="filter-input" onchange="filterTable()">
+                        <option value="">All</option>
+                        <option value="active">Active</option>
+                        <option value="inactive">Inactive</option>
+                    </select>
+                        </HeaderTemplate>
+                        <ItemTemplate>
+                            <span class='<%# Convert.ToBoolean(Eval("ActiveState")) ? "status-badge status-active" : "status-badge status-inactive" %>'>
+                                <i class='<%# Convert.ToBoolean(Eval("ActiveState")) ? "bi bi-check-circle-fill" : "bi bi-x-circle-fill" %> me-1'></i>
+                                <%# Convert.ToBoolean(Eval("ActiveState")) ? "Active" : "Inactive" %>
+                            </span>
+                        </ItemTemplate>
+                    </asp:TemplateField>
                     <asp:TemplateField HeaderText="ACTIONS">
                         <ItemTemplate>
-                            <!-- Action buttons -->
+                            <asp:LinkButton ID="btnEdit" runat="server" CssClass="btn btn-warning btn-sm"
+                                CommandName="EditRecord" CommandArgument='<%# Eval("Id") %>'>
+                        <i class="bi bi-pencil-fill"></i>
+                            </asp:LinkButton>
+                            <asp:LinkButton ID="btnDelete" runat="server"
+                                CssClass='<%# Convert.ToBoolean(Eval("ActiveState")) ? "btn btn-danger btn-sm" : "btn btn-success btn-sm" %>'
+                                OnClientClick='<%# "return confirmDelete(" + Eval("Id") + ");" %>'>
+                        <i class='<%# Convert.ToBoolean(Eval("ActiveState")) ? "bi bi-toggle-off" : "bi bi-toggle-on" %>'></i>
+                            </asp:LinkButton>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="STATUS">
+                        <HeaderTemplate>
+                            Status
+                    <select id="statusFilter" class="filter-input" onchange="filterTable()">
+                        <option value="">All</option>
+                        <option value="active">Active</option>
+                        <option value="inactive">Inactive</option>
+                    </select>
+                        </HeaderTemplate>
+                        <ItemTemplate>
+                            <span class='<%# Convert.ToBoolean(Eval("ActiveState")) ? "status-badge status-active" : "status-badge status-inactive" %>'>
+                                <i class='<%# Convert.ToBoolean(Eval("ActiveState")) ? "bi bi-check-circle-fill" : "bi bi-x-circle-fill" %> me-1'></i>
+                                <%# Convert.ToBoolean(Eval("ActiveState")) ? "Active" : "Inactive" %>
+                            </span>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="ACTIONS">
+                        <ItemTemplate>
+                            <asp:LinkButton ID="btnEdit" runat="server" CssClass="btn btn-warning btn-sm"
+                                CommandName="EditRecord" CommandArgument='<%# Eval("Id") %>'>
+                        <i class="bi bi-pencil-fill"></i>
+                            </asp:LinkButton>
+                            <asp:LinkButton ID="btnDelete" runat="server"
+                                CssClass='<%# Convert.ToBoolean(Eval("ActiveState")) ? "btn btn-danger btn-sm" : "btn btn-success btn-sm" %>'
+                                OnClientClick='<%# "return confirmDelete(" + Eval("Id") + ");" %>'>
+                        <i class='<%# Convert.ToBoolean(Eval("ActiveState")) ? "bi bi-toggle-off" : "bi bi-toggle-on" %>'></i>
+                            </asp:LinkButton>
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>
@@ -50,7 +103,7 @@
             </div>
         </div>
 
-        <div style="display:flex; justify-content:end;">
+        <div style="display: flex; justify-content: end;">
             <span class="total-outstanding">TOTAL OUTSTANDING</span>
             <span class="total-value">
                 <asp:Literal ID="litTotalOutstanding" runat="server"></asp:Literal>
@@ -208,35 +261,35 @@
         $(document).ready(function () {
             // Attach click event to the Add button
             $("#<%= btnAdd.ClientID %>").click(function (e) {
-            e.preventDefault();
-            $("#customerModal").modal("show");
-        });
+                e.preventDefault();
+                $("#customerModal").modal("show");
+            });
 
-        // Handle save button click
-        $("#<%= btnSave.ClientID %>").click(function (e) {
-            // Prevent postback for this example - in real application you'll handle server-side validation
-            e.preventDefault();
+            // Handle save button click
+            $("#<%= btnSave.ClientID %>").click(function (e) {
+                // Prevent postback for this example - in real application you'll handle server-side validation
+                e.preventDefault();
 
-            // Validate form
-            if (validateForm()) {
-                // Here you would typically make an AJAX call or allow postback to server
-                // For demo purposes, we'll just close the modal and show success message
-                $("#customerModal").modal("hide");
-                alert("Customer data saved successfully!");
-            }
+                // Validate form
+                if (validateForm()) {
+                    // Here you would typically make an AJAX call or allow postback to server
+                    // For demo purposes, we'll just close the modal and show success message
+                    $("#customerModal").modal("hide");
+                    alert("Customer data saved successfully!");
+                }
+            });
         });
-    });
 
         function validateForm() {
             let isValid = true;
 
             // Basic validation example - add more as needed
             if ($("#<%= txtName.ClientID %>").val() === "") {
-            alert("Customer name is required");
-            isValid = false;
-        }
+                alert("Customer name is required");
+                isValid = false;
+            }
 
-        if ($("#<%= txtMobile.ClientID %>").val() === "") {
+            if ($("#<%= txtMobile.ClientID %>").val() === "") {
                 alert("Mobile number is required");
                 isValid = false;
             }
