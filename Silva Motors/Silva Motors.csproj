@@ -112,7 +112,9 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\CustomCSS\MasterFiles\BranchCSS.css" />
+    <Content Include="Content\CustomCSS\MasterFiles\BankAccountCSS.css" />
+    <Content Include="Content\CustomCSS\MasterFiles\BankBranchCSS.css" />
+    <Content Include="Content\CustomCSS\MasterFiles\BankCSS.css" />
     <Content Include="Content\CustomCSS\MasterFiles\BrandCSS.css" />
     <Content Include="Content\CustomCSS\MasterFiles\BrokerCSS.css" />
     <Content Include="Content\CustomCSS\MasterFiles\CategoryCSS.css" />
@@ -148,6 +150,8 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Pages\MasterFiles\Bank.aspx" />
+    <Content Include="Pages\MasterFiles\BankAccount.aspx" />
     <Content Include="Pages\MasterFiles\BankBranch.aspx" />
     <Content Include="Pages\MasterFiles\Brand.aspx" />
     <Content Include="Pages\MasterFiles\Broker.aspx" />
@@ -222,6 +226,14 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MasterFiles\Bank.aspx.cs">
+      <DependentUpon>Bank.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\MasterFiles\BankAccount.aspx.cs">
+      <DependentUpon>BankAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\MasterFiles\BankBranch.aspx.cs">
       <DependentUpon>BankBranch.aspx</DependentUpon>

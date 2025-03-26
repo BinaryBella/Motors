@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Retail branchs" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" Inherits="Silva_Motors.Pages.MasterFiles.BankBranch" %>
+﻿<%@ Page Title="Retail branchs" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" Inherits="Silva_Motors.Pages.MasterFiles.BankAccount" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -9,9 +9,9 @@
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href='<%= ResolveUrl("~/Content/CustomCSS/MasterFiles/BankBranchCSS.css") %>' />
+    <link rel="stylesheet" href='<%= ResolveUrl("~/Content/CustomCSS/MasterFiles/BankCSS.css") %>' />
     <div class="container-fluid main">
-        <div class="header">BRANCHES OF THE BANKS</div>
+        <div class="header">BANK ACCOUNTS</div>
 
         <div class="d-flex justify-content-between mb-3">
             <asp:Button ID="btnFilters" runat="server" Text="Filters" CssClass="filters-button" />
@@ -20,10 +20,15 @@
 
         <div class="table-responsive">
             <asp:GridView ID="gvbranchs" runat="server" AutoGenerateColumns="false"
-                CssClass="table table-bordered branch-table" Width="100%">
+                CssClass="table table-bordered bank-acc-table" Width="100%">
                 <Columns>
-                    <asp:BoundField DataField="BankBranchNo" HeaderText="BRANCH & BANK NO" />
-                    <asp:BoundField DataField="BranchName" HeaderText="BRANCH NAME" />
+                    <asp:BoundField DataField="Acc" HeaderText="ACC" />
+                    <asp:BoundField DataField="branch" HeaderText="BRANCH" />
+                    <asp:BoundField DataField="BankName" HeaderText="BANK NAME" />
+                    <asp:BoundField DataField="AccNo" HeaderText="ACCOUNT NO" />
+                    <asp:BoundField DataField="Holder" HeaderText="HOLDER" />
+                    <asp:BoundField DataField="User" HeaderText="USER" />
+                    <asp:BoundField DataField="Date" HeaderText="DATE" />
                     <asp:TemplateField HeaderText="STATUS">
                         <HeaderTemplate>
                             Status
@@ -104,25 +109,46 @@
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="branchModalLabel">Add branch</h5>
+                    <h5 class="modal-title" id="branchModalLabel">Add Bank Account Details</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
                     <div class="form-group row">
-                        <label for="BranchNo" class="col-sm-3 col-form-label">Branch No</label>
+                        <label for="AccId" class="col-sm-3 col-form-label">Account ID</label>
                         <div class="col-sm-9">
-                            <asp:TextBox ID="BranchNo" runat="server" CssClass="form-control"></asp:TextBox>
+                            <asp:TextBox ID="AccId" runat="server" CssClass="form-control"></asp:TextBox>
                         </div>
                     </div>
 
                     <div class="form-group row">
-                        <label for="branchName" class="col-sm-3 col-form-label">Branch Name</label>
+                        <label for="BankName" class="col-sm-3 col-form-label">Bank Name</label>
                         <div class="col-sm-9">
-                            <asp:TextBox ID="branchName" runat="server" CssClass="form-control"></asp:TextBox>
+                            <asp:TextBox ID="BankName" runat="server" CssClass="form-control"></asp:TextBox>
                         </div>
-                    </div>          
+                    </div>     
+                    
+                    <div class="form-group row">
+                        <label for="Branch" class="col-sm-3 col-form-label">Branch</label>
+                        <div class="col-sm-9">
+                            <asp:TextBox ID="Branch" runat="server" CssClass="form-control"></asp:TextBox>
+                        </div>
+                    </div>                    
+                    
+                    <div class="form-group row">
+                        <label for="AccNo" class="col-sm-3 col-form-label">Account No</label>
+                        <div class="col-sm-9">
+                            <asp:TextBox ID="AccNo" runat="server" CssClass="form-control"></asp:TextBox>
+                        </div>
+                    </div>                    
+                    
+                    <div class="form-group row">
+                        <label for="HolderName" class="col-sm-3 col-form-label">Holder Name</label>
+                        <div class="col-sm-9">
+                            <asp:TextBox ID="HolderName" runat="server" CssClass="form-control"></asp:TextBox>
+                        </div>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <asp:Button ID="btnSave" runat="server" Text="Save" CssClass="btn btn-primary" Style="background-color: #B71D1D; border-color: #B71D1D;" OnClientClick="return validateForm();" />
