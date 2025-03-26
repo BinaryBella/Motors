@@ -106,8 +106,8 @@
 
         .modules-row {
             margin-bottom: 20px;
-            margin-left:0px;
-            margin-right:0px;
+            margin-left: 0px;
+            margin-right: 0px;
         }
 
         .modules-container {
@@ -212,6 +212,8 @@
                                 <li><a class="dropdown-item" runat="server" href="~/Pages/MasterFiles/Bank">Bank Master File</a></li>
                                 <li><a class="dropdown-item" runat="server" href="~/Pages/MasterFiles/BankBranch">Bank Branch Master File</a></li>
                                 <li><a class="dropdown-item" runat="server" href="~/Pages/MasterFiles/BankAccount">Bank Account Master File</a></li>
+                                <li><a class="dropdown-item" runat="server" href="~/Pages/MasterFiles/ChequeRegistry">Customer Cheque Registry</a></li>
+                                <li><a class="dropdown-item" runat="server" href="~/Pages/MasterFiles/ChequeBanking">Customer Cheque Banking</a></li>                            
                             </ul>
                         </li>
                         <li class="nav-item dropdown">

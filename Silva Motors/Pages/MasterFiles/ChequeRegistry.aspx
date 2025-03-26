@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Retail branchs" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" Inherits="Silva_Motors.Pages.MasterFiles.Bank" %>
+﻿<%@ Page Title="Retail branchs" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" Inherits="Silva_Motors.Pages.MasterFiles.ChequeRegistry" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -9,24 +9,24 @@
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href='<%= ResolveUrl("~/Content/CustomCSS/MasterFiles/BankCSS.css") %>' />
+    <link rel="stylesheet" href='<%= ResolveUrl("~/Content/CustomCSS/MasterFiles/ChequeRegistryCSS.css") %>' />
     <div class="container-fluid main">
-        <div class="header">BANKS</div>
+        <div class="header">CUSTOMER CHEQUE REGISTRY</div>
 
         <div class="d-flex justify-content-between mb-3">
             <asp:Button ID="btnFilters" runat="server" Text="Filters" CssClass="filters-button" />
-            <asp:Button ID="btnAdd" runat="server" Text=" ADD" CssClass="add-button" />
         </div>
 
         <div class="table-responsive">
-            <asp:GridView ID="gvbranchs" runat="server" AutoGenerateColumns="false"
-                CssClass="table table-bordered bank-table" Width="100%">
+            <asp:GridView ID="gvbranchs" runat="server" AutoGenerateColumns="false" CssClass="table table-bordered bank-table" Width="100%">
                 <Columns>
-                    <asp:BoundField DataField="Code" HeaderText="CODE" />
-                    <asp:BoundField DataField="BankId" HeaderText="BANK ID" />
                     <asp:BoundField DataField="BankName" HeaderText="BANK NAME" />
-                    <asp:BoundField DataField="User" HeaderText="USER" />
-                    <asp:BoundField DataField="Date" HeaderText="DATE" />
+                    <asp:BoundField DataField="Branch" HeaderText="BRANCH" />
+                    <asp:BoundField DataField="ChequeId" HeaderText="CHEQUE ID" />
+                    <asp:BoundField DataField="Amount" HeaderText="AMOUNT" />
+                    <asp:BoundField DataField="ReceiptId" HeaderText="RECEIPT ID" />
+                    <asp:BoundField DataField="Account" HeaderText="ACCOUNT" />
+                    <asp:BoundField DataField="ChequeNo" HeaderText="CHEQUE NO" />
                     <asp:TemplateField HeaderText="STATUS">
                         <HeaderTemplate>
                             Status
@@ -101,68 +101,5 @@
                 <a href="#">5</a>
             </div>
         </div>
-
-    <%-- Modal Markup --%>
-    <div class="modal fade" id="branchModal" tabindex="-1" role="dialog" aria-labelledby="branchModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="branchModalLabel">Add Bank</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="form-group row">
-                        <label for="Code" class="col-sm-3 col-form-label">Code</label>
-                        <div class="col-sm-9">
-                            <asp:TextBox ID="Code" runat="server" CssClass="form-control"></asp:TextBox>
-                        </div>
-                    </div>
-
-                    <div class="form-group row">
-                        <label for="BankId" class="col-sm-3 col-form-label">Bank ID</label>
-                        <div class="col-sm-9">
-                            <asp:TextBox ID="BankId" runat="server" CssClass="form-control"></asp:TextBox>
-                        </div>
-                    </div>     
-                    
-                    <div class="form-group row">
-                        <label for="BankName" class="col-sm-3 col-form-label">Bank Name</label>
-                        <div class="col-sm-9">
-                            <asp:TextBox ID="BankName" runat="server" CssClass="form-control"></asp:TextBox>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <asp:Button ID="btnSave" runat="server" Text="Save" CssClass="btn filters-button" Style="background-color: #B71D1D; border-color: #B71D1D;" OnClientClick="return validateForm();" />
-                    <button type="button" class="btn" data-dismiss="modal" style="background-color: #D9D9D9;">Cancel</button>
-                </div>
-            </div>
-        </div>
     </div>
-        </div>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            // Attach click event to the Add button
-            $("#<%= btnAdd.ClientID %>").click(function (e) {
-                e.preventDefault();
-                $("#branchModal").modal("show");
-            });
-
-            // Handle save button click
-            $("#<%= btnSave.ClientID %>").click(function (e) {
-                // Prevent postback for this example - in real application you'll handle server-side validation
-                e.preventDefault();
-
-                // Validate form
-                if (validateForm()) {
-                    // Here you would typically make an AJAX call or allow postback to server
-                    // For demo purposes, we'll just close the modal and show success message
-                    $("#customerModal").modal("hide");
-                    alert("Customer data saved successfully!");
-                }
-            });
-        });
-    </script>
 </asp:Content>

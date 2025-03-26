@@ -118,6 +118,8 @@
     <Content Include="Content\CustomCSS\MasterFiles\BrandCSS.css" />
     <Content Include="Content\CustomCSS\MasterFiles\BrokerCSS.css" />
     <Content Include="Content\CustomCSS\MasterFiles\CategoryCSS.css" />
+    <Content Include="Content\CustomCSS\MasterFiles\ChequeBankingCSS.css" />
+    <Content Include="Content\CustomCSS\MasterFiles\ChequeRegistryCSS.css" />
     <Content Include="Content\CustomCSS\MasterFiles\ModelCSS.css" />
     <Content Include="Content\CustomCSS\MasterFiles\RackCSS.css" />
     <Content Include="Content\CustomCSS\MasterFiles\RetailCustomerCSS.css" />
@@ -156,6 +158,8 @@
     <Content Include="Pages\MasterFiles\Brand.aspx" />
     <Content Include="Pages\MasterFiles\Broker.aspx" />
     <Content Include="Pages\MasterFiles\Category.aspx" />
+    <Content Include="Pages\MasterFiles\ChequeBanking.aspx" />
+    <Content Include="Pages\MasterFiles\ChequeRegistry.aspx" />
     <Content Include="Pages\MasterFiles\Model.aspx" />
     <Content Include="Pages\MasterFiles\Rack.aspx" />
     <Content Include="Pages\MasterFiles\RetailCustomer.aspx" />
@@ -249,6 +253,14 @@
     </Compile>
     <Compile Include="Pages\MasterFiles\Category.aspx.cs">
       <DependentUpon>Category.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\MasterFiles\ChequeBanking.aspx.cs">
+      <DependentUpon>ChequeBanking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\MasterFiles\ChequeRegistry.aspx.cs">
+      <DependentUpon>ChequeRegistry.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\MasterFiles\Model.aspx.cs">

@@ -1,0 +1,77 @@
+﻿.main {
+    padding: 30px;
+}
+
+.header {
+    color: #c22;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.filters-button, .bin-button, .add-button {
+    background-color: #c22;
+    color: white;
+    border: none;
+    padding: 8px 30px;
+    font-weight: normal;
+}
+
+    .add-button i {
+        margin-right: 5px;
+    }
+
+.cheque-registry-table th {
+    background-color: #000;
+    color: white;
+    font-weight: normal;
+    text-align: left;
+}
+
+.cheque-registry-table tr:nth-child(odd) td {
+    background-color: #e0e0e0;
+}
+
+.cheque-registry-table tr:nth-child(even) td {
+    background-color: #fff;
+}
+
+.pagination {
+    display: flex;
+}
+
+    .pagination a {
+        color: white;
+        background-color: #000;
+        padding: 8px 12px;
+        text-decoration: none;
+        margin-right: 2px;
+    }
+
+        .pagination a.active {
+            background-color: #c22;
+        }
+
+.total-outstanding {
+    background-color: #000;
+    color: white;
+    padding: 8px 12px;
+    display: inline-block;
+    font-weight: bold;
+}
+
+.total-value {
+    background-color: white;
+    border: 2px solid #000;
+    padding: 8px 12px;
+    display: inline-block;
+    min-width: 80px;
+    text-align: center;
+}
+
+.checkbox-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 10px;
+}
