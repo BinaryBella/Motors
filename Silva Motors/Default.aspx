@@ -208,14 +208,21 @@
                                 <li><a class="dropdown-item" runat="server" href="~/Pages/MasterFiles/Category">Category Master File</a></li>
                                 <li><a class="dropdown-item" runat="server" href="~/Pages/MasterFiles/Brand">Brand Master File</a></li>
                                 <li><a class="dropdown-item" runat="server" href="~/Pages/MasterFiles/Model">Model Master File</a></li>
+                                <li><a class="dropdown-item" runat="server" href="~/Pages/MasterFiles/Rack">Rack Master File</a></li>
+                                <li><a class="dropdown-item" runat="server" href="~/Pages/MasterFiles/Bank">Bank Master File</a></li>
+                                <li><a class="dropdown-item" runat="server" href="~/Pages/MasterFiles/BankBranch">Bank Branch Master File</a></li>
+                                <li><a class="dropdown-item" runat="server" href="~/Pages/MasterFiles/BankAccount">Bank Account Master File</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="viewDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">VIEW
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="viewDropdown">
-                                <li><a class="dropdown-item" href="#">Option 1</a></li>
-                                <li><a class="dropdown-item" href="#">Option 2</a></li>
+                                <li><a class="dropdown-item" runat="server" href="~/Pages/View/CustomerLedger">Customer Ledger</a></li>
+                                <li><a class="dropdown-item" runat="server" href="~/Pages/View/RepCommision">Sales Rep Commision</a></li>
+                                <li><a class="dropdown-item" runat="server" href="~/Pages/View/BinCard">Bin Card</a></li>
+                                <li><a class="dropdown-item" runat="server" href="~/Pages/View/StockValuation-StockWise">Stock Valuation-Stock Wise</a></li>
+                                <li><a class="dropdown-item" runat="server" href="~/Pages/View/StockValuation-ItemWise">Stock Valuation-Item Wise</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">

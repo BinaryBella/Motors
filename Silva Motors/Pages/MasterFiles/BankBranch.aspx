@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Retail branchs" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" Inherits="Silva_Motors.Pages.MasterFiles.Branch" %>
+﻿<%@ Page Title="Retail branchs" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" Inherits="Silva_Motors.Pages.MasterFiles.BankBranch" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -22,7 +22,7 @@
             <asp:GridView ID="gvbranchs" runat="server" AutoGenerateColumns="false"
                 CssClass="table table-bordered branch-table" Width="100%">
                 <Columns>
-                    <asp:BoundField DataField="Bank&BranchNo" HeaderText="BRANCH & BANK NO" />
+                    <asp:BoundField DataField="BankBranchNo" HeaderText="BRANCH & BANK NO" />
                     <asp:BoundField DataField="BranchName" HeaderText="BRANCH NAME" />
                     <asp:TemplateField HeaderText="STATUS">
                         <HeaderTemplate>
@@ -110,11 +110,10 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <%-- Removed the form tag here --%>
                     <div class="form-group row">
-                        <label for="Bank&BranchNo" class="col-sm-3 col-form-label">Bank&BranchNo</label>
+                        <label for="BankBranchNo" class="col-sm-3 col-form-label">Bank & Branch No</label>
                         <div class="col-sm-9">
-                            <asp:TextBox ID="Bank&BranchNo" runat="server" CssClass="form-control"></asp:TextBox>
+                            <asp:TextBox ID="BankBranchNo" runat="server" CssClass="form-control"></asp:TextBox>
                         </div>
                     </div>
 

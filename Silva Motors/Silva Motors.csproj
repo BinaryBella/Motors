@@ -121,6 +121,7 @@
     <Content Include="Content\CustomCSS\MasterFiles\RetailCustomerCSS.css" />
     <Content Include="Content\CustomCSS\MasterFiles\StockItemCSS.css" />
     <Content Include="Content\CustomCSS\MasterFiles\VendorCSS.css" />
+    <Content Include="Content\CustomCSS\View\CustomerLedgerCSS.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\src\banner-background.jpg" />
     <Content Include="Content\src\cashier-icon.png" />
@@ -147,7 +148,7 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
-    <Content Include="Pages\MasterFiles\Branch.aspx" />
+    <Content Include="Pages\MasterFiles\BankBranch.aspx" />
     <Content Include="Pages\MasterFiles\Brand.aspx" />
     <Content Include="Pages\MasterFiles\Broker.aspx" />
     <Content Include="Pages\MasterFiles\Category.aspx" />
@@ -156,6 +157,11 @@
     <Content Include="Pages\MasterFiles\RetailCustomer.aspx" />
     <Content Include="Pages\MasterFiles\StockItem.aspx" />
     <Content Include="Pages\MasterFiles\Vendor.aspx" />
+    <Content Include="Pages\View\BinCard.aspx" />
+    <Content Include="Pages\View\CustomerLedger.aspx" />
+    <Content Include="Pages\View\RepCommision.aspx" />
+    <Content Include="Pages\View\StockValuation-ItemWise.aspx" />
+    <Content Include="Pages\View\StockValuation-StockWise.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -217,8 +223,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Pages\MasterFiles\Branch.aspx.cs">
-      <DependentUpon>Branch.aspx</DependentUpon>
+    <Compile Include="Pages\MasterFiles\BankBranch.aspx.cs">
+      <DependentUpon>BankBranch.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\MasterFiles\Brand.aspx.cs">
@@ -251,6 +257,14 @@
     </Compile>
     <Compile Include="Pages\MasterFiles\Vendor.aspx.cs">
       <DependentUpon>Vendor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\View\BinCard.aspx.cs">
+      <DependentUpon>BinCard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\View\CustomerLedger.aspx.cs">
+      <DependentUpon>CustomerLedger.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
