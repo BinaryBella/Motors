@@ -27,22 +27,16 @@
                     <input type="text" class="form-control" id="txtAccountName" placeholder="Account Name">
                 </div>
                 <div class="col-md-3">
-                    <input type="text" class="form-control" id="ddlBankName" placeholder="Account Name">
+                    <input type="text" class="form-control" id="ddlBankName" placeholder="Bank Name">
                 </div>
                 <div class="col-md-3">
-                    <input type="text" class="form-control" id="ddlBranch" placeholder="Account Name">
+                    <input type="text" class="form-control" id="ddlBranch" placeholder="Branch">
                 </div>
             </div>
 
             <div class="row filter-section mb-3">
                 <div class="col-md-3">
                     <input type="date" class="form-control" id="txtFromDate" placeholder="From Date">
-                </div>
-                <div class="col-md-3">
-                    <input type="number" class="form-control" id="txtMinAmount" placeholder="Minimum Amount">
-                </div>
-                <div class="col-md-3">
-                    <input type="number" class="form-control" id="txtMaxAmount" placeholder="Maximum Amount">
                 </div>
             </div>
 

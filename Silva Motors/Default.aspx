@@ -226,7 +226,7 @@
                                 <li><a class="dropdown-item" runat="server" href="~/Pages/View/StockValuation-StockWise">Stock Valuation-Stock Wise</a></li>
                                 <li><a class="dropdown-item" runat="server" href="~/Pages/View/StockValuation-ItemWise">Stock Valuation-Item Wise</a></li>
                                 <li><a class="dropdown-item" runat="server" href="~/Pages/View/Transaction-Customer">Transaction-Customer</a></li>
-                                <li><a class="dropdown-item" runat="server" href="~/Pages/View/Transaction-Internal">Transaction-Internal</a></li>
+                                <li><a class="dropdown-item" runat="server" href="~/Pages/View/Transaction-Vendor">Transaction-Internal</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">

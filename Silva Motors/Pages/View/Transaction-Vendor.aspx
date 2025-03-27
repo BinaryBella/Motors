@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Transaction-Customer.aspx.cs" Inherits="Silva_Motors.Pages.View.Transaction_Customer" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Transaction-Vendor.aspx.cs" Inherits="Silva_Motors.Pages.View.Transaction_Vendor" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -14,7 +14,7 @@
 
     <div class="container-fluid main">
 
-        <div class="header">CUSTOMER TRANSACTIONS</div>
+        <div class="header">VENDOR TRANSACTIONS</div>
 
         <div class="container-fluid">
             <div class="filter-section">
@@ -143,9 +143,10 @@
                 <AlternatingRowStyle BackColor="White" />
             </asp:GridView>
         </div>
-        <!-- Trigger Button -->
+
+                <!-- Trigger Button -->
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cashInvoiceModal">
-            View Cash Invoice
+            View Good Received Memo
         </button>
 
         <!-- Cash Invoice Modal -->
@@ -153,7 +154,7 @@
             <div class="modal-dialog modal-lg cash-invoice-modal">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="cashInvoiceModalLabel">CASH INVOICE</h5>
+                        <h5 class="modal-title" id="cashInvoiceModalLabel">VIEW GOOD RECIEVED MEMO</h5>
                         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">

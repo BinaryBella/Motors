@@ -1,3 +1,7 @@
+.main-container{
+    padding:30px;
+    margin:40px;
+}
 .header {
     color: #c22;
     font-weight: bold;

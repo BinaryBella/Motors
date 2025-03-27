@@ -11,7 +11,7 @@ namespace Silva_Motors.Pages.View
 {
 
 
-    public partial class Transaction_Customer
+    public partial class Transaction_Vendor
     {
 
         /// <summary>

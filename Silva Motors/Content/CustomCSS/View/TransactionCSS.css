@@ -1,0 +1,90 @@
+﻿.main {
+    padding: 30px;
+}
+
+.header {
+    color: #c22;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.filter-section {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 30px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.date-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+    .date-container label {
+        white-space: nowrap;
+        margin-right: 10px;
+    }
+
+.date-input {
+    display: flex;
+    align-items: center;
+}
+
+    .date-input input {
+        width: 250px;
+        margin-left: 10px;
+    }
+
+.view-options-container {
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    padding: 15px;
+    margin-left: 300px;
+    margin-right: -500px;
+}
+
+.view-option-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+    .view-option-row .form-check-input {
+        margin-right: 10px;
+    }
+
+    .view-option-row input[type="text"] {
+        width: 250px;
+        margin-left: 10px;
+    }
+
+.cash-invoice-modal {
+    max-width: 1200px;
+}
+
+.modal-header {
+    color: black;
+}
+
+.table th {
+    background-color: #000;
+    color: white;
+    font-weight: normal;
+    text-align: left;
+}
+
+.table tr:nth-child(odd) td {
+    background-color: #e0e0e0;
+}
+
+.table tr:nth-child(even) td {
+    background-color: #fff;
+}
+
+.modal-footer .btn {
+    min-width: 100px;
+}
