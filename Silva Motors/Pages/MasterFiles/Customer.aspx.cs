@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Silva_Motors.Pages.MasterFiles
 {
-    public partial class Brand1 : System.Web.UI.Page
+    public partial class Customer1 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

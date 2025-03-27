@@ -1,4 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="BinCard.aspx.cs" Inherits="Silva_Motors.Pages.View.BinCard1" %>
+﻿<%@ Page Title="Stock Bin Card" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="BinCardt.aspx.cs" Inherits="Silva_Motors.Pages.View.BinCard" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <style>
         .main{

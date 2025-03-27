@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Silva_Motors.Pages.MasterFiles
+namespace Silva_Motors.Pages.View
 {
-    public partial class Brand1 : System.Web.UI.Page
+    public partial class RepCommision : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

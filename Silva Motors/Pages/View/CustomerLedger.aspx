@@ -1,5 +1,4 @@
-﻿<%@ Page Title="CustomerLedger" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" Inherits="Silva_Motors.Pages.View.CustomerLedger" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CustomerLedger.aspx.cs" Inherits="Silva_Motors.Pages.View.CustomerLedger1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <link rel="stylesheet" href='<%= ResolveUrl("~/Content/CustomCSS/View/CustomerLedgerCSS.css") %>' />
 

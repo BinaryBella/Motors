@@ -1,5 +1,4 @@
-﻿<%@ Page Title="Retail Customers" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" Inherits="Silva_Motors.Pages.MasterFiles.RetailCustomer" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Customer.aspx.cs" Inherits="Silva_Motors.Pages.MasterFiles.Customer1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
@@ -9,9 +8,9 @@
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href='<%= ResolveUrl("~/Content/CustomCSS/MasterFiles/RetailCustomerCSS.css") %>' />
+    <link rel="stylesheet" href='<%= ResolveUrl("~/Content/CustomCSS/MasterFiles/CustomerCSS.css") %>' />
     <div class="container-fluid main">
-        <div class="header">RETAIL CUSTOMERS</div>
+        <div class="header">CUSTOMERS</div>
 
         <div class="d-flex justify-content-between mb-3">
             <asp:Button ID="btnFilters" runat="server" Text="Filters" CssClass="filters-button" />

@@ -122,7 +122,7 @@
     <Content Include="Content\CustomCSS\MasterFiles\ChequeRegistryCSS.css" />
     <Content Include="Content\CustomCSS\MasterFiles\ModelCSS.css" />
     <Content Include="Content\CustomCSS\MasterFiles\RackCSS.css" />
-    <Content Include="Content\CustomCSS\MasterFiles\RetailCustomerCSS.css" />
+    <Content Include="Content\CustomCSS\MasterFiles\CustomerCSS.css" />
     <Content Include="Content\CustomCSS\MasterFiles\StockItemCSS.css" />
     <Content Include="Content\CustomCSS\MasterFiles\VendorCSS.css" />
     <Content Include="Content\CustomCSS\View\CustomerLedgerCSS.css" />
@@ -160,9 +160,9 @@
     <Content Include="Pages\MasterFiles\Category.aspx" />
     <Content Include="Pages\MasterFiles\ChequeBanking.aspx" />
     <Content Include="Pages\MasterFiles\ChequeRegistry.aspx" />
+    <Content Include="Pages\MasterFiles\Customer.aspx" />
     <Content Include="Pages\MasterFiles\Model.aspx" />
     <Content Include="Pages\MasterFiles\Rack.aspx" />
-    <Content Include="Pages\MasterFiles\RetailCustomer.aspx" />
     <Content Include="Pages\MasterFiles\StockItem.aspx" />
     <Content Include="Pages\MasterFiles\Vendor.aspx" />
     <Content Include="Pages\View\BinCard.aspx" />
@@ -170,6 +170,7 @@
     <Content Include="Pages\View\RepCommision.aspx" />
     <Content Include="Pages\View\StockValuation-ItemWise.aspx" />
     <Content Include="Pages\View\StockValuation-StockWise.aspx" />
+    <Content Include="Pages\View\Transaction-Customer.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -235,61 +236,134 @@
       <DependentUpon>Bank.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Pages\MasterFiles\Bank.aspx.designer.cs">
+      <DependentUpon>Bank.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\MasterFiles\BankAccount.aspx.cs">
       <DependentUpon>BankAccount.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\MasterFiles\BankAccount.aspx.designer.cs">
+      <DependentUpon>BankAccount.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\MasterFiles\BankBranch.aspx.cs">
       <DependentUpon>BankBranch.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Pages\MasterFiles\BankBranch.aspx.designer.cs">
+      <DependentUpon>BankBranch.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\MasterFiles\Brand.aspx.cs">
       <DependentUpon>Brand.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\MasterFiles\Brand.aspx.designer.cs">
+      <DependentUpon>Brand.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\MasterFiles\Broker.aspx.cs">
       <DependentUpon>Broker.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Pages\MasterFiles\Broker.aspx.designer.cs">
+      <DependentUpon>Broker.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\MasterFiles\Category.aspx.cs">
       <DependentUpon>Category.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\MasterFiles\Category.aspx.designer.cs">
+      <DependentUpon>Category.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\MasterFiles\ChequeBanking.aspx.cs">
       <DependentUpon>ChequeBanking.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Pages\MasterFiles\ChequeBanking.aspx.designer.cs">
+      <DependentUpon>ChequeBanking.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\MasterFiles\ChequeRegistry.aspx.cs">
       <DependentUpon>ChequeRegistry.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\MasterFiles\ChequeRegistry.aspx.designer.cs">
+      <DependentUpon>ChequeRegistry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MasterFiles\Customer.aspx.cs">
+      <DependentUpon>Customer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\MasterFiles\Customer.aspx.designer.cs">
+      <DependentUpon>Customer.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\MasterFiles\Model.aspx.cs">
       <DependentUpon>Model.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Pages\MasterFiles\Model.aspx.designer.cs">
+      <DependentUpon>Model.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\MasterFiles\Rack.aspx.cs">
       <DependentUpon>Rack.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\MasterFiles\RetailCustomer.aspx.cs">
-      <DependentUpon>RetailCustomer.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
+    <Compile Include="Pages\MasterFiles\Rack.aspx.designer.cs">
+      <DependentUpon>Rack.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\MasterFiles\StockItem.aspx.cs">
       <DependentUpon>StockItem.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Pages\MasterFiles\StockItem.aspx.designer.cs">
+      <DependentUpon>StockItem.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\MasterFiles\Vendor.aspx.cs">
       <DependentUpon>Vendor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\MasterFiles\Vendor.aspx.designer.cs">
+      <DependentUpon>Vendor.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\View\BinCard.aspx.cs">
       <DependentUpon>BinCard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Pages\View\BinCard.aspx.designer.cs">
+      <DependentUpon>BinCard.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\View\CustomerLedger.aspx.cs">
       <DependentUpon>CustomerLedger.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\View\CustomerLedger.aspx.designer.cs">
+      <DependentUpon>CustomerLedger.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\View\RepCommision.aspx.cs">
+      <DependentUpon>RepCommision.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\View\RepCommision.aspx.designer.cs">
+      <DependentUpon>RepCommision.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\View\StockValuation-ItemWise.aspx.cs">
+      <DependentUpon>StockValuation-ItemWise.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\View\StockValuation-ItemWise.aspx.designer.cs">
+      <DependentUpon>StockValuation-ItemWise.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\View\StockValuation-StockWise.aspx.cs">
+      <DependentUpon>StockValuation-StockWise.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\View\StockValuation-StockWise.aspx.designer.cs">
+      <DependentUpon>StockValuation-StockWise.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\View\Transaction-Customer.aspx.cs">
+      <DependentUpon>Transaction-Customer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\View\Transaction-Customer.aspx.designer.cs">
+      <DependentUpon>Transaction-Customer.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">

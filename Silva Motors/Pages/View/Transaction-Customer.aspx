@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Broker.aspx.cs" Inherits="Silva_Motors.Pages.MasterFiles.Broker1" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Transaction-Customer.aspx.cs" Inherits="Silva_Motors.Pages.View.Transaction_Customer" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
@@ -8,9 +8,9 @@
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href='<%= ResolveUrl("~/Content/CustomCSS/MasterFiles/BrokerCSS.css") %>' />
+    <link rel="stylesheet" href='<%= ResolveUrl("~/Content/CustomCSS/MasterFiles/CustomerCSS.css") %>' />
     <div class="container-fluid main">
-        <div class="header">BROKERS</div>
+        <div class="header">CUSTOMER - TRANSACTIONS</div>
 
         <div class="d-flex justify-content-between mb-3">
             <asp:Button ID="btnFilters" runat="server" Text="Filters" CssClass="filters-button" />
@@ -18,18 +18,44 @@
         </div>
 
         <div class="table-responsive">
-            <asp:GridView ID="gvBrokers" runat="server" AutoGenerateColumns="false"
+            <asp:GridView ID="gvCustomers" runat="server" AutoGenerateColumns="false"
                 CssClass="table table-bordered customers-table" Width="100%">
                 <Columns>
-                    <asp:BoundField DataField="Code" HeaderText="CODE" />
-                    <asp:BoundField DataField="Name" HeaderText="NAME" />
-                    <asp:BoundField DataField="Address" HeaderText="ADDRESS" />
-                    <asp:BoundField DataField="Telephone" HeaderText="TELEPHONE" />
-                    <asp:BoundField DataField="TotalTransactions" HeaderText="TOTAL TRANSACTIONS" />
-                    <asp:BoundField DataField="TotalCommison" HeaderText="TOTAL COMMISON" />
-                    <asp:BoundField DataField="TotalPaid" HeaderText="TOTAL PAID" />
-                    <asp:BoundField DataField="TotalCommisonReturn" HeaderText="TOTAL COMMISON RETURN" />
-                    <asp:BoundField DataField="DueAmount" HeaderText="DUE AMOUNT" />
+                    <asp:BoundField DataField="RefNo" HeaderText="REF/NO" />
+                    <asp:BoundField DataField="Date" HeaderText="DATE" />
+                    <asp:BoundField DataField="Time" HeaderText="TIME" />
+                    <asp:BoundField DataField="Particulars" HeaderText="PARTICULARS" />
+                    <asp:BoundField DataField="Owner" HeaderText="OWNER" />
+                    <asp:BoundField DataField="User" HeaderText="USER" />
+                    <asp:TemplateField HeaderText="STATUS">
+                        <HeaderTemplate>
+                            Status
+                    <select id="statusFilter" class="filter-input" onchange="filterTable()">
+                        <option value="">All</option>
+                        <option value="active">Active</option>
+                        <option value="inactive">Inactive</option>
+                    </select>
+                        </HeaderTemplate>
+                        <ItemTemplate>
+                            <span class='<%# Convert.ToBoolean(Eval("ActiveState")) ? "status-badge status-active" : "status-badge status-inactive" %>'>
+                                <i class='<%# Convert.ToBoolean(Eval("ActiveState")) ? "bi bi-check-circle-fill" : "bi bi-x-circle-fill" %> me-1'></i>
+                                <%# Convert.ToBoolean(Eval("ActiveState")) ? "Active" : "Inactive" %>
+                            </span>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="ACTIONS">
+                        <ItemTemplate>
+                            <asp:LinkButton ID="btnEdit" runat="server" CssClass="btn btn-warning btn-sm"
+                                CommandName="EditRecord" CommandArgument='<%# Eval("Id") %>'>
+                        <i class="bi bi-pencil-fill"></i>
+                            </asp:LinkButton>
+                            <asp:LinkButton ID="btnDelete" runat="server"
+                                CssClass='<%# Convert.ToBoolean(Eval("ActiveState")) ? "btn btn-danger btn-sm" : "btn btn-success btn-sm" %>'
+                                OnClientClick='<%# "return confirmDelete(" + Eval("Id") + ");" %>'>
+                        <i class='<%# Convert.ToBoolean(Eval("ActiveState")) ? "bi bi-toggle-off" : "bi bi-toggle-on" %>'></i>
+                            </asp:LinkButton>
+                        </ItemTemplate>
+                    </asp:TemplateField>
                     <asp:TemplateField HeaderText="STATUS">
                         <HeaderTemplate>
                             Status
@@ -75,14 +101,27 @@
                 <a href="#">5</a>
             </div>
         </div>
+
+        <div style="display: flex; justify-content: end;">
+            <span class="total-outstanding">TOTAL OUTSTANDING</span>
+            <span class="total-value">
+                <asp:Literal ID="litTotalOutstanding" runat="server"></asp:Literal>
+            </span>
+        </div>
+    </div>
+
+    <div class="checkbox-container">
+        <asp:CheckBox ID="chkShowDebtor" runat="server" Text="Show Debtor" CssClass="checkbox-label" />
+        <asp:CheckBox ID="chkShowCreditor" runat="server" Text="Show Creditor" CssClass="checkbox-label" />
+    </div>
     </div>
 
     <%-- Modal Markup --%>
-    <div class="modal fade" id="brokerModal" tabindex="-1" role="dialog" aria-labelledby="brokerModalLabel" aria-hidden="true">
+    <div class="modal fade" id="customerModal" tabindex="-1" role="dialog" aria-labelledby="customerModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="brokerModalLabel">Add Broker</h5>
+                    <h5 class="modal-title" id="customerModalLabel">Add Customer</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -125,9 +164,9 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="nic" class="col-sm-3 col-form-label">NIC</label>
+                        <label for="txtFax" class="col-sm-3 col-form-label">Fax</label>
                         <div class="col-sm-9">
-                            <asp:TextBox ID="nic" runat="server" CssClass="form-control"></asp:TextBox>
+                            <asp:TextBox ID="txtFax" runat="server" CssClass="form-control"></asp:TextBox>
                         </div>
                     </div>
 
@@ -145,6 +184,69 @@
                         </div>
                     </div>
 
+                    <div class="form-group row">
+                        <label for="txtIntroduceBy" class="col-sm-3 col-form-label">Introduce By</label>
+                        <div class="col-sm-9">
+                            <asp:TextBox ID="txtIntroduceBy" runat="server" CssClass="form-control"></asp:TextBox>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="ddlType" class="col-sm-3 col-form-label">Type</label>
+                        <div class="col-sm-9">
+                            <asp:DropDownList ID="ddlType" runat="server" CssClass="form-control">
+                                <asp:ListItem Text="Retail Customer" Value="Retail"></asp:ListItem>
+                                <asp:ListItem Text="Wholesale Customer" Value="Wholesale"></asp:ListItem>
+                            </asp:DropDownList>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="ddlMode" class="col-sm-3 col-form-label">Mode</label>
+                        <div class="col-sm-9">
+                            <asp:DropDownList ID="ddlMode" runat="server" CssClass="form-control">
+                                <asp:ListItem Text="Commercial" Value="Commercial"></asp:ListItem>
+                                <asp:ListItem Text="Residential" Value="Residential"></asp:ListItem>
+                            </asp:DropDownList>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="txtCreditLimit" class="col-sm-3 col-form-label">Credit Limit</label>
+                        <div class="col-sm-9">
+                            <asp:TextBox ID="txtCreditLimit" runat="server" CssClass="form-control" TextMode="Number" step="0.01"></asp:TextBox>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="ddlCreditPeriod" class="col-sm-3 col-form-label">Credit Period</label>
+                        <div class="col-sm-9">
+                            <asp:DropDownList ID="ddlCreditPeriod" runat="server" CssClass="form-control">
+                                <asp:ListItem Text="30 days" Value="30"></asp:ListItem>
+                                <asp:ListItem Text="60 days" Value="60"></asp:ListItem>
+                                <asp:ListItem Text="90 days" Value="90"></asp:ListItem>
+                                <asp:ListItem Text="120 days" Value="120"></asp:ListItem>
+                                <asp:ListItem Text="150 days" Value="150"></asp:ListItem>
+                                <asp:ListItem Text="180 days" Value="180"></asp:ListItem>
+                                <asp:ListItem Text="364 days" Value="364"></asp:ListItem>
+                                <asp:ListItem Text="Unlimited" Value="Unlimited"></asp:ListItem>
+                            </asp:DropDownList>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="txtBalanceDue" class="col-sm-3 col-form-label">Balance Due</label>
+                        <div class="col-sm-9">
+                            <asp:TextBox ID="txtBalanceDue" runat="server" CssClass="form-control" TextMode="Number" step="0.01"></asp:TextBox>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="txtPDCheques" class="col-sm-3 col-form-label">P/D Cheques</label>
+                        <div class="col-sm-9">
+                            <asp:TextBox ID="txtPDCheques" runat="server" CssClass="form-control"></asp:TextBox>
+                        </div>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <asp:Button ID="btnSave" runat="server" Text="Save" CssClass="btn btn-primary" Style="background-color: #B71D1D; border-color: #B71D1D;" OnClientClick="return validateForm();" />
@@ -159,7 +261,7 @@
             // Attach click event to the Add button
             $("#<%= btnAdd.ClientID %>").click(function (e) {
                 e.preventDefault();
-                $("#brokerModal").modal("show");
+                $("#customerModal").modal("show");
             });
 
             // Handle save button click
@@ -171,7 +273,7 @@
                 if (validateForm()) {
                     // Here you would typically make an AJAX call or allow postback to server
                     // For demo purposes, we'll just close the modal and show success message
-                    $("#brokerModal").modal("hide");
+                    $("#customerModal").modal("hide");
                     alert("Customer data saved successfully!");
                 }
             });

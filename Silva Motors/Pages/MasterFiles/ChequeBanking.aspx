@@ -1,5 +1,4 @@
-﻿<%@ Page Title="Retail branchs" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" Inherits="Silva_Motors.Pages.MasterFiles.ChequeBanking" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ChequeBanking.aspx.cs" Inherits="Silva_Motors.Pages.MasterFiles.ChequeBanking1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
@@ -28,29 +27,16 @@
                     <input type="text" class="form-control" id="txtAccountName" placeholder="Account Name">
                 </div>
                 <div class="col-md-3">
-                    <select class="form-control" id="ddlBankName">
-                        <option value="">Select Bank Name</option>
-                        <option value="1">Bank A</option>
-                        <option value="2">Bank B</option>
-                        <option value="3">Bank C</option>
-                    </select>
+                    <input type="text" class="form-control" id="ddlBankName" placeholder="Account Name">
                 </div>
                 <div class="col-md-3">
-                    <select class="form-control" id="ddlBranch">
-                        <option value="">Select Branch</option>
-                        <option value="1">Main Branch</option>
-                        <option value="2">Downtown Branch</option>
-                        <option value="3">Suburb Branch</option>
-                    </select>
+                    <input type="text" class="form-control" id="ddlBranch" placeholder="Account Name">
                 </div>
             </div>
 
             <div class="row filter-section mb-3">
                 <div class="col-md-3">
                     <input type="date" class="form-control" id="txtFromDate" placeholder="From Date">
-                </div>
-                <div class="col-md-3">
-                    <input type="date" class="form-control" id="txtToDate" placeholder="To Date">
                 </div>
                 <div class="col-md-3">
                     <input type="number" class="form-control" id="txtMinAmount" placeholder="Minimum Amount">

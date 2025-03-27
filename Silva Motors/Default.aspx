@@ -201,7 +201,7 @@
                             <a class="nav-link dropdown-toggle" href="#" id="filesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">FILES
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="filesDropdown">
-                                <li><a class="dropdown-item" runat="server" href="~/Pages/MasterFiles/RetailCustomer">Retail Customer Master File</a></li>
+                                <li><a class="dropdown-item" runat="server" href="~/Pages/MasterFiles/Customer">Customer Master File</a></li>
                                 <li><a class="dropdown-item" runat="server" href="~/Pages/MasterFiles/Broker">Broker Master File</a></li>
                                 <li><a class="dropdown-item" runat="server" href="~/Pages/MasterFiles/Vendor">Vendor Master File</a></li>
                                 <li><a class="dropdown-item" runat="server" href="~/Pages/MasterFiles/StockItem">Stock Item Master File</a></li>
@@ -225,6 +225,8 @@
                                 <li><a class="dropdown-item" runat="server" href="~/Pages/View/BinCard">Bin Card</a></li>
                                 <li><a class="dropdown-item" runat="server" href="~/Pages/View/StockValuation-StockWise">Stock Valuation-Stock Wise</a></li>
                                 <li><a class="dropdown-item" runat="server" href="~/Pages/View/StockValuation-ItemWise">Stock Valuation-Item Wise</a></li>
+                                <li><a class="dropdown-item" runat="server" href="~/Pages/View/Transaction-Customer">Transaction-Customer</a></li>
+                                <li><a class="dropdown-item" runat="server" href="~/Pages/View/Transaction-Internal">Transaction-Internal</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
