@@ -115,6 +115,7 @@
     <Content Include="Content\CustomCSS\CustomerTransaction\CustomerCreditNote.css" />
     <Content Include="Content\CustomCSS\CustomerTransaction\CustomerDebitNote.css" />
     <Content Include="Content\CustomCSS\CustomerTransaction\CustomerPaymentReciept.css" />
+    <Content Include="Content\CustomCSS\CustomerTransaction\InvoiceCSS.css" />
     <Content Include="Content\CustomCSS\MasterFiles\BankAccountCSS.css" />
     <Content Include="Content\CustomCSS\MasterFiles\BankBranchCSS.css" />
     <Content Include="Content\CustomCSS\MasterFiles\BankCSS.css" />
@@ -161,6 +162,7 @@
     <Content Include="Pages\CustomerTransaction\CustomerCreditNote.aspx" />
     <Content Include="Pages\CustomerTransaction\CustomerDebitNote.aspx" />
     <Content Include="Pages\CustomerTransaction\CustomerPaymentReciept.aspx" />
+    <Content Include="Pages\CustomerTransaction\Invoice.aspx" />
     <Content Include="Pages\MasterFiles\Bank.aspx" />
     <Content Include="Pages\MasterFiles\BankAccount.aspx" />
     <Content Include="Pages\MasterFiles\BankBranch.aspx" />
@@ -181,6 +183,7 @@
     <Content Include="Pages\View\RepCommision.aspx" />
     <Content Include="Pages\View\StockValuation-ItemWise.aspx" />
     <Content Include="Pages\View\StockValuation-StockWise.aspx" />
+    <Content Include="Pages\View\Transaction-Advance.aspx" />
     <Content Include="Pages\View\Transaction-Commision.aspx" />
     <Content Include="Pages\View\Transaction-Customer.aspx" />
     <Content Include="Pages\View\Transaction-Vendor.aspx" />
@@ -265,6 +268,13 @@
     </Compile>
     <Compile Include="Pages\CustomerTransaction\CustomerPaymentReciept.aspx.designer.cs">
       <DependentUpon>CustomerPaymentReciept.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CustomerTransaction\Invoice.aspx.cs">
+      <DependentUpon>Invoice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\CustomerTransaction\Invoice.aspx.designer.cs">
+      <DependentUpon>Invoice.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\MasterFiles\Bank.aspx.cs">
       <DependentUpon>Bank.aspx</DependentUpon>
@@ -405,6 +415,13 @@
     </Compile>
     <Compile Include="Pages\View\StockValuation-StockWise.aspx.designer.cs">
       <DependentUpon>StockValuation-StockWise.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\View\Transaction-Advance.aspx.cs">
+      <DependentUpon>Transaction-Advance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\View\Transaction-Advance.aspx.designer.cs">
+      <DependentUpon>Transaction-Advance.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\View\Transaction-Commision.aspx.cs">
       <DependentUpon>Transaction-Commision.aspx</DependentUpon>

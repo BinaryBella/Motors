@@ -1,0 +1,141 @@
+﻿.main {
+    padding: 30px;
+}
+
+.header {
+    color: #c22;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.invoice-container {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Top Section Styling */
+.invoice-header {
+    background-color: #f0f0f0;
+    padding: 15px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+    .invoice-header select,
+    .invoice-header input {
+        background-color: #ffffff;
+        border: 1px solid #d0d0d0;
+        color: #333;
+        padding: 8px;
+        width: 100%;
+    }
+
+/* Balance Section Styling */
+.balance-section {
+    background-color: #000;
+    color: #ffffff;
+    padding: 10px;
+}
+
+    .balance-section input {
+        background-color: transparent;
+        border: none;
+        color: #ffffff;
+        text-align: center;
+    }
+
+/* Invoice Items Table */
+.invoice-items-table {
+    width: 100%;
+}
+
+    .invoice-items-table th {
+        background-color: #000;
+        color: #ffffff;
+        padding: 10px;
+        text-align: left;
+    }
+
+    .invoice-items-table td {
+        padding: 8px;
+        border: 1px solid #e0e0e0;
+    }
+
+    .invoice-items-table input {
+        width: 100%;
+        border: 1px solid #d0d0d0;
+        padding: 6px;
+    }
+
+/* Broker and Commission Section */
+.broker-section {
+    margin-top: 15px;
+}
+
+    .broker-section input {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #d0d0d0;
+    }
+
+/* Totals Section */
+.totals-section {
+    background-color: #f0f0f0;
+    padding: 15px;
+    margin-top: 15px;
+}
+
+    .totals-section input {
+        width: 100%;
+        background-color: #ffffff;
+        border: 1px solid #d0d0d0;
+        padding: 8px;
+    }
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .invoice-header select,
+    .invoice-header input,
+    .invoice-items-table input,
+    .broker-section input,
+    .totals-section input {
+        font-size: 14px;
+        padding: 6px;
+    }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+
+
+
+.table th {
+    background-color: #000;
+    color: white;
+    font-weight: normal;
+    text-align: left;
+}
+
+.table tr:nth-child(odd) td {
+    background-color: #e0e0e0;
+}
+
+.table tr:nth-child(even) td {
+    background-color: #fff;
+}
