@@ -114,6 +114,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\CustomCSS\CustomerTransaction\CustomerCreditNote.css" />
     <Content Include="Content\CustomCSS\CustomerTransaction\CustomerDebitNote.css" />
+    <Content Include="Content\CustomCSS\CustomerTransaction\CustomerGoodsReturn.css" />
     <Content Include="Content\CustomCSS\CustomerTransaction\CustomerPaymentReciept.css" />
     <Content Include="Content\CustomCSS\CustomerTransaction\InvoiceCSS.css" />
     <Content Include="Content\CustomCSS\MasterFiles\BankAccountCSS.css" />
@@ -161,6 +162,7 @@
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Pages\CustomerTransaction\CustomerCreditNote.aspx" />
     <Content Include="Pages\CustomerTransaction\CustomerDebitNote.aspx" />
+    <Content Include="Pages\CustomerTransaction\CustomerGoodsReturn.aspx" />
     <Content Include="Pages\CustomerTransaction\CustomerPaymentReciept.aspx" />
     <Content Include="Pages\CustomerTransaction\Invoice.aspx" />
     <Content Include="Pages\MasterFiles\Bank.aspx" />
@@ -261,6 +263,13 @@
     </Compile>
     <Compile Include="Pages\CustomerTransaction\CustomerDebitNote.aspx.designer.cs">
       <DependentUpon>CustomerDebitNote.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CustomerTransaction\CustomerGoodsReturn.aspx.cs">
+      <DependentUpon>CustomerGoodsReturn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\CustomerTransaction\CustomerGoodsReturn.aspx.designer.cs">
+      <DependentUpon>CustomerGoodsReturn.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\CustomerTransaction\CustomerPaymentReciept.aspx.cs">
       <DependentUpon>CustomerPaymentReciept.aspx</DependentUpon>
