@@ -1,0 +1,88 @@
+﻿.main{
+    margin: 30px;
+}
+
+.header {
+    color: #c22;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.card {
+    border-radius: 0;
+    border: none;
+    margin-bottom: 20px;
+}
+
+.card-header {
+    background-color: #e3e1e1;
+    border-radius: 0;
+    padding: 20px;
+    border: none;
+}
+
+.form-control {
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+.form-floating label {
+    padding: 0.5rem 0.75rem;
+}
+
+.btn {
+    border-radius: 4px;
+    padding: 8px 20px;
+    margin-right: 10px;
+}
+
+.btn-primary {
+    background-color: #cc2222;
+    border-color: #cc2222;
+    color: #000;
+}
+
+.btn-secondary {
+    background-color: #6b6a6a;
+    border-color: #6b6a6a;
+    color: #ffffff;
+}
+
+ul li {
+    margin-bottom: 8px;
+}
+
+.content-container {
+    background-color: #f0f0f0;
+    padding: 30px;
+    border-radius: 4px;
+}
+
+.vendor-info-container {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.balance-info {
+    margin-top: 10px;
+}
+
+.action-buttons {
+    margin-top: 20px;
+    text-align: right;
+}
+
+.input-error {
+    border: 1px solid #dc3545 !important;
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25) !important;
+}
+
+.validation-message {
+    color: #dc3545;
+    font-size: 16px;
+    margin-top: 5px;
+    display: block;
+}

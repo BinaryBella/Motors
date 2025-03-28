@@ -9,6 +9,15 @@
     font-size: 24px;
 }
 
+.add-button{
+margin-left: 1585px; 
+background-color: #c22; 
+color: white;
+border: none; 
+padding: 8px 30px; 
+font-weight: normal;
+}
+
 .filter-section {
     background-color: #f8f9fa;
     border-radius: 8px;

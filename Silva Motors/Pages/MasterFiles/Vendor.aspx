@@ -82,7 +82,6 @@
             </span>
         </div>
     </div>
-    </div>
 
     <%-- Modal Markup --%>
     <div class="modal fade" id="vendorModal" tabindex="-1" role="dialog" aria-labelledby="vendorModalLabel" aria-hidden="true">
@@ -166,7 +165,7 @@
             </div>
         </div>
     </div>
-
+        </div>
     <script type="text/javascript">
         $(document).ready(function () {
             // Attach click event to the Add button

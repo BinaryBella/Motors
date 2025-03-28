@@ -227,22 +227,23 @@
                                 <li><a class="dropdown-item" runat="server" href="~/Pages/View/StockValuation-ItemWise">Stock Valuation-Item Wise</a></li>
                                 <li><a class="dropdown-item" runat="server" href="~/Pages/View/Transaction-Customer">Transaction-Customer</a></li>
                                 <li><a class="dropdown-item" runat="server" href="~/Pages/View/Transaction-Vendor">Transaction-Internal</a></li>
+                                <li><a class="dropdown-item" runat="server" href="~/Pages/View/Transaction-Commision">Transaction-Commision</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="customerDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">CUSTOMER'S TRANSACTIONS
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="customerDropdown">
-                                <li><a class="dropdown-item" href="#">Option 1</a></li>
-                                <li><a class="dropdown-item" href="#">Option 2</a></li>
+                                <li><a class="dropdown-item" runat="server" href="~/Pages/CustomerTransaction/CustomerCreditNote">Customer Credit Note</a></li>
+                                <li><a class="dropdown-item" runat="server" href="~/Pages/CustomerTransaction/CustomerDebitNote">Customer Debit Note</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="vendorDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">VENDOR'S TRANSACTIONS
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="vendorDropdown">
-                                <li><a class="dropdown-item" href="#">Option 1</a></li>
-                                <li><a class="dropdown-item" href="#">Option 2</a></li>
+                                <li><a class="dropdown-item" runat="server" href="~/Pages/VendorTransaction/VendorCreditNote">Vendor Credit Note</a></li>
+                                <li><a class="dropdown-item" runat="server" href="~/Pages/VendorTransaction/VendorDebitNote">Vendor Debit Note</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
