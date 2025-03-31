@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CustomerPaymentReciept.aspx.cs" Inherits="Silva_Motors.Pages.CustomerTransaction.CustomerPaymentReciept" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="VendorChequeIssue.aspx.cs" Inherits="Silva_Motors.Pages.VendorTransaction.VendorChequeIssue" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <link rel="stylesheet" href='<%= ResolveUrl("~/Content/CustomCSS/CustomerTransaction/CustomerPaymentReciept.css") %>' />
@@ -11,7 +11,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <div class="main">
-        <div class="header">CUSTOMER PAYMENT RECIEPT</div>
+        <div class="header">VENDOR CHEQUE ISSUE</div>
 
         <div class="row">
             <div class="col-12">

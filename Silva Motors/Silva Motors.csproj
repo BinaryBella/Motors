@@ -181,6 +181,7 @@
     <Content Include="Pages\MasterFiles\Vendor.aspx" />
     <Content Include="Pages\VendorTransaction\GoodRecievedMemo.aspx" />
     <Content Include="Pages\VendorTransaction\GRMReturn.aspx" />
+    <Content Include="Pages\VendorTransaction\VendorChequeIssue.aspx" />
     <Content Include="Pages\VendorTransaction\VendorCreditNote.aspx" />
     <Content Include="Pages\VendorTransaction\VendorDebitNote.aspx" />
     <Content Include="Pages\View\BinCard.aspx" />
@@ -392,6 +393,13 @@
     </Compile>
     <Compile Include="Pages\VendorTransaction\GRMReturn.aspx.designer.cs">
       <DependentUpon>GRMReturn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\VendorTransaction\VendorChequeIssue.aspx.cs">
+      <DependentUpon>VendorChequeIssue.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\VendorTransaction\VendorChequeIssue.aspx.designer.cs">
+      <DependentUpon>VendorChequeIssue.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\VendorTransaction\VendorCreditNote.aspx.cs">
       <DependentUpon>VendorCreditNote.aspx</DependentUpon>
