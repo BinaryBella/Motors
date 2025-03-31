@@ -211,6 +211,7 @@
                             <ul class="dropdown-menu" aria-labelledby="customerDropdown">
                                 <li><a class="dropdown-item" runat="server" href="~/Pages/CustomerTransaction/CustomerCreditNote">Customer Credit Note</a></li>
                                 <li><a class="dropdown-item" runat="server" href="~/Pages/CustomerTransaction/CustomerDebitNote">Customer Debit Note</a></li>
+                                <li><a class="dropdown-item" runat="server" href="~/Pages/CustomerTransaction/CustomerGoodsReturn">Customer Goods Return</a></li>
                                 <li><a class="dropdown-item" runat="server" href="~/Pages/CustomerTransaction/CustomerPaymentReciept">Customer Payment Reciept</a></li>
                                 <li><a class="dropdown-item" runat="server" href="~/Pages/CustomerTransaction/Invoice">Invoice</a></li>
                             </ul>
@@ -221,6 +222,7 @@
                             <ul class="dropdown-menu" aria-labelledby="vendorDropdown">
                                 <li><a class="dropdown-item" runat="server" href="~/Pages/VendorTransaction/VendorCreditNote">Vendor Credit Note</a></li>
                                 <li><a class="dropdown-item" runat="server" href="~/Pages/VendorTransaction/VendorDebitNote">Vendor Debit Note</a></li>
+                                <li><a class="dropdown-item" runat="server" href="~/Pages/VendorTransaction/GoodRecievedMemo">Good Recieved Memo</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">

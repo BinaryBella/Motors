@@ -1,13 +1,13 @@
-﻿<%@ Page Title="Customer Goods Return" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CustomerGoodsReturn.aspx.cs" Inherits="Silva_Motors.Pages.CustomerTransaction.CustomerGoodsReturn" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="GoodRecievedMemo.aspx.cs" Inherits="Silva_Motors.Pages.VendorTransaction.GoodRecievedMemo" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <link rel="stylesheet" href='<%= ResolveUrl("~/Content/CustomCSS/CustomerTransaction/CustomerGoodsReturn.css") %>' />
+    <link rel="stylesheet" href='<%= ResolveUrl("~/Content/CustomCSS/VendorTransaction/GoodRecievedMemo.css") %>' />
 
     <div class="main">
         <div class="container-fluid">
             <div class="row align-items-center">
                 <div class="col d-flex justify-content-between align-items-center">
-                    <div class="header h4">CUSTOMER GOODS RETURN</div>
+                    <div class="header h4">GOODS RECIEVED MEMO</div>
                     <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#addCommissionModal">
                         Add
                     </button>
@@ -18,52 +18,39 @@
             <div class="row">
                 <div class="col-md-3">
                     <div class="form-group">
-                        <label>Invoice To</label>
-                        <asp:DropDownList ID="ddlgoodsreturnTo" CssClass="form-control" runat="server">
-                            <asp:ListItem Text="Select Customer" Value="" />
+                        <label>Supplier</label>
+                        <asp:DropDownList ID="ddlsupplier" CssClass="form-control" runat="server">
+                            <asp:ListItem Text="Select Supplier" Value="" />
                         </asp:DropDownList>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="row">
                         <div class="col-12 mb-2">
-                            <asp:TextBox ID="txtCustomerName" CssClass="form-control" runat="server" Placeholder="Customer Name" />
+                            <asp:TextBox ID="txt1" CssClass="form-control" runat="server" />
                         </div>
                         <div class="col-12 mb-2">
-                            <asp:TextBox ID="txtAddress" CssClass="form-control" runat="server" Placeholder="Address" />
+                            <asp:TextBox ID="txt2" CssClass="form-control" runat="server" />
                         </div>
                         <div class="col-12 mb-2">
-                            <asp:TextBox ID="txtContact" CssClass="form-control" runat="server" Placeholder="Contact" />
+                            <asp:TextBox ID="txt3" CssClass="form-control" runat="server" />
                         </div>
                         <div class="col-12">
-                            <asp:TextBox ID="txtEmail" CssClass="form-control" runat="server" Placeholder="Email" />
+                            <asp:TextBox ID="txt4" CssClass="form-control" runat="server" />
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="row">
                         <div class="col-12 mb-2">
-                            <asp:TextBox ID="salesRep1" CssClass="form-control" runat="server" Placeholder="sales Rep 1" />
+                            <label>Mode</label>
+                            <asp:DropDownList ID="DropDownList2" CssClass="form-control" runat="server">
+                                <asp:ListItem Text="Select Mode" Value="" />
+                            </asp:DropDownList>
                         </div>
                         <div class="col-12 mb-2">
-                            <asp:TextBox ID="salesRep2" CssClass="form-control" runat="server" Placeholder="sales Rep 2" />
+                            <asp:TextBox ID="billno" CssClass="form-control" runat="server" Placeholder="Bill Number" />
                         </div>
-                        <div class="col-12">
-                            <asp:TextBox ID="salesRep3" CssClass="form-control" runat="server" Placeholder="sales Rep 3" />
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="form-group mb-2">
-                        <asp:DropDownList ID="ddlMode" CssClass="form-control" runat="server">
-                            <asp:ListItem Text="Invoice No" Value="" />
-                        </asp:DropDownList>
-                    </div>
-                    <div class="form-group mb-2">
-                        <asp:TextBox ID="txtInvoiceDate" CssClass="form-control" runat="server" TextMode="Date" Placeholder="Date" />
-                    </div>
-                    <div class="form-group">
-                        <asp:TextBox ID="TextBox1" CssClass="form-control" runat="server" TextMode="Date" Placeholder="Date" />
                     </div>
                 </div>
             </div>
@@ -155,22 +142,10 @@
                         <asp:TextBox ID="txtTotalQUantity" CssClass="form-control" runat="server" />
                     </div>
                 </div>
-                <div class="col-md-2">
-                    <div class="form-group">
-                        <label>Discount</label>
-                        <asp:TextBox ID="txtDiscount" CssClass="form-control" runat="server" />
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <div class="form-group">
-                        <label>Disc. Amount</label>
-                        <asp:TextBox ID="txtDiscAmount" CssClass="form-control" runat="server" />
-                    </div>
-                </div>
                 <div class="col-md-3">
                     <div class="form-group">
-                        <label>Total</label>
-                        <asp:TextBox ID="txtTotal" CssClass="form-control" runat="server" />
+                        <label>Total Cost</label>
+                        <asp:TextBox ID="txtTotalCost" CssClass="form-control" runat="server" />
                     </div>
                 </div>
                 <div class="col-md-3">

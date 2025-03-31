@@ -130,6 +130,7 @@
     <Content Include="Content\CustomCSS\MasterFiles\CustomerCSS.css" />
     <Content Include="Content\CustomCSS\MasterFiles\StockItemCSS.css" />
     <Content Include="Content\CustomCSS\MasterFiles\VendorCSS.css" />
+    <Content Include="Content\CustomCSS\VendorTransaction\GoodRecievedMemo.css" />
     <Content Include="Content\CustomCSS\VendorTransaction\VendorCreditNote.css" />
     <Content Include="Content\CustomCSS\VendorTransaction\VendorDebitNote.css" />
     <Content Include="Content\CustomCSS\View\CustomerLedgerCSS.css" />
@@ -178,6 +179,8 @@
     <Content Include="Pages\MasterFiles\Rack.aspx" />
     <Content Include="Pages\MasterFiles\StockItem.aspx" />
     <Content Include="Pages\MasterFiles\Vendor.aspx" />
+    <Content Include="Pages\VendorTransaction\GoodRecievedMemo.aspx" />
+    <Content Include="Pages\VendorTransaction\GRMReturn.aspx" />
     <Content Include="Pages\VendorTransaction\VendorCreditNote.aspx" />
     <Content Include="Pages\VendorTransaction\VendorDebitNote.aspx" />
     <Content Include="Pages\View\BinCard.aspx" />
@@ -375,6 +378,20 @@
     </Compile>
     <Compile Include="Pages\MasterFiles\Vendor.aspx.designer.cs">
       <DependentUpon>Vendor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\VendorTransaction\GoodRecievedMemo.aspx.cs">
+      <DependentUpon>GoodRecievedMemo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\VendorTransaction\GoodRecievedMemo.aspx.designer.cs">
+      <DependentUpon>GoodRecievedMemo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\VendorTransaction\GRMReturn.aspx.cs">
+      <DependentUpon>GRMReturn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\VendorTransaction\GRMReturn.aspx.designer.cs">
+      <DependentUpon>GRMReturn.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\VendorTransaction\VendorCreditNote.aspx.cs">
       <DependentUpon>VendorCreditNote.aspx</DependentUpon>

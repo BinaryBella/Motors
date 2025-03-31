@@ -4,7 +4,16 @@
     <link rel="stylesheet" href='<%= ResolveUrl("~/Content/CustomCSS/CustomerTransaction/InvoiceCSS.css") %>' />
 
     <div class="main">
-        <div class="header">INVOICE</div>
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col d-flex justify-content-between align-items-center">
+                    <div class="header h4">INVOICE</div>
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#addInvoiceModal">
+                            Add
+                        </button>
+                </div>
+            </div>
+        </div>
 
         <div style="background-color: #f1f1f1; margin-bottom: 10px; padding: 10px;">
             <div class="row">
@@ -191,7 +200,7 @@
                     <div class="input-group">
                         <asp:TextBox ID="txtBroker" CssClass="form-control" runat="server" Placeholder="Broker" />
                         <div class="input-group-append" style="margin-left: 20px;">
-                            <asp:Button ID="btnAddBroker" runat="server" Text="+" CssClass="btn btn-success" Style="padding-right: 10px;background-color: #dc3545; border:none;" />
+                            <asp:Button ID="btnAddBroker" runat="server" Text="+" CssClass="btn btn-success" Style="padding-right: 10px; background-color: #dc3545; border: none;" />
                         </div>
                     </div>
                 </div>
@@ -228,5 +237,178 @@
             </div>
 
         </div>
+
+        <!-- Add New Invoice Modal -->
+        <div class="modal fade" id="addInvoiceModal" tabindex="-1" aria-labelledby="addInvoiceModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addInvoiceModalLabel">Add New Invoice</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Grid View Table -->
+                        <div class="table-responsive mb-4">
+                            <table class="table table-bordered table-hover" id="invoiceItemsTable">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Code</th>
+                                        <th>Part</th>
+                                        <th>Brand</th>
+                                        <th>Old Name</th>
+                                        <th>Rack</th>
+                                        <th>Category</th>
+                                        <th>Model</th>
+                                        <th>Description</th>
+                                        <th>Qty</th>
+                                        <th>Price</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Table data will be populated dynamically -->
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Add New Item Form -->
+                        <form id="addInvoiceItemForm">
+                            <!-- Section 1 -->
+                            <div class="row mb-3">
+                                <h6 class="fw-bold">Item Details</h6>
+                                <div class="col-md-4">
+                                    <div class="mb-2">
+                                        <label for="itemCode" class="form-label">Item Code</label>
+                                        <input type="text" class="form-control" id="itemCode" name="itemCode">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="mb-2">
+                                        <label for="partNumber" class="form-label">Part Number</label>
+                                        <input type="text" class="form-control" id="partNumber" name="partNumber">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="mb-2">
+                                        <label for="brand" class="form-label">Brand</label>
+                                        <input type="text" class="form-control" id="brand" name="brand">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="mb-2">
+                                        <label for="oldName" class="form-label">Old Name</label>
+                                        <input type="text" class="form-control" id="oldName" name="oldName">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="mb-2">
+                                        <label for="category" class="form-label">Category</label>
+                                        <input type="text" class="form-control" id="category" name="category">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="mb-2">
+                                        <label for="model" class="form-label">Model</label>
+                                        <input type="text" class="form-control" id="model" name="model">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="mb-2">
+                                        <label for="description" class="form-label">Description</label>
+                                        <textarea class="form-control" id="description" name="description" rows="2"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Section 2 -->
+                            <div class="row mb-3">
+                                <h6 class="fw-bold">Pricing Details</h6>
+                                <div class="col-md-3">
+                                    <div class="mb-2">
+                                        <label for="qty" class="form-label">Qty</label>
+                                        <input type="number" class="form-control" id="qty" name="qty" min="1" value="1">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="mb-2">
+                                        <label for="price" class="form-label">Price</label>
+                                        <input type="number" step="0.01" class="form-control" id="price" name="price">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="mb-2">
+                                        <label for="unitDisc" class="form-label">Unit Disc.</label>
+                                        <input type="number" step="0.01" class="form-control" id="unitDisc" name="unitDisc" value="0">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="mb-2">
+                                        <label for="amount" class="form-label">Amount</label>
+                                        <input type="number" step="0.01" class="form-control" id="amount" name="amount" readonly>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 mt-2">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="stockType" id="all" value="all" checked>
+                                        <label class="form-check-label" for="all">All</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="stockType" id="brandNew" value="brandNew">
+                                        <label class="form-check-label" for="brandNew">Brand-New (Stock)</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="stockType" id="reCondition" value="reCondition">
+                                        <label class="form-check-label" for="reCondition">Re-Condition (Non STK)</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Section 3 -->
+                            <div class="row">
+                                <h6 class="fw-bold">Additional Information</h6>
+                                <div class="col-md-4">
+                                    <div class="mb-2">
+                                        <label for="originalPrice" class="form-label">Original Price</label>
+                                        <input type="number" step="0.01" class="form-control" id="originalPrice" name="originalPrice">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="mb-2">
+                                        <label for="finalPrice" class="form-label">Final Price</label>
+                                        <input type="number" step="0.01" class="form-control" id="finalPrice" name="finalPrice">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="mb-2">
+                                        <label for="minPrice" class="form-label">Min Price</label>
+                                        <input type="number" step="0.01" class="form-control" id="minPrice" name="minPrice">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="mb-2">
+                                        <label for="tType" class="form-label">T. Type</label>
+                                        <select class="form-select" id="tType" name="tType">
+                                            <option selected disabled>Select Type</option>
+                                            <!-- Options will be loaded dynamically -->
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="mb-2">
+                                        <label for="commission" class="form-label">Commission</label>
+                                        <input type="number" step="0.01" class="form-control" id="commission" name="commission" value="0">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                <div class="modal-footer">
+                    <asp:Button ID="btnSave" runat="server" Text="Save" CssClass="btn btn-primary" Style="background-color: #B71D1D; border-color: #B71D1D;" OnClientClick="return validateForm();" />
+                    <button type="button" class="btn" data-dismiss="modal" style="background-color: #D9D9D9;">Cancel</button>
+                </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 </asp:Content>

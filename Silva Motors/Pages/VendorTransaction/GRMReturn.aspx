@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Customer Goods Return" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CustomerGoodsReturn.aspx.cs" Inherits="Silva_Motors.Pages.CustomerTransaction.CustomerGoodsReturn" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="GRMReturn.aspx.cs" Inherits="Silva_Motors.Pages.VendorTransaction.GRMReturn" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <link rel="stylesheet" href='<%= ResolveUrl("~/Content/CustomCSS/CustomerTransaction/CustomerGoodsReturn.css") %>' />
@@ -7,7 +7,7 @@
         <div class="container-fluid">
             <div class="row align-items-center">
                 <div class="col d-flex justify-content-between align-items-center">
-                    <div class="header h4">CUSTOMER GOODS RETURN</div>
+                    <div class="header h4">GRM RETURN</div>
                     <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#addCommissionModal">
                         Add
                     </button>
@@ -18,9 +18,9 @@
             <div class="row">
                 <div class="col-md-3">
                     <div class="form-group">
-                        <label>Invoice To</label>
-                        <asp:DropDownList ID="ddlgoodsreturnTo" CssClass="form-control" runat="server">
-                            <asp:ListItem Text="Select Customer" Value="" />
+                        <label>Vendor</label>
+                        <asp:DropDownList ID="ddlVendor" CssClass="form-control" runat="server">
+                            <asp:ListItem Text="Select Vendor" Value="" />
                         </asp:DropDownList>
                     </div>
                 </div>
@@ -30,40 +30,27 @@
                             <asp:TextBox ID="txtCustomerName" CssClass="form-control" runat="server" Placeholder="Customer Name" />
                         </div>
                         <div class="col-12 mb-2">
-                            <asp:TextBox ID="txtAddress" CssClass="form-control" runat="server" Placeholder="Address" />
+                            <asp:TextBox ID="txt1" CssClass="form-control" runat="server" />
                         </div>
                         <div class="col-12 mb-2">
-                            <asp:TextBox ID="txtContact" CssClass="form-control" runat="server" Placeholder="Contact" />
+                            <asp:TextBox ID="txt2" CssClass="form-control" runat="server" />
                         </div>
                         <div class="col-12">
-                            <asp:TextBox ID="txtEmail" CssClass="form-control" runat="server" Placeholder="Email" />
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="row">
-                        <div class="col-12 mb-2">
-                            <asp:TextBox ID="salesRep1" CssClass="form-control" runat="server" Placeholder="sales Rep 1" />
-                        </div>
-                        <div class="col-12 mb-2">
-                            <asp:TextBox ID="salesRep2" CssClass="form-control" runat="server" Placeholder="sales Rep 2" />
+                            <asp:TextBox ID="txt3" CssClass="form-control" runat="server" />
                         </div>
                         <div class="col-12">
-                            <asp:TextBox ID="salesRep3" CssClass="form-control" runat="server" Placeholder="sales Rep 3" />
+                            <asp:TextBox ID="txt4" CssClass="form-control" runat="server" />
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="form-group mb-2">
-                        <asp:DropDownList ID="ddlMode" CssClass="form-control" runat="server">
-                            <asp:ListItem Text="Invoice No" Value="" />
+                        <asp:DropDownList ID="ddlGRMCode" CssClass="form-control" runat="server">
+                            <asp:ListItem Text="GRM/Item Code" Value="" />
                         </asp:DropDownList>
                     </div>
                     <div class="form-group mb-2">
-                        <asp:TextBox ID="txtInvoiceDate" CssClass="form-control" runat="server" TextMode="Date" Placeholder="Date" />
-                    </div>
-                    <div class="form-group">
-                        <asp:TextBox ID="TextBox1" CssClass="form-control" runat="server" TextMode="Date" Placeholder="Date" />
+                        <asp:TextBox ID="txtGRMDate" CssClass="form-control" runat="server" TextMode="Date" Placeholder="GRM Date" />
                     </div>
                 </div>
             </div>
