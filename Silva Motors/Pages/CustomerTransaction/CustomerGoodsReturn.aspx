@@ -6,10 +6,15 @@
     <div class="main">
         <div class="container-fluid">
             <div class="row align-items-center">
-                <div class="col d-flex justify-content-between align-items-center">
+                <div class="col-6">
                     <div class="header h4">CUSTOMER GOODS RETURN</div>
-                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#addGrnModal">
-                        Add
+                </div>
+                <div class="col-6 d-flex justify-content-end">
+                    <button type="button" class="btn btn-danger me-2" data-bs-toggle="modal" data-bs-target="#addGrnModal">
+                        ADD
+                    </button>
+                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#printEndModal">
+                        END PRINT
                     </button>
                 </div>
             </div>
@@ -248,5 +253,67 @@
                 </div>
             </div>
         </div>
+
+
+    </div>
+
+    <!-- Print End GRN Modal -->
+    <div class="modal fade" id="printEndModal" tabindex="-1" aria-labelledby="printEndModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl" style="max-width: 80%; width: 80%;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="printEndModalLabel">End Print</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="table-responsive mb-4">
+                        <table class="table table-bordered table-hover" id="printTable">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>No</th>
+                                    <th>Ref/No</th>
+                                    <th>Date</th>
+                                    <th>Particulars</th>
+                                    <th>Trx Amount</th>
+                                    <th>Due Amount</th>
+                                    <th>Age</th>
+                                    <th>X</th>
+                                    <th>Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Table data will be populated dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="mb-2">
+                                <label for="totaldueamount" class="form-label">Total Due Amount</label>
+                                <input type="text" class="form-control" id="totaldueamount" name="TotalDueAmount">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="mb-2">
+                                <label for="remainingbalance" class="form-label">Remaining Balance</label>
+                                <input type="text" class="form-control" id="remainingbalance" name="RemainingBalance">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="mb-2">
+                                <label for="cnbalance" class="form-label">C/N Balance</label>
+                                <input type="text" class="form-control" id="cnbalance" name="CNBalance">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <asp:Button ID="Button1" runat="server" Text="Save" CssClass="btn btn-primary" Style="background-color: #B71D1D; border-color: #B71D1D;" OnClientClick="return validateForm();" />
+                    <button type="button" class="btn" data-dismiss="modal" style="background-color: #D9D9D9;">Cancel</button>
+                </div>
+            </div>
+        </div>
+
+
     </div>
 </asp:Content>
