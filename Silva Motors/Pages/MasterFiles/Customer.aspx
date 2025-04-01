@@ -30,11 +30,6 @@
                     <asp:TemplateField HeaderText="STATUS">
                         <HeaderTemplate>
                             Status
-                    <select id="statusFilter" class="filter-input" onchange="filterTable()">
-                        <option value="">All</option>
-                        <option value="active">Active</option>
-                        <option value="inactive">Inactive</option>
-                    </select>
                         </HeaderTemplate>
                         <ItemTemplate>
                             <span class='<%# Convert.ToBoolean(Eval("ActiveState")) ? "status-badge status-active" : "status-badge status-inactive" %>'>
@@ -45,7 +40,7 @@
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="ACTIONS">
                         <ItemTemplate>
-                            <asp:LinkButton ID="btnEdit" runat="server" CssClass="btn btn-warning btn-sm"
+                            <asp:LinkButton ID="btnEdit" runat="server" CssClass="btn btn-warning btn-sm" style="background-color: none;"
                                 CommandName="EditRecord" CommandArgument='<%# Eval("Id") %>'>
                         <i class="bi bi-pencil-fill"></i>
                             </asp:LinkButton>
@@ -56,36 +51,7 @@
                             </asp:LinkButton>
                         </ItemTemplate>
                     </asp:TemplateField>
-                    <asp:TemplateField HeaderText="STATUS">
-                        <HeaderTemplate>
-                            Status
-                    <select id="statusFilter" class="filter-input" onchange="filterTable()">
-                        <option value="">All</option>
-                        <option value="active">Active</option>
-                        <option value="inactive">Inactive</option>
-                    </select>
-                        </HeaderTemplate>
-                        <ItemTemplate>
-                            <span class='<%# Convert.ToBoolean(Eval("ActiveState")) ? "status-badge status-active" : "status-badge status-inactive" %>'>
-                                <i class='<%# Convert.ToBoolean(Eval("ActiveState")) ? "bi bi-check-circle-fill" : "bi bi-x-circle-fill" %> me-1'></i>
-                                <%# Convert.ToBoolean(Eval("ActiveState")) ? "Active" : "Inactive" %>
-                            </span>
-                        </ItemTemplate>
-                    </asp:TemplateField>
-                    <asp:TemplateField HeaderText="ACTIONS">
-                        <ItemTemplate>
-                            <asp:LinkButton ID="btnEdit" runat="server" CssClass="btn btn-warning btn-sm"
-                                CommandName="EditRecord" CommandArgument='<%# Eval("Id") %>'>
-                        <i class="bi bi-pencil-fill"></i>
-                            </asp:LinkButton>
-                            <asp:LinkButton ID="btnDelete" runat="server"
-                                CssClass='<%# Convert.ToBoolean(Eval("ActiveState")) ? "btn btn-danger btn-sm" : "btn btn-success btn-sm" %>'
-                                OnClientClick='<%# "return confirmDelete(" + Eval("Id") + ");" %>'>
-                        <i class='<%# Convert.ToBoolean(Eval("ActiveState")) ? "bi bi-toggle-off" : "bi bi-toggle-on" %>'></i>
-                            </asp:LinkButton>
-                        </ItemTemplate>
-                    </asp:TemplateField>
-                </Columns>
+                                   </Columns>
                 <HeaderStyle BackColor="Black" ForeColor="White" />
                 <RowStyle BackColor="#e0e0e0" />
                 <AlternatingRowStyle BackColor="White" />

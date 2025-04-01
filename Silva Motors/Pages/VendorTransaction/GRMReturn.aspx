@@ -9,7 +9,7 @@
                 <div class="col d-flex justify-content-between align-items-center">
                     <div class="header h4">GRM RETURN</div>
                     <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#addCommissionModal">
-                        Add
+                        ADD
                     </button>
                 </div>
             </div>
