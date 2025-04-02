@@ -8,7 +8,7 @@
             <div class="row align-items-center">
                 <div class="col d-flex justify-content-between align-items-center">
                     <div class="header h4">GRM RETURN</div>
-                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#addCommissionModal">
+                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#addGrmReturnModal">
                         Add
                     </button>
                 </div>
@@ -165,6 +165,72 @@
                         <label>Grand Total Rs.</label>
                         <asp:TextBox ID="TextGrandTotal" CssClass="form-control" runat="server" />
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+     <!-- Add New GRN Modal -->
+    <div class="modal fade" id="addGrmReturnModal" tabindex="-1" aria-labelledby="addGrmReturnModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl" style="max-width: 80%; width: 80%;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addGrmReturnModalLabel">Add New GRM Return</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Add New Item Form -->
+                    <!-- Section 1 -->
+                    <div class="row mb-3">
+                        <h6 class="fw-bold">Item Details</h6>
+                        <div class="col-md-4">
+                            <div class="mb-2">
+                                <input type="text" class="form-control" id="itemCode" name="itemCode" placeholder="Item Code">
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="mb-2">
+                                <input class="form-control" id="description" name="description" rows="2" placeholder="Description">
+                            </div>
+                        </div>
+                        <div class="table-responsive mb-4">
+                            <table class="table table-bordered table-hover" id="grmReturnItemsTable">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Code</th>
+                                        <th>Description</th>
+                                        <th>Qty</th>
+                                        <th>Price</th>
+                                        
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Table data will be populated dynamically -->
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="mb-2">
+                                <label for="quentity" class="form-label">Quantity</label>
+                                <input type="text" class="form-control" id="quentity" name="quentity">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="mb-2">
+                                <label for="unitPrice" class="form-label">Unit Price</label>
+                                <input type="text" class="form-control" id="unitPrice" name="unitPrice">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="mb-2">
+                                <label for="amount" class="form-label">Amount</label>
+                                <input type="text" class="form-control" id="amount" name="amount">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <asp:Button ID="btnSave" runat="server" Text="Save" CssClass="btn btn-primary" Style="background-color: #B71D1D; border-color: #B71D1D;" OnClientClick="return validateForm();" />
+                    <button type="button" class="btn" data-dismiss="modal" style="background-color: #D9D9D9;">Cancel</button>
                 </div>
             </div>
         </div>

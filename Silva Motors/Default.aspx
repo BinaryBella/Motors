@@ -249,6 +249,7 @@
                                 <li><a class="dropdown-item" runat="server" href="~/Pages/VendorTransaction/VendorCreditNote">Vendor Credit Note</a></li>
                                 <li><a class="dropdown-item" runat="server" href="~/Pages/VendorTransaction/VendorDebitNote">Vendor Debit Note</a></li>
                                 <li><a class="dropdown-item" runat="server" href="~/Pages/VendorTransaction/GoodRecievedMemo">Good Recieved Memo</a></li>
+                                <li><a class="dropdown-item" runat="server" href="~/Pages/VendorTransaction/GRMReturn">Good Recieved Memo Return</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
