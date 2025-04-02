@@ -7,102 +7,48 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Silva_Motors.Pages.CustomerTransaction
+namespace Silva_Motors.Pages.VendorTransaction
 {
 
 
-    public partial class CustomerGoodsReturn
+    public partial class VendorChequeIssue
     {
 
         /// <summary>
-        /// ddlgoodsreturnTo control.
+        /// txt_SearchCustomerId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlgoodsreturnTo;
+        protected global::System.Web.UI.WebControls.DropDownList txt_SearchCustomerId;
 
         /// <summary>
-        /// txtCustomerName control.
+        /// txt_CustomerName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCustomerName;
+        protected global::System.Web.UI.WebControls.TextBox txt_CustomerName;
 
         /// <summary>
-        /// txtAddress control.
+        /// txt_CustomerAdd1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAddress;
+        protected global::System.Web.UI.WebControls.TextBox txt_CustomerAdd1;
 
         /// <summary>
-        /// txtContact control.
+        /// txt_Contact1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtContact;
-
-        /// <summary>
-        /// txtEmail control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEmail;
-
-        /// <summary>
-        /// salesRep1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox salesRep1;
-
-        /// <summary>
-        /// salesRep2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox salesRep2;
-
-        /// <summary>
-        /// salesRep3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox salesRep3;
-
-        /// <summary>
-        /// ddlMode control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlMode;
-
-        /// <summary>
-        /// txtInvoiceDate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtInvoiceDate;
+        protected global::System.Web.UI.WebControls.TextBox txt_Contact1;
 
         /// <summary>
         /// TextBox1 control.
@@ -114,49 +60,103 @@ namespace Silva_Motors.Pages.CustomerTransaction
         protected global::System.Web.UI.WebControls.TextBox TextBox1;
 
         /// <summary>
-        /// txtTotalQUantity control.
+        /// chkCash control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTotalQUantity;
+        protected global::System.Web.UI.WebControls.CheckBox chkCash;
 
         /// <summary>
-        /// txtDiscount control.
+        /// txtCash control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDiscount;
+        protected global::System.Web.UI.WebControls.TextBox txtCash;
 
         /// <summary>
-        /// txtDiscAmount control.
+        /// chkCheque control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDiscAmount;
+        protected global::System.Web.UI.WebControls.CheckBox chkCheque;
 
         /// <summary>
-        /// txtTotal control.
+        /// txtCheque control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTotal;
+        protected global::System.Web.UI.WebControls.TextBox txtCheque;
 
         /// <summary>
-        /// TextGrandTotal control.
+        /// chkCreditCard control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextGrandTotal;
+        protected global::System.Web.UI.WebControls.CheckBox chkCreditCard;
+
+        /// <summary>
+        /// txtCreditCard control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtCreditCard;
+
+        /// <summary>
+        /// txt_CustomerTotalDueBal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_CustomerTotalDueBal;
+
+        /// <summary>
+        /// txt_remaining_balance control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_remaining_balance;
+
+        /// <summary>
+        /// txt_total_recieptbalance control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_total_recieptbalance;
+
+        /// <summary>
+        /// rptTransactions control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rptTransactions;
+
+        /// <summary>
+        /// hdnCheckedPayments control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdnCheckedPayments;
 
         /// <summary>
         /// btnSave control.
@@ -168,12 +168,39 @@ namespace Silva_Motors.Pages.CustomerTransaction
         protected global::System.Web.UI.WebControls.Button btnSave;
 
         /// <summary>
-        /// Button1 control.
+        /// hdnSaveStatus control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.HiddenField hdnSaveStatus;
+
+        /// <summary>
+        /// hdnSaveMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdnSaveMessage;
+
+        /// <summary>
+        /// txt_Customer_NEW_DueBal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField txt_Customer_NEW_DueBal;
+
+        /// <summary>
+        /// txt_Customer_OLD_DueBal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField txt_Customer_OLD_DueBal;
     }
 }
