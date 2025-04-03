@@ -108,6 +108,7 @@
                                 </table>
                                 <asp:HiddenField ID="hdnCheckedPayments" runat="server" />
                             </div>
+                            
                             <div class="action-buttons">
                                 <asp:Button ID="btnSave" runat="server" Text="Save" CssClass="btn btn-primary" Style="background-color: #B71D1D; border-color: #B71D1D; color: white;" />
                                 <button type="button" class="btn" data-dismiss="modal" style="background-color: #D9D9D9;">Cancel</button>
