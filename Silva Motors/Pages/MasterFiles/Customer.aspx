@@ -40,15 +40,15 @@
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="ACTIONS">
                         <ItemTemplate>
-                            <asp:LinkButton ID="btnEdit" runat="server" CssClass="btn btn-warning btn-sm" style="background-color: none;"
+                            <asp:LinkButton ID="btnEdit" runat="server" CssClass="btn" style="background-color: none;"
                                 CommandName="EditRecord" CommandArgument='<%# Eval("Id") %>'>
                         <i class="bi bi-pencil-fill"></i>
                             </asp:LinkButton>
-                            <asp:LinkButton ID="btnDelete" runat="server"
-                                CssClass='<%# Convert.ToBoolean(Eval("ActiveState")) ? "btn btn-danger btn-sm" : "btn btn-success btn-sm" %>'
-                                OnClientClick='<%# "return confirmDelete(" + Eval("Id") + ");" %>'>
-                        <i class='<%# Convert.ToBoolean(Eval("ActiveState")) ? "bi bi-toggle-off" : "bi bi-toggle-on" %>'></i>
+                            <asp:LinkButton ID="btnDelete" runat="server" CssClass="btn btn-danger btn-sm"
+                                CommandName="DeleteRecord" CommandArgument='<%# Eval("Id") %>' OnClientClick="return confirm('Are you sure you want to delete this record?');">
+                                <i class="bi bi-trash-fill"></i>
                             </asp:LinkButton>
+
                         </ItemTemplate>
                     </asp:TemplateField>
                                    </Columns>

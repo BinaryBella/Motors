@@ -239,6 +239,8 @@
                                 <li><a class="dropdown-item" runat="server" href="~/Pages/CustomerTransaction/CustomerDebitNote">Customer Debit Note</a></li>
                                 <li><a class="dropdown-item" runat="server" href="~/Pages/CustomerTransaction/CustomerGoodsReturn">Customer Goods Return</a></li>
                                 <li><a class="dropdown-item" runat="server" href="~/Pages/CustomerTransaction/CustomerPaymentReciept">Customer Payment Reciept</a></li>
+                                <li><a class="dropdown-item" runat="server" href="~/Pages/CustomerTransaction/AdvancePaymentAdjustment">Advance Payment Adjustment</a></li>
+                                <li><a class="dropdown-item" runat="server" href="~/Pages/CustomerTransaction/AdvancePaymentConfirmationRemoval">Advance Payment Confirmation/Removal</a></li>
                                 <li><a class="dropdown-item" runat="server" href="~/Pages/CustomerTransaction/Invoice">Invoice</a></li>
                             </ul>
                         </li>

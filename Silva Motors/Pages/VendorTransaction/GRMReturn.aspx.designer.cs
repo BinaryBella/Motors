@@ -139,5 +139,19 @@ namespace Silva_Motors.Pages.VendorTransaction
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSave;
+
+        /// <summary>
+        /// Master property.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated property.
+        /// </remarks>
+        public new Silva_Motors.SiteMaster Master
+        {
+            get
+            {
+                return ((Silva_Motors.SiteMaster)(base.Master));
+            }
+        }
     }
 }

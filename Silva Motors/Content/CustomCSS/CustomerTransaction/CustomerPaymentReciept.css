@@ -55,7 +55,6 @@
 }
 
     .form-check input[type="checkbox"] {
-        appearance: none;
         -webkit-appearance: none;
         height: 20px;
         width: 20px;
@@ -124,20 +123,20 @@ input[readonly] {
     margin-right: 10px;
 }
 
-.table {
-    border-radius: 8px;
-    overflow: hidden;
+.customers-table th {
+    background-color: #000;
+    color: white;
+    font-weight: normal;
+    text-align: left;
 }
 
+.customers-table tr:nth-child(odd) td {
+    background-color: #e0e0e0;
+}
 
-    .table thead th {
-        background-color: #000;
-        color: white;
-        border: 8px solid #000;
-        border-radius: 8px;
-        padding: 10px;
-        vertical-align: middle;
-    }
+.customers-table tr:nth-child(even) td {
+    background-color: #fff;
+}
 
 .payment-section {
     background-color: #f0f0f0;
@@ -177,4 +176,23 @@ input[readonly] {
 .action-buttons {
     text-align: right;
     padding: 15px 0;
+}
+
+.payment-row {
+    margin-bottom: 15px;
+}
+
+.modal-title {
+    font-weight: 600;
+}
+
+.separator {
+    margin: 20px 0;
+    border-top: 1px solid #dee2e6;
+}
+
+.checkbox-col {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
