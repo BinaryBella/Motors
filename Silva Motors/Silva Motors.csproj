@@ -161,6 +161,8 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Pages\CustomerTransaction\AdvancePaymentAdjustment.aspx" />
+    <Content Include="Pages\CustomerTransaction\AdvancePaymentConfirmationRemoval.aspx" />
     <Content Include="Pages\CustomerTransaction\CustomerCreditNote.aspx" />
     <Content Include="Pages\CustomerTransaction\CustomerDebitNote.aspx" />
     <Content Include="Pages\CustomerTransaction\CustomerGoodsReturn.aspx" />
@@ -254,6 +256,20 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CustomerTransaction\AdvancePaymentAdjustment.aspx.cs">
+      <DependentUpon>AdvancePaymentAdjustment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\CustomerTransaction\AdvancePaymentAdjustment.aspx.designer.cs">
+      <DependentUpon>AdvancePaymentAdjustment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CustomerTransaction\AdvancePaymentConfirmationRemoval.aspx.cs">
+      <DependentUpon>AdvancePaymentConfirmationRemoval.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\CustomerTransaction\AdvancePaymentConfirmationRemoval.aspx.designer.cs">
+      <DependentUpon>AdvancePaymentConfirmationRemoval.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\CustomerTransaction\CustomerCreditNote.aspx.cs">
       <DependentUpon>CustomerCreditNote.aspx</DependentUpon>
