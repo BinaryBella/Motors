@@ -183,10 +183,12 @@
     <Content Include="Pages\MasterFiles\Vendor.aspx" />
     <Content Include="Pages\VendorTransaction\GoodRecievedMemo.aspx" />
     <Content Include="Pages\VendorTransaction\GRMReturn.aspx" />
+    <Content Include="Pages\VendorTransaction\VendorChequeCancellation.aspx" />
     <Content Include="Pages\VendorTransaction\VendorChequeIssue.aspx" />
     <Content Include="Pages\VendorTransaction\VendorChequeRegistry.aspx" />
     <Content Include="Pages\VendorTransaction\VendorCreditNote.aspx" />
     <Content Include="Pages\VendorTransaction\VendorDebitNote.aspx" />
+    <Content Include="Pages\VendorTransaction\VendorLedger.aspx" />
     <Content Include="Pages\View\BinCard.aspx" />
     <Content Include="Pages\View\CustomerLedger.aspx" />
     <Content Include="Pages\View\RepCommision.aspx" />
@@ -411,6 +413,13 @@
     <Compile Include="Pages\VendorTransaction\GRMReturn.aspx.designer.cs">
       <DependentUpon>GRMReturn.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\VendorTransaction\VendorChequeCancellation.aspx.cs">
+      <DependentUpon>VendorChequeCancellation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\VendorTransaction\VendorChequeCancellation.aspx.designer.cs">
+      <DependentUpon>VendorChequeCancellation.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\VendorTransaction\VendorChequeIssue.aspx.cs">
       <DependentUpon>VendorChequeIssue.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -438,6 +447,13 @@
     </Compile>
     <Compile Include="Pages\VendorTransaction\VendorDebitNote.aspx.designer.cs">
       <DependentUpon>VendorDebitNote.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\VendorTransaction\VendorLedger.aspx.cs">
+      <DependentUpon>VendorLedger.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\VendorTransaction\VendorLedger.aspx.designer.cs">
+      <DependentUpon>VendorLedger.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\View\BinCard.aspx.cs">
       <DependentUpon>BinCard.aspx</DependentUpon>

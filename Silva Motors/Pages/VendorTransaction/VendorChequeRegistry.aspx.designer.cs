@@ -69,13 +69,31 @@ namespace Silva_Motors.Pages.VendorTransaction
         protected global::System.Web.UI.WebControls.TextBox txtAmount;
 
         /// <summary>
-        /// gvbranchs control.
+        /// gvTransactions control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvbranchs;
+        protected global::System.Web.UI.WebControls.GridView gvTransactions;
+
+        /// <summary>
+        /// lblGrandTotal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblGrandTotal;
+
+        /// <summary>
+        /// grandTotal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox grandTotal;
 
         /// <summary>
         /// btnPrint control.

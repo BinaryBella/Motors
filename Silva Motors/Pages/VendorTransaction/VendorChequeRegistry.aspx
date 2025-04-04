@@ -9,7 +9,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href='<%= ResolveUrl("~/Content/CustomCSS/MasterFiles/ChequeRegistryCSS.css") %>' />
+    <link rel="stylesheet" href='<%= ResolveUrl("~/Content/CustomCSS/CustomerTransaction/CustomerPaymentReciept.css") %>' />
 
     <div class="main">
         <div class="header">VENDOR CHEQUE REGISTRY</div>
@@ -18,8 +18,8 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <div class="container-fluid">  
-                            <div class="row"> 
+                        <div class="container-fluid">
+                            <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group mb-4">
                                         <div class="form-check mb-4">
@@ -36,12 +36,12 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div class="col-md-6">
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <asp:TextBox ID="txtChequeNo" runat="server" CssClass="form-control"  placeholder="Cheque No"></asp:TextBox>
+                                                <asp:TextBox ID="txtChequeNo" runat="server" CssClass="form-control" placeholder="Cheque No"></asp:TextBox>
                                             </div>
                                         </div>
                                     </div>
@@ -63,65 +63,31 @@
                             </div>
 
                             <div class="table-responsive">
-                                <asp:GridView ID="gvbranchs" runat="server" AutoGenerateColumns="false" CssClass="table table-bordered bank-table" Width="100%">
+                                <asp:GridView ID="gvTransactions" runat="server" AutoGenerateColumns="false" CssClass="table table-bordered customers-table" Width="100%">
+                                    <HeaderStyle CssClass="table-header" />
                                     <Columns>
+                                        <asp:BoundField DataField="ChequeNo" HeaderText="CHEQUE NO" />
                                         <asp:BoundField DataField="BankName" HeaderText="BANK NAME" />
                                         <asp:BoundField DataField="Branch" HeaderText="BRANCH" />
-                                        <asp:BoundField DataField="ChequeId" HeaderText="CHEQUE ID" />
+                                        <asp:BoundField DataField="Date" HeaderText="DATE" />
+                                        <asp:BoundField DataField="Status" HeaderText="STATUS" />
+                                        <asp:BoundField DataField="Vendor" HeaderText="VENDOR" />
                                         <asp:BoundField DataField="Amount" HeaderText="AMOUNT" />
-                                        <asp:BoundField DataField="ReceiptId" HeaderText="RECEIPT ID" />
-                                        <asp:BoundField DataField="Account" HeaderText="ACCOUNT" />
-                                        <asp:BoundField DataField="ChequeNo" HeaderText="CHEQUE NO" />
-                                        <asp:TemplateField HeaderText="STATUS">
-                                            <HeaderTemplate>
-                                                Status
-                                                <select id="statusFilter" class="filter-input" onchange="filterTable()">
-                                                    <option value="">All</option>
-                                                    <option value="active">Active</option>
-                                                    <option value="inactive">Inactive</option>
-                                                </select>
-                                            </HeaderTemplate>
-                                            <ItemTemplate>
-                                                <span class='<%# Convert.ToBoolean(Eval("ActiveState")) ? "status-badge status-active" : "status-badge status-inactive" %>'>
-                                                    <i class='<%# Convert.ToBoolean(Eval("ActiveState")) ? "bi bi-check-circle-fill" : "bi bi-x-circle-fill" %> me-1'></i>
-                                                    <%# Convert.ToBoolean(Eval("ActiveState")) ? "Active" : "Inactive" %>
-                                                </span>
-                                            </ItemTemplate>
-                                        </asp:TemplateField>
-                                        <asp:TemplateField HeaderText="ACTIONS">
-                                            <ItemTemplate>
-                                                <asp:LinkButton ID="btnEdit" runat="server" CssClass="btn btn-warning btn-sm"
-                                                    CommandName="EditRecord" CommandArgument='<%# Eval("Id") %>'>
-                                                    <i class="bi bi-pencil-fill"></i>
-                                                </asp:LinkButton>
-                                                <asp:LinkButton ID="btnDelete" runat="server"
-                                                    CssClass='<%# Convert.ToBoolean(Eval("ActiveState")) ? "btn btn-danger btn-sm" : "btn btn-success btn-sm" %>'
-                                                    OnClientClick='<%# "return confirmDelete(" + Eval("Id") + ");" %>'>
-                                                    <i class='<%# Convert.ToBoolean(Eval("ActiveState")) ? "bi bi-toggle-off" : "bi bi-toggle-on" %>'></i>
-                                                </asp:LinkButton>
-                                            </ItemTemplate>
-                                        </asp:TemplateField>
+
                                     </Columns>
                                     <HeaderStyle BackColor="Black" ForeColor="White" />
                                     <RowStyle BackColor="#e0e0e0" />
                                     <AlternatingRowStyle BackColor="White" />
                                 </asp:GridView>
-                                
-                                <div class="text-right mb-3">
-                                    <asp:Button ID="btnPrint" runat="server" Text="Print" CssClass="btn btn-primary" Style="background-color: #B71D1D; border-color: #B71D1D; color: white;" />
+                                <div class="form-group d-flex align-items-center">
+                                    <asp:Label ID="lblGrandTotal" runat="server" Text="Grand Total" CssClass="me-2"></asp:Label>
+                                    <asp:TextBox ID="grandTotal" runat="server" CssClass="form-control" Width="30%"></asp:TextBox>
                                 </div>
                             </div>
+                            <div class="text-right mb-3">
+                                <asp:Button ID="btnPrint" runat="server" Text="Print" CssClass="btn btn-primary" Style="background-color: #B71D1D; border-color: #B71D1D; color: white;" />
+                            </div>
                         </div>
-                    </div>
-                </div>
-
-                <div class="d-flex justify-content-between mt-3">
-                    <div class="pagination">
-                        <a href="#">1</a>
-                        <a href="#" class="active">2</a>
-                        <a href="#">3</a>
-                        <a href="#">4</a>
-                        <a href="#">5</a>
                     </div>
                 </div>
             </div>
