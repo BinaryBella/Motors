@@ -226,7 +226,10 @@
                                 <li><a class="dropdown-item" runat="server" href="~/Pages/VendorTransaction/VendorDebitNote">Vendor Debit Note</a></li>
                                 <li><a class="dropdown-item" runat="server" href="~/Pages/VendorTransaction/GoodRecievedMemo">Good Recieved Memo</a></li>
                                 <li><a class="dropdown-item" runat="server" href="~/Pages/VendorTransaction/VendorChequeIssue">Vendor Cheque Issue</a></li>
+                                <li><a class="dropdown-item" runat="server" href="~/Pages/VendorTransaction/VendorChequeRegistry">Vendor Cheque Registry</a></li>
+                                <li><a class="dropdown-item" runat="server" href="~/Pages/VendorTransaction/VendorChequeCancellation">Vendor Cheque Cancellation</a></li>
                                 <li><a class="dropdown-item" runat="server" href="~/Pages/VendorTransaction/GRMReturn">Good Recieved Memo Return</a></li>
+                                <li><a class="dropdown-item" runat="server" href="~/Pages/VendorTransaction/VendorLedger">Vendor Ledger</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
