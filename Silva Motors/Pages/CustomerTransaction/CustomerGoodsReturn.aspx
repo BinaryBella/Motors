@@ -115,41 +115,7 @@
             </div>
         </div>
 
-        <%--Table Grid View--%>
-        <%--                <div class="row mt-3">
-            <div class="col-12">
-                <asp:GridView ID="gvGood-returnItems" runat="server" CssClass="table table-bordered"
-                    AutoGenerateColumns="false">
-                    <Columns>
-                        <asp:TemplateField HeaderText="CODE">
-                            <ItemTemplate>
-                                <asp:TextBox ID="txtCode" runat="server" CssClass="form-control" />
-                            </ItemTemplate>
-                        </asp:TemplateField>
-                        <asp:TemplateField HeaderText="ITEM-DESC">
-                            <ItemTemplate>
-                                <asp:TextBox ID="txtItemDesc" runat="server" CssClass="form-control" />
-                            </ItemTemplate>
-                        </asp:TemplateField>
-                        <asp:TemplateField HeaderText="QTY">
-                            <ItemTemplate>
-                                <asp:TextBox ID="txtQty" runat="server" CssClass="form-control" TextMode="Number" />
-                            </ItemTemplate>
-                        </asp:TemplateField>
-                        <asp:TemplateField HeaderText="UNIT PRICE">
-                            <ItemTemplate>
-                                <asp:TextBox ID="txtUnitPrice" runat="server" CssClass="form-control" TextMode="Number" step="0.01" />
-                            </ItemTemplate>
-                        </asp:TemplateField>
-                        <asp:TemplateField HeaderText="AMOUNT">
-                            <ItemTemplate>
-                                <asp:TextBox ID="txtAmount" runat="server" CssClass="form-control" ReadOnly="true" />
-                            </ItemTemplate>
-                        </asp:TemplateField>
-                    </Columns>
-                </asp:GridView>
-            </div>
-        </div>--%>
+      
 
         <div style="background-color: #f1f1f1; margin-bottom: 10px; padding: 10px;">
             <div class="row mt-3">
@@ -308,4 +274,26 @@
 
 
     </div>
+
+    <script type="text/javascript">
+    $(document).ready(function () {
+        // Initialize modal for Add button
+        $("#<%= btnAdd.ClientID %>").click(function() {
+            $("#addGrnModal").modal("show");
+            return false;
+        });
+        
+        // Initialize modal for End Print button
+        $("#<%= btnEndPrint.ClientID %>").click(function() {
+            $("#printEndModal").modal("show");
+            return false;
+        });
+        
+        // Fix the cancel button in the GRN modal
+        $("#<%= btnCancel.ClientID %>").click(function() {
+            $("#addGrnModal").modal("hide");
+            return false;
+        });
+    });
+</script>
 </asp:Content>

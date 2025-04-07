@@ -8,7 +8,7 @@
             <div class="row align-items-center">
                 <div class="col d-flex justify-content-between align-items-center">
                     <div class="header h4">INVOICE</div>
-                    <asp:Button ID="btnShowAddInvoiceModal" runat="server" CssClass="btn btn-danger" Text="Add" UseSubmitBehavior="false" OnClientClick="return false;" />
+                    <asp:Button ID="btnShowAddInvoiceModal" runat="server" CssClass="btn btn-danger" Text="Add" UseSubmitBehavior="false" OnClientClick="$('#addInvoiceModal').modal('show'); return false;" />
                 </div>
             </div>
         </div>
@@ -265,15 +265,15 @@
                             </div>
                             <div class="col-md-12 mt-2">
                                 <div class="form-check form-check-inline">
-                                    <asp:RadioButton ID="rbAll" runat="server" CssClass="form-check-input" GroupName="stockType" Text="All" Checked="True" />
+                                    <asp:RadioButton ID="rbAll" runat="server" CssClass="form-check-input" GroupName="stockType" Checked="True" />
                                     <asp:Label ID="lblAll" runat="server" CssClass="form-check-label" AssociatedControlID="rbAll" Text="All" />
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <asp:RadioButton ID="rbBrandNew" runat="server" CssClass="form-check-input" GroupName="stockType" Text="Brand-New (Stock)" />
+                                    <asp:RadioButton ID="rbBrandNew" runat="server" CssClass="form-check-input" GroupName="stockType" />
                                     <asp:Label ID="lblBrandNew" runat="server" CssClass="form-check-label" AssociatedControlID="rbBrandNew" Text="Brand-New (Stock)" />
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <asp:RadioButton ID="rbReCondition" runat="server" CssClass="form-check-input" GroupName="stockType" Text="Re-Condition (Non STK)" />
+                                    <asp:RadioButton ID="rbReCondition" runat="server" CssClass="form-check-input" GroupName="stockType" />
                                     <asp:Label ID="lblReCondition" runat="server" CssClass="form-check-label" AssociatedControlID="rbReCondition" Text="Re-Condition (Non STK)" />
                                 </div>
                             </div>
@@ -305,7 +305,7 @@
                                     <asp:Label ID="lblTType" runat="server" CssClass="form-label" Text="T. Type" AssociatedControlID="ddlTType" />
                                     <asp:DropDownList ID="ddlTType" runat="server" CssClass="form-select">
                                         <asp:ListItem Text="Select Type" Value="" Selected="True" Enabled="False" />
-                                        
+
                                     </asp:DropDownList>
                                 </div>
                                 <div class="col-md-4">
@@ -325,4 +325,26 @@
             </div>
         </div>
     </div>
+    <asp:HiddenField ID="hdnShowModal" runat="server" Value="" />
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // Show modal when Add button is clicked (redundant but just to be safe)
+            $("#<%= btnShowAddInvoiceModal.ClientID %>").click(function () {
+                $("#addInvoiceModal").modal("show");
+                return false;
+            });
+
+            // Your existing code
+            var showModal = $("#<%= hdnShowModal.ClientID %>").val();
+            if (showModal === "1") {
+                $("#addInvoiceModal").modal("show");
+            }
+
+            // Fix the cancel button in the GRN modal
+            $("#<%= btnCancel.ClientID %>").click(function () {
+                $("#addInvoiceModal").modal("hide");
+                return false;
+            });
+        });
+    </script>
 </asp:Content>
