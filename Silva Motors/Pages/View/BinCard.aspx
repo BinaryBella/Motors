@@ -1,97 +1,56 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="BinCard.aspx.cs" Inherits="Silva_Motors.Pages.View.BinCard1" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <style>
-        .main{
-            padding: 30px;
-        }
-        .bin-card-container {
-            background-color: #e3e1e1;
-            padding: 20px;
-        }
-        .header {
-            color: #c22;
-            font-weight: bold;
-            margin-bottom: 20px;
-            font-size: 24px;
-        }
-        .input-row {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 15px;
-        }
-        .input-row .form-group {
-            flex: 1;
-        }
-        .input-row input {
-            width: 100%;
-            border: 1px solid #ddd;
-            height: 30px;
-            padding: 0 5px;
-            border-radius:8px;
-        }
-        .data-table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        .data-table th {
-            background-color: black;
-            color: white;
-            padding: 8px;
-            text-align: left;
-        }
-        .data-table td {
-            border: 1px solid #ddd;
-            padding: 8px;
-        }
-    </style>
-    <div class="main">
-        <div class="header">STOCK BIN CARD</div>
-    <div class="bin-card-container">
+    <link rel="stylesheet" href='<%= ResolveUrl("~/Content/CustomCSS/View/BinCard.css") %>' />
 
+    <asp:Panel CssClass="main" runat="server">
+        <asp:Label ID="lblHeader" runat="server" CssClass="header" Text="STOCK BIN CARD"></asp:Label>
 
-                <label>Find by Item Code</label>
-                <asp:TextBox ID="txtItemCode" runat="server" placeholder="Enter Item Code"></asp:TextBox>
+        <asp:Panel CssClass="bin-card-container" runat="server">
 
-        <div class="input-row">
-            <div class="form-group">
-                <label>Code</label>
-                <asp:TextBox ID="txtCode" runat="server" ReadOnly="true"></asp:TextBox>
-            </div>
-            <div class="form-group">
-                <label>Category</label>
-                <asp:TextBox ID="txtCategory" runat="server" ReadOnly="true"></asp:TextBox>
-            </div>
-            <div class="form-group">
-                <label>Part No</label>
-                <asp:TextBox ID="txtPartNo" runat="server" ReadOnly="true"></asp:TextBox>
-            </div>
-            <div class="form-group">
-                <label>Description</label>
-                <asp:TextBox ID="txtDescription" runat="server" ReadOnly="true"></asp:TextBox>
-            </div>
-        </div>
+            <asp:Label ID="lblFindByItemCode" runat="server" Text="Find by Item Code"></asp:Label><br />
+            <asp:TextBox ID="txtItemCode" runat="server" CssClass="form-control" placeholder="Enter Item Code"></asp:TextBox><br />
+            <br />
 
-        <div class="input-row">
-            <div class="form-group">
-                <label>Brand</label>
-                <asp:TextBox ID="txtBrand" runat="server" ReadOnly="true"></asp:TextBox>
+            <div class="input-row">
+                <div class="form-group">
+                    <asp:Label ID="lblCode" runat="server" Text="Code"></asp:Label>
+                    <asp:TextBox ID="txtCode" runat="server" ReadOnly="true"></asp:TextBox>
+                </div>
+                <div class="form-group">
+                    <asp:Label ID="lblCategory" runat="server" Text="Category"></asp:Label>
+                    <asp:TextBox ID="txtCategory" runat="server" ReadOnly="true"></asp:TextBox>
+                </div>
+                <div class="form-group">
+                    <asp:Label ID="lblPartNo" runat="server" Text="Part No"></asp:Label>
+                    <asp:TextBox ID="txtPartNo" runat="server" ReadOnly="true"></asp:TextBox>
+                </div>
+                <div class="form-group">
+                    <asp:Label ID="lblDescription" runat="server" Text="Description"></asp:Label>
+                    <asp:TextBox ID="txtDescription" runat="server" ReadOnly="true"></asp:TextBox>
+                </div>
             </div>
-            <div class="form-group">
-                <label>Price</label>
-                <asp:TextBox ID="txtPrice" runat="server" ReadOnly="true"></asp:TextBox>
-            </div>
-            <div class="form-group">
-                <label>Make</label>
-                <asp:TextBox ID="txtMake" runat="server" ReadOnly="true"></asp:TextBox>
-            </div>
-            <div class="form-group">
-                <label>Quantity</label>
-                <asp:TextBox ID="txtQuantity" runat="server" ReadOnly="true"></asp:TextBox>
-            </div>
-        </div>
 
-        <asp:GridView ID="gvTransactions" runat="server" CssClass="data-table" 
-            AutoGenerateColumns="false" ShowHeader="true">
+            <div class="input-row">
+                <div class="form-group">
+                    <asp:Label ID="lblBrand" runat="server" Text="Brand"></asp:Label>
+                    <asp:TextBox ID="txtBrand" runat="server" ReadOnly="true"></asp:TextBox>
+                </div>
+                <div class="form-group">
+                    <asp:Label ID="lblPrice" runat="server" Text="Price"></asp:Label>
+                    <asp:TextBox ID="txtPrice" runat="server" ReadOnly="true"></asp:TextBox>
+                </div>
+                <div class="form-group">
+                    <asp:Label ID="lblMake" runat="server" Text="Make"></asp:Label>
+                    <asp:TextBox ID="txtMake" runat="server" ReadOnly="true"></asp:TextBox>
+                </div>
+                <div class="form-group">
+                    <asp:Label ID="lblQuantity" runat="server" Text="Quantity"></asp:Label>
+                    <asp:TextBox ID="txtQuantity" runat="server" ReadOnly="true"></asp:TextBox>
+                </div>
+            </div>
+        </asp:Panel>
+        <asp:GridView ID="gvTransactions" runat="server" CssClass="data-table" AutoGenerateColumns="False" ShowHeader="True">
             <Columns>
                 <asp:BoundField DataField="Date" HeaderText="DATE" />
                 <asp:BoundField DataField="TrxID" HeaderText="TRX-ID" />
@@ -103,6 +62,5 @@
                 <asp:BoundField DataField="SellPrice" HeaderText="SELL PRICE" />
             </Columns>
         </asp:GridView>
-    </div>
-        </div>
+    </asp:Panel>
 </asp:Content>

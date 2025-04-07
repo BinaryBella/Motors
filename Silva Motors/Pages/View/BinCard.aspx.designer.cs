@@ -15,6 +15,24 @@ namespace Silva_Motors.Pages.View
     {
 
         /// <summary>
+        /// lblHeader control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblHeader;
+
+        /// <summary>
+        /// lblFindByItemCode control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblFindByItemCode;
+
+        /// <summary>
         /// txtItemCode control.
         /// </summary>
         /// <remarks>
@@ -22,6 +40,15 @@ namespace Silva_Motors.Pages.View
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtItemCode;
+
+        /// <summary>
+        /// lblCode control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCode;
 
         /// <summary>
         /// txtCode control.
@@ -33,6 +60,15 @@ namespace Silva_Motors.Pages.View
         protected global::System.Web.UI.WebControls.TextBox txtCode;
 
         /// <summary>
+        /// lblCategory control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCategory;
+
+        /// <summary>
         /// txtCategory control.
         /// </summary>
         /// <remarks>
@@ -40,6 +76,15 @@ namespace Silva_Motors.Pages.View
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtCategory;
+
+        /// <summary>
+        /// lblPartNo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPartNo;
 
         /// <summary>
         /// txtPartNo control.
@@ -51,6 +96,15 @@ namespace Silva_Motors.Pages.View
         protected global::System.Web.UI.WebControls.TextBox txtPartNo;
 
         /// <summary>
+        /// lblDescription control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDescription;
+
+        /// <summary>
         /// txtDescription control.
         /// </summary>
         /// <remarks>
@@ -58,6 +112,15 @@ namespace Silva_Motors.Pages.View
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDescription;
+
+        /// <summary>
+        /// lblBrand control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblBrand;
 
         /// <summary>
         /// txtBrand control.
@@ -69,6 +132,15 @@ namespace Silva_Motors.Pages.View
         protected global::System.Web.UI.WebControls.TextBox txtBrand;
 
         /// <summary>
+        /// lblPrice control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPrice;
+
+        /// <summary>
         /// txtPrice control.
         /// </summary>
         /// <remarks>
@@ -78,6 +150,15 @@ namespace Silva_Motors.Pages.View
         protected global::System.Web.UI.WebControls.TextBox txtPrice;
 
         /// <summary>
+        /// lblMake control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMake;
+
+        /// <summary>
         /// txtMake control.
         /// </summary>
         /// <remarks>
@@ -85,6 +166,15 @@ namespace Silva_Motors.Pages.View
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtMake;
+
+        /// <summary>
+        /// lblQuantity control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblQuantity;
 
         /// <summary>
         /// txtQuantity control.

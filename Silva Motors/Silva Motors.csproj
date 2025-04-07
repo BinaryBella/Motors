@@ -133,6 +133,7 @@
     <Content Include="Content\CustomCSS\VendorTransaction\GoodRecievedMemo.css" />
     <Content Include="Content\CustomCSS\VendorTransaction\VendorCreditNote.css" />
     <Content Include="Content\CustomCSS\VendorTransaction\VendorDebitNote.css" />
+    <Content Include="Content\CustomCSS\View\BinCard.css" />
     <Content Include="Content\CustomCSS\View\CustomerLedgerCSS.css" />
     <Content Include="Content\CustomCSS\View\TransactionCSS.css" />
     <Content Include="Content\Site.css" />
@@ -191,9 +192,6 @@
     <Content Include="Pages\VendorTransaction\VendorLedger.aspx" />
     <Content Include="Pages\View\BinCard.aspx" />
     <Content Include="Pages\View\CustomerLedger.aspx" />
-    <Content Include="Pages\View\RepCommision.aspx" />
-    <Content Include="Pages\View\StockValuation-ItemWise.aspx" />
-    <Content Include="Pages\View\StockValuation-StockWise.aspx" />
     <Content Include="Pages\View\Transaction-Advance.aspx" />
     <Content Include="Pages\View\Transaction-Commision.aspx" />
     <Content Include="Pages\View\Transaction-Customer.aspx" />
@@ -468,27 +466,6 @@
     </Compile>
     <Compile Include="Pages\View\CustomerLedger.aspx.designer.cs">
       <DependentUpon>CustomerLedger.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\View\RepCommision.aspx.cs">
-      <DependentUpon>RepCommision.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\View\RepCommision.aspx.designer.cs">
-      <DependentUpon>RepCommision.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\View\StockValuation-ItemWise.aspx.cs">
-      <DependentUpon>StockValuation-ItemWise.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\View\StockValuation-ItemWise.aspx.designer.cs">
-      <DependentUpon>StockValuation-ItemWise.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\View\StockValuation-StockWise.aspx.cs">
-      <DependentUpon>StockValuation-StockWise.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\View\StockValuation-StockWise.aspx.designer.cs">
-      <DependentUpon>StockValuation-StockWise.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\View\Transaction-Advance.aspx.cs">
       <DependentUpon>Transaction-Advance.aspx</DependentUpon>

@@ -4,48 +4,46 @@
 
     <div class="main-container">
         <!-- Page Title -->
-        <h2 class="header">CUSTOMER LEDGER</h2>
+        <asp:Label ID="lblHeader" runat="server" Text="CUSTOMER LEDGER" CssClass="header"></asp:Label>
 
         <!-- Customer Info Card -->
         <div class="custom-card">
             <div class="info-section">
                 <div class="customer-info">
                     <div>
-                        <asp:DropDownList ID="txtCustomerName" runat="server" AutoPostBack="true" class="form-control" ref="CustomerSelect">
-                        </asp:DropDownList>
+                        <asp:DropDownList ID="txtCustomerName" runat="server" AutoPostBack="true" CssClass="form-control"></asp:DropDownList>
                     </div>
-                    <input type="text" class="form-control" readonly>
-                    <input type="text" class="form-control" readonly>
-                    <input type="text" class="form-control" readonly>
-                    <input type="text" class="form-control" readonly>
+                    <asp:TextBox ID="txtAddress" runat="server" CssClass="form-control" ReadOnly="true" />
+                    <asp:TextBox ID="txtPhone" runat="server" CssClass="form-control" ReadOnly="true" />
+                    <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control" ReadOnly="true" />
+                    <asp:TextBox ID="txtNIC" runat="server" CssClass="form-control" ReadOnly="true" />
                 </div>
+
                 <div class="due-amount">
                     <div style="margin-bottom: 10px;">
-                        <label>Total Due Amount</label>
-                        <input type="text" class="form-control" readonly>
+                        <asp:Label ID="lblTotalDue" runat="server" Text="Total Due Amount"></asp:Label>
+                        <asp:TextBox ID="txtTotalDueAmount" runat="server" CssClass="form-control" ReadOnly="true" />
                     </div>
 
                     <!-- Outstanding Age Analysis -->
                     <div style="margin-top: 20px;">
-                        <div class="age-analysis-header">
-                            Outstanding Age Analysis
-                        </div>
+                        <asp:Label ID="lblAgeHeader" runat="server" Text="Outstanding Age Analysis" CssClass="age-analysis-header"></asp:Label>
                         <div class="age-analysis-content">
                             <div class="age-box">
-                                <div>Over 30 Days</div>
-                                <div>0.00</div>
+                                <asp:Label ID="lblOver30Label" runat="server" Text="Over 30 Days"></asp:Label>
+                                <asp:Label ID="lblOver30" runat="server" Text="0.00"></asp:Label>
                             </div>
                             <div class="age-box">
-                                <div>Over 60 Days</div>
-                                <div>0.00</div>
+                                <asp:Label ID="lblOver60Label" runat="server" Text="Over 60 Days"></asp:Label>
+                                <asp:Label ID="lblOver60" runat="server" Text="0.00"></asp:Label>
                             </div>
                             <div class="age-box">
-                                <div>Over 90 Days</div>
-                                <div>0.00</div>
+                                <asp:Label ID="lblOver90Label" runat="server" Text="Over 90 Days"></asp:Label>
+                                <asp:Label ID="lblOver90" runat="server" Text="0.00"></asp:Label>
                             </div>
                             <div class="age-box">
-                                <div>Current Month</div>
-                                <div>0.00</div>
+                                <asp:Label ID="lblCurrentMonthLabel" runat="server" Text="Current Month"></asp:Label>
+                                <asp:Label ID="lblCurrentMonth" runat="server" Text="0.00"></asp:Label>
                             </div>
                         </div>
                     </div>
@@ -69,13 +67,13 @@
         <!-- Tabs and Action Buttons -->
         <div style="display: flex; justify-content: space-between;">
             <div>
-                <button class="tab-button">Customer Ledger</button>
-                <button class="tab-button">Outstandings</button>
-                <button class="tab-button">Detail Ledger</button>
+                <asp:Button ID="btnCustomerLedger" runat="server" Text="Customer Ledger" CssClass="tab-button" />
+                <asp:Button ID="btnOutstandings" runat="server" Text="Outstandings" CssClass="tab-button" />
+                <asp:Button ID="btnDetailLedger" runat="server" Text="Detail Ledger" CssClass="tab-button" />
             </div>
             <div class="action-buttons">
-                <button class="cancel-btn">Cancel</button>
-                <button class="print-btn">Print</button>
+                <asp:Button ID="btnCancel" runat="server" Text="Cancel" CssClass="cancel-btn" />
+                <asp:Button ID="btnPrint" runat="server" Text="Print" CssClass="print-btn" />
             </div>
         </div>
     </div>

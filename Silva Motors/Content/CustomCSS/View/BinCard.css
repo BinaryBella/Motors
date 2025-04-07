@@ -1,0 +1,51 @@
+﻿.main {
+    padding: 30px;
+}
+
+.bin-card-container {
+    background-color: #e3e1e1;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.header {
+    color: #c22;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.input-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+    .input-row .form-group {
+        flex: 1;
+    }
+
+    .input-row input, .input-row textarea {
+        width: 100%;
+        border: 1px solid #ddd;
+        height: 30px;
+        padding: 0 5px;
+        border-radius: 8px;
+    }
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+    .data-table th {
+        background-color: black;
+        color: white;
+        padding: 8px;
+        text-align: left;
+    }
+
+    .data-table td {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }

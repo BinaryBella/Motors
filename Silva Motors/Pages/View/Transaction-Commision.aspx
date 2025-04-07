@@ -27,17 +27,17 @@
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-md-6 mb-3">
-                                            <label asp-for="StartDate" class="form-label">Start Date</label>
+                                            <asp:Label AssociatedControlID="StartDate" CssClass="form-label" runat="server" Text="Start Date"></asp:Label>
                                             <div class="input-group">
                                                 <span class="input-group-text"><i class="bi bi-calendar-check"></i></span>
-                                                <input asp-for="StartDate" type="date" class="form-control">
+                                                <asp:TextBox ID="StartDate" runat="server" CssClass="form-control" TextMode="Date"></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="col-md-6 mb-3">
-                                            <label asp-for="EndDate" class="form-label">End Date</label>
+                                            <asp:Label AssociatedControlID="EndDate" CssClass="form-label" runat="server" Text="End Date"></asp:Label>
                                             <div class="input-group">
                                                 <span class="input-group-text"><i class="bi bi-calendar-check"></i></span>
-                                                <input asp-for="EndDate" type="date" class="form-control">
+                                                <asp:TextBox ID="EndDate" runat="server" CssClass="form-control" TextMode="Date"></asp:TextBox>
                                             </div>
                                         </div>
                                     </div>
@@ -54,40 +54,20 @@
                                 <div class="card-body">
                                     <div class="row mb-3">
                                         <div class="col-md-6">
-                                            <div class="form-check">
-                                                <input asp-for="ViewOption" type="radio" value="all" class="form-check-input" checked>
-                                                <label class="form-check-label" for="ViewOption">
-                                                    View All Transactions
-                                                </label>
-                                            </div>
+                                            <asp:RadioButton ID="ViewOptionAll" runat="server" GroupName="ViewOption" Text="View All Transactions" Checked="true" CssClass="form-check-input" />
                                         </div>
                                         <div class="col-md-6">
-                                            <div class="form-check">
-                                                <input asp-for="ViewOption" type="radio" value="due" class="form-check-input">
-                                                <label class="form-check-label" for="ViewOption">
-                                                    View All Due
-                                                </label>
-                                            </div>
+                                            <asp:RadioButton ID="ViewOptionDue" runat="server" GroupName="ViewOption" Text="View All Due" CssClass="form-check-input" />
                                         </div>
                                     </div>
                                     <div class="row mb-3">
                                         <div class="col-md-6">
-                                            <div class="form-check">
-                                                <input asp-for="ViewOption" type="radio" value="refNo" class="form-check-input">
-                                                <label class="form-check-label" for="ViewOption">
-                                                    View Selected Ref/No
-                                                </label>
-                                                <input asp-for="RefNo" type="text" class="form-control mt-2" placeholder="Enter Ref/No">
-                                            </div>
+                                            <asp:RadioButton ID="ViewOptionRefNo" runat="server" GroupName="ViewOption" Text="View Selected Ref/No" CssClass="form-check-input" />
+                                            <asp:TextBox ID="RefNo" runat="server" CssClass="form-control mt-2" placeholder="Enter Ref/No"></asp:TextBox>
                                         </div>
                                         <div class="col-md-6">
-                                            <div class="form-check">
-                                                <input asp-for="ViewOption" type="radio" value="trxType" class="form-check-input">
-                                                <label class="form-check-label" for="ViewOption">
-                                                    View Selected Tx Type
-                                                </label>
-                                                <input asp-for="TrxType" type="text" class="form-control mt-2" placeholder="Enter Transaction Type">
-                                            </div>
+                                            <asp:RadioButton ID="ViewOptionTrxType" runat="server" GroupName="ViewOption" Text="View Selected Tx Type" CssClass="form-check-input" />
+                                            <asp:TextBox ID="TrxType" runat="server" CssClass="form-control mt-2" placeholder="Enter Transaction Type"></asp:TextBox>
                                         </div>
                                     </div>
                                 </div>
@@ -97,9 +77,7 @@
                 </div>
             </div>
 
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addCommissionModal" style="margin-left: 1585px; background-color: #c22; color: white; border: none; padding: 8px 30px; font-weight: normal;">
-                Add New Commission
-            </button>
+            <asp:Button ID="btnAddCommission" runat="server" Text="Add New Commission" CssClass="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addCommissionModal" Style="margin-left: 1585px; background-color: #c22; color: white; border: none; padding: 8px 30px; font-weight: normal;" />
 
             <div class="table-responsive">
                 <asp:GridView ID="gvCustomers" runat="server" AutoGenerateColumns="false"
@@ -134,37 +112,32 @@
                             <div class="row g-3">
                                 <!-- Invoice No Dropdown -->
                                 <div class="col-12 mb-3">
-                                    <label for="invoiceNo" class="form-label">Invoice No</label>
-                                    <select id="invoiceNo" name="InvoiceNo" class="form-select" required>
-                                        <option value="">Select Invoice No</option>
+                                    <asp:Label AssociatedControlID="invoiceNo" CssClass="form-label" runat="server" Text="Invoice No"></asp:Label>
+                                    <asp:DropDownList ID="invoiceNo" runat="server" CssClass="form-select" AutoPostBack="true" >
+                                        <asp:ListItem Text="Select Invoice No" Value=""></asp:ListItem>
                                         <!-- Dynamically populate invoice numbers -->
-                                    </select>
+                                    </asp:DropDownList>
                                     <div class="invalid-feedback">Please select an invoice number.</div>
                                 </div>
 
                                 <!-- Broker Dropdown -->
                                 <div class="col-12 mb-3">
-                                    <label for="broker" class="form-label">Broker</label>
-                                    <select id="broker" name="Broker" class="form-select" required>
-                                        <option value="">Select Broker</option>
+                                    <asp:Label AssociatedControlID="broker" CssClass="form-label" runat="server" Text="Broker"></asp:Label>
+                                    <asp:DropDownList ID="broker" runat="server" CssClass="form-select" AutoPostBack="true" >
+                                        <asp:ListItem Text="Select Broker" Value=""></asp:ListItem>
                                         <!-- Dynamically populate brokers -->
-                                    </select>
+                                    </asp:DropDownList>
                                     <div class="invalid-feedback">Please select a broker.</div>
                                 </div>
 
                                 <!-- Commission Input -->
                                 <div class="col-12 mb-3">
-                                    <label for="commission" class="form-label">Commission</label>
+                                    <asp:Label AssociatedControlID="commission" CssClass="form-label" runat="server" Text="Commission"></asp:Label>
                                     <div class="input-group">
                                         <span class="input-group-text">$</span>
-                                        <input type="number" id="commission" name="Commission"
-                                            class="form-control"
-                                            placeholder="Enter Commission Amount"
-                                            step="0.01"
-                                            min="0"
-                                            required>
-                                        <div class="invalid-feedback">Please enter a valid commission amount.</div>
+                                        <asp:TextBox ID="commission" runat="server" CssClass="form-control" Placeholder="Enter Commission Amount" MaxLength="10" />
                                     </div>
+                                    <div class="invalid-feedback">Please enter a valid commission amount.</div>
                                 </div>
                             </div>
                         </div>
