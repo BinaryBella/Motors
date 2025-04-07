@@ -181,7 +181,7 @@
     <Content Include="Pages\MasterFiles\Rack.aspx" />
     <Content Include="Pages\MasterFiles\StockItem.aspx" />
     <Content Include="Pages\MasterFiles\Vendor.aspx" />
-    <Content Include="Pages\VendorTransaction\GoodRecievedMemo.aspx" />
+    <Content Include="Pages\VendorTransaction\GoodReceivedMemo.aspx" />
     <Content Include="Pages\VendorTransaction\GRMReturn.aspx" />
     <Content Include="Pages\VendorTransaction\VendorChequeCancellation.aspx" />
     <Content Include="Pages\VendorTransaction\VendorChequeIssue.aspx" />
@@ -399,12 +399,12 @@
     <Compile Include="Pages\MasterFiles\Vendor.aspx.designer.cs">
       <DependentUpon>Vendor.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\VendorTransaction\GoodRecievedMemo.aspx.cs">
-      <DependentUpon>GoodRecievedMemo.aspx</DependentUpon>
+    <Compile Include="Pages\VendorTransaction\GoodReceivedMemo.aspx.cs">
+      <DependentUpon>GoodReceivedMemo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\VendorTransaction\GoodRecievedMemo.aspx.designer.cs">
-      <DependentUpon>GoodRecievedMemo.aspx</DependentUpon>
+    <Compile Include="Pages\VendorTransaction\GoodReceivedMemo.aspx.designer.cs">
+      <DependentUpon>GoodReceivedMemo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\VendorTransaction\GRMReturn.aspx.cs">
       <DependentUpon>GRMReturn.aspx</DependentUpon>

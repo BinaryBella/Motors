@@ -15,6 +15,15 @@ namespace Silva_Motors.Pages.VendorTransaction
     {
 
         /// <summary>
+        /// lblHeader control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblHeader;
+
+        /// <summary>
         /// txt_SearchVendorId control.
         /// </summary>
         /// <remarks>
@@ -60,6 +69,15 @@ namespace Silva_Motors.Pages.VendorTransaction
         protected global::System.Web.UI.WebControls.TextBox TextBox1;
 
         /// <summary>
+        /// lblTotalDue control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTotalDue;
+
+        /// <summary>
         /// txt_VendorTotalDueBal control.
         /// </summary>
         /// <remarks>
@@ -67,6 +85,15 @@ namespace Silva_Motors.Pages.VendorTransaction
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_VendorTotalDueBal;
+
+        /// <summary>
+        /// lblRemaining control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblRemaining;
 
         /// <summary>
         /// txt_remaining_balance control.
@@ -78,6 +105,15 @@ namespace Silva_Motors.Pages.VendorTransaction
         protected global::System.Web.UI.WebControls.TextBox txt_remaining_balance;
 
         /// <summary>
+        /// lblCNBalance control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCNBalance;
+
+        /// <summary>
         /// txt_total_checkedBalance control.
         /// </summary>
         /// <remarks>
@@ -85,6 +121,15 @@ namespace Silva_Motors.Pages.VendorTransaction
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_total_checkedBalance;
+
+        /// <summary>
+        /// lblDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDate;
 
         /// <summary>
         /// Date control.
@@ -96,6 +141,15 @@ namespace Silva_Motors.Pages.VendorTransaction
         protected global::System.Web.UI.WebControls.TextBox Date;
 
         /// <summary>
+        /// lblDescription control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDescription;
+
+        /// <summary>
         /// txt_description control.
         /// </summary>
         /// <remarks>
@@ -103,6 +157,24 @@ namespace Silva_Motors.Pages.VendorTransaction
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_description;
+
+        /// <summary>
+        /// lblDescriptionError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDescriptionError;
+
+        /// <summary>
+        /// lblAmount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblAmount;
 
         /// <summary>
         /// txtEnteredAmount control.
@@ -114,22 +186,22 @@ namespace Silva_Motors.Pages.VendorTransaction
         protected global::System.Web.UI.WebControls.TextBox txtEnteredAmount;
 
         /// <summary>
-        /// rptTransactions control.
+        /// lblAmountError control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptTransactions;
+        protected global::System.Web.UI.WebControls.Label lblAmountError;
 
         /// <summary>
-        /// hdnCheckedPayments control.
+        /// gvTransactions control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hdnCheckedPayments;
+        protected global::System.Web.UI.WebControls.GridView gvTransactions;
 
         /// <summary>
         /// btnSave control.
@@ -139,6 +211,15 @@ namespace Silva_Motors.Pages.VendorTransaction
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSave;
+
+        /// <summary>
+        /// btnCancel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCancel;
 
         /// <summary>
         /// hdnSaveStatus control.

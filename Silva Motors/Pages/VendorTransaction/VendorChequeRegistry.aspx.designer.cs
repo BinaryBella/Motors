@@ -24,6 +24,15 @@ namespace Silva_Motors.Pages.VendorTransaction
         protected global::System.Web.UI.WebControls.RadioButton rbAllCheque;
 
         /// <summary>
+        /// lblAllCheque control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblAllCheque;
+
+        /// <summary>
         /// rbChequeInHand control.
         /// </summary>
         /// <remarks>
@@ -33,6 +42,15 @@ namespace Silva_Motors.Pages.VendorTransaction
         protected global::System.Web.UI.WebControls.RadioButton rbChequeInHand;
 
         /// <summary>
+        /// lblChequeInHand control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblChequeInHand;
+
+        /// <summary>
         /// rbChequeRealized control.
         /// </summary>
         /// <remarks>
@@ -40,6 +58,15 @@ namespace Silva_Motors.Pages.VendorTransaction
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButton rbChequeRealized;
+
+        /// <summary>
+        /// lblChequeRealized control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblChequeRealized;
 
         /// <summary>
         /// txtChequeNo control.

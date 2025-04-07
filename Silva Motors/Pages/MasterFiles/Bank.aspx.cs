@@ -56,22 +56,37 @@ namespace Silva_Motors.Pages.MasterFiles
 
         private DataTable GetBankData()
         {
-            // Simulated data - in a real application, this would be fetched from a database
             DataTable dt = new DataTable();
+
+            // Define table columns
             dt.Columns.Add("Id", typeof(int));
             dt.Columns.Add("Code", typeof(string));
-            dt.Columns.Add("Name", typeof(string));
+            dt.Columns.Add("BankId", typeof(string));
+            dt.Columns.Add("BankName", typeof(string));
+            dt.Columns.Add("User", typeof(string));
+            dt.Columns.Add("Date", typeof(DateTime));
             dt.Columns.Add("ActiveState", typeof(bool));
 
-            // Sample data
-            dt.Rows.Add(1, "BRD001", "Toyota", true);
-            dt.Rows.Add(2, "BRD002", "Honda", true);
-            dt.Rows.Add(3, "BRD003", "Ford", true);
-            dt.Rows.Add(4, "BRD004", "Chevrolet", false);
-            dt.Rows.Add(5, "BRD005", "BMW", true);
+            // Sample data entries
+            dt.Rows.Add(1, "BNK001", "1001", "Bank of America", "Admin", DateTime.Now.AddDays(-5), true);
+            dt.Rows.Add(2, "BNK002", "1002", "JPMorgan Chase", "User1", DateTime.Now.AddDays(-10), true);
+            dt.Rows.Add(3, "BNK003", "1003", "Wells Fargo", "Admin", DateTime.Now.AddDays(-15), false);
+            dt.Rows.Add(4, "BNK004", "1004", "Citibank", "User2", DateTime.Now.AddDays(-20), true);
+            dt.Rows.Add(5, "BNK005", "1005", "HSBC", "User3", DateTime.Now.AddDays(-25), true);
+            dt.Rows.Add(6, "BNK006", "1006", "Barclays", "Admin", DateTime.Now.AddDays(-30), false);
+            dt.Rows.Add(7, "BNK007", "1007", "Standard Chartered", "User4", DateTime.Now.AddDays(-35), true);
+            dt.Rows.Add(8, "BNK008", "1008", "Goldman Sachs", "User5", DateTime.Now.AddDays(-40), true);
+            dt.Rows.Add(9, "BNK009", "1009", "Morgan Stanley", "Admin", DateTime.Now.AddDays(-45), false);
+            dt.Rows.Add(10, "BNK010", "1010", "Deutsche Bank", "User6", DateTime.Now.AddDays(-50), true);
+            dt.Rows.Add(11, "BNK011", "1011", "UBS", "User7", DateTime.Now.AddDays(-55), true);
+            dt.Rows.Add(12, "BNK012", "1012", "Royal Bank of Canada", "User8", DateTime.Now.AddDays(-60), false);
+            dt.Rows.Add(13, "BNK013", "1013", "TD Bank", "Admin", DateTime.Now.AddDays(-65), true);
+            dt.Rows.Add(14, "BNK014", "1014", "Santander", "User9", DateTime.Now.AddDays(-70), true);
+            dt.Rows.Add(15, "BNK015", "1015", "BNP Paribas", "User10", DateTime.Now.AddDays(-75), false);
 
             return dt;
         }
+
 
         private DataTable ApplyPaging(DataTable sourceTable, int currentPage, int pageSize)
         {
@@ -117,30 +132,41 @@ namespace Silva_Motors.Pages.MasterFiles
             public int PageNumber { get; set; }
         }
 
+        protected void gvbanks_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "EditBank")
+            {
+                int rowIndex = Convert.ToInt32(e.CommandArgument);
+                GridViewRow row = gvbanks.Rows[rowIndex];
+
+                // Retrieve data from the selected row
+                string bankId = gvbanks.DataKeys[rowIndex].Value.ToString();
+                string code = row.Cells[0].Text;
+                string bankName = row.Cells[2].Text;
+
+                // Set values in the modal for editing
+                txtBankId.Text = bankId;
+                txtCode.Text = code;
+                txtBankName.Text = bankName;
+
+                // Show the modal
+                ScriptManager.RegisterStartupScript(this, GetType(), "ShowEditModal", "$('#bankModal').modal('show');", true);
+            }
+            else if (e.CommandName == "DeleteBank")
+            {
+                int bankId = Convert.ToInt32(e.CommandArgument);
+
+                // Refresh the GridView
+                LoadBanks();
+            }
+        }
+
         protected void rptPagination_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
             if (e.CommandName == "Page")
             {
                 CurrentPage = Convert.ToInt32(e.CommandArgument);
                 LoadBanks();
-            }
-        }
-
-        protected void gvbrands_RowCommand(object sender, GridViewCommandEventArgs e)
-        {
-            // Note: This is now handled by client-side JavaScript
-            // But we keep the method for any server-side processing needed
-            try
-            {
-                if (e.CommandName == "EditRecord" || e.CommandName == "DeleteRecord")
-                {
-                    // Any additional server-side processing can go here
-                }
-            }
-            catch (Exception)
-            {
-                // Log the error
-                ShowErrorMessage("An error occurred processing your request.");
             }
         }
 
@@ -215,6 +241,14 @@ namespace Silva_Motors.Pages.MasterFiles
                 hfErrorMessage.Value = "An error occurred during deletion: " + ex.Message;
                 // Consider logging the exception as well
             }
+        }
+        protected void btnCloseModal_Click(object sender, EventArgs e)
+        {
+            // Any server-side logic before closing the modal
+        }
+        protected void btnCancel_Click(object sender, EventArgs e)
+        {
+            // Any server-side logic before closing the modal
         }
 
         private void ShowSuccessMessage(string message)

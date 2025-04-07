@@ -124,18 +124,24 @@
     }
 
 
-
-.table th {
-    background-color: #000;
-    color: white;
-    font-weight: normal;
-    text-align: left;
+.table {
+    width: 100%;
 }
 
-.table tr:nth-child(odd) td {
-    background-color: #e0e0e0;
-}
+    .table th {
+        background-color: #000;
+        color: #ffffff;
+        padding: 10px;
+        text-align: left;
+    }
 
-.table tr:nth-child(even) td {
-    background-color: #fff;
-}
+    .table td {
+        padding: 8px;
+        border: 1px solid #e0e0e0;
+    }
+
+    .table input {
+        width: 100%;
+        border: 1px solid #d0d0d0;
+        padding: 6px;
+    }

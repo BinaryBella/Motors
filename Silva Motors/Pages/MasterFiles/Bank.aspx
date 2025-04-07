@@ -3,9 +3,9 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <link rel="stylesheet" href='<%= ResolveUrl("~/Content/CustomCSS/MasterFiles/BankCSS.css") %>' />
 
-    <!-- Add Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 
+    <!-- Add Bootstrap Icons -->
     <!-- Add SweetAlert2 CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.7.3/sweetalert2.min.css" />
 
@@ -73,9 +73,9 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="bankModalLabel">Add Bank</h5>
-                        <button type="button" class="close" style="border:none;" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
+                        <asp:Button ID="btnCloseModal" runat="server" CssClass="close" 
+                            Style="border:none;" OnClientClick="$('#myModal').modal('hide'); return false;" />
+                        <span aria-hidden="true">&times;</span>
                     </div>
                     <div class="modal-body">
                         <asp:UpdatePanel ID="upModal" runat="server">
@@ -115,7 +115,7 @@
                         </asp:UpdatePanel>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        <asp:Button ID="btnCancel" runat="server" CssClass="btn btn-secondary" Text="Cancel" OnClick="btnCancel_Click" />
                         <asp:Button ID="btnSave" runat="server" Text="Save" CssClass="btn btn-primary add-button"
                             OnClientClick="return validateForm();" OnClick="btnSave_Click" ValidationGroup="BankValidation" UseSubmitBehavior="false" />
                     </div>

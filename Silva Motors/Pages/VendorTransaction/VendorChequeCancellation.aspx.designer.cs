@@ -15,6 +15,15 @@ namespace Silva_Motors.Pages.VendorTransaction
     {
 
         /// <summary>
+        /// lblSelectVendor control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSelectVendor;
+
+        /// <summary>
         /// txt_SearchVendorId control.
         /// </summary>
         /// <remarks>

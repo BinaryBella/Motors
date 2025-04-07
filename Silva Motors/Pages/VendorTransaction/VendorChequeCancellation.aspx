@@ -22,7 +22,7 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Select Vendor</label>
+                                        <asp:Label ID="lblSelectVendor" runat="server" Text="Select Vendor" CssClass="form-label"></asp:Label>
                                         <asp:DropDownList ID="txt_SearchVendorId" CssClass="form-control select-customer" runat="server" AutoPostBack="true">
                                         </asp:DropDownList>
                                     </div>
@@ -44,7 +44,6 @@
                                         <asp:TextBox ID="txt_Time" runat="server" CssClass="form-control" ReadOnly="true" Width="50%"></asp:TextBox>
                                     </div>
                                 </div>
-
 
                                 <div class="col-md-12">
                                     <div class="form-group d-flex flex-wrap align-items-center gap-3">

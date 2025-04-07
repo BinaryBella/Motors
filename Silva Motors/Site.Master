@@ -224,7 +224,7 @@
                             <ul class="dropdown-menu" aria-labelledby="vendorDropdown">
                                 <li><a class="dropdown-item" runat="server" href="~/Pages/VendorTransaction/VendorCreditNote">Vendor Credit Note</a></li>
                                 <li><a class="dropdown-item" runat="server" href="~/Pages/VendorTransaction/VendorDebitNote">Vendor Debit Note</a></li>
-                                <li><a class="dropdown-item" runat="server" href="~/Pages/VendorTransaction/GoodRecievedMemo">Good Recieved Memo</a></li>
+                                <li><a class="dropdown-item" runat="server" href="~/Pages/VendorTransaction/GoodReceivedMemo">Good Received Memo</a></li>
                                 <li><a class="dropdown-item" runat="server" href="~/Pages/VendorTransaction/VendorChequeIssue">Vendor Cheque Issue</a></li>
                                 <li><a class="dropdown-item" runat="server" href="~/Pages/VendorTransaction/VendorChequeRegistry">Vendor Cheque Registry</a></li>
                                 <li><a class="dropdown-item" runat="server" href="~/Pages/VendorTransaction/VendorChequeCancellation">Vendor Cheque Cancellation</a></li>

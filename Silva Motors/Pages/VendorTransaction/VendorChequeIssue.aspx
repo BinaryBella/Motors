@@ -21,7 +21,7 @@
                             <div class="form-container">
                                 <div class="column">
                                     <div class="form-group">
-                                        <label>Select Customer</label>
+                                        <asp:Label runat="server" Text="Select Customer"></asp:Label>
                                         <asp:DropDownList ID="txt_SearchCustomerId" CssClass="form-control select-customer" runat="server" AutoPostBack="true">
                                         </asp:DropDownList>
                                     </div>
@@ -36,82 +36,61 @@
                                 <div class="column">
                                     <div class="form-group">
                                         <div class="form-check mt-3">
-                                            <asp:CheckBox ID="chkCash" runat="server" Text="Cash" class="w-50" />
-                                            <asp:TextBox ID="txtCash" runat="server" class="w-50" Enabled="false"></asp:TextBox>
+                                            <asp:CheckBox ID="chkCash" runat="server" Text="Cash" CssClass="w-50" />
+                                            <asp:TextBox ID="txtCash" runat="server" CssClass="w-50" Enabled="false"></asp:TextBox>
                                         </div>
                                         <div class="form-check">
-                                            <asp:CheckBox ID="chkCheque" runat="server" Text="Cheque" class="w-50" />
-                                            <asp:TextBox ID="txtCheque" runat="server" class="w-50" Enabled="false"></asp:TextBox>
+                                            <asp:CheckBox ID="chkCheque" runat="server" Text="Cheque" CssClass="w-50" />
+                                            <asp:TextBox ID="txtCheque" runat="server" CssClass="w-50" Enabled="false"></asp:TextBox>
                                         </div>
                                         <div class="form-check">
-                                            <asp:CheckBox ID="chkCreditCard" runat="server" Text="Credit Card / Voucher" class="w-50" />
-                                            <asp:TextBox ID="txtCreditCard" runat="server" class="w-50" Enabled="false"></asp:TextBox>
+                                            <asp:CheckBox ID="chkCreditCard" runat="server" Text="Credit Card / Voucher" CssClass="w-50" />
+                                            <asp:TextBox ID="txtCreditCard" runat="server" CssClass="w-50" Enabled="false"></asp:TextBox>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="column">
                                     <div class="form-group">
-                                        <label>Total Due Amount</label>
+                                        <asp:Label runat="server" Text="Total Due Amount"></asp:Label>
                                         <asp:TextBox ID="txt_CustomerTotalDueBal" runat="server" CssClass="form-control" ReadOnly="true"></asp:TextBox>
                                     </div>
                                     <div class="form-group">
-                                        <label>Remaining Balance</label>
+                                        <asp:Label runat="server" Text="Remaining Balance"></asp:Label>
                                         <asp:TextBox ID="txt_remaining_balance" runat="server" CssClass="form-control" ReadOnly="true"></asp:TextBox>
                                     </div>
                                     <div class="form-group">
-                                        <label>Reciept Balance</label>
+                                        <asp:Label runat="server" Text="Receipt Balance"></asp:Label>
                                         <asp:TextBox ID="txt_total_recieptbalance" runat="server" CssClass="form-control" ReadOnly="true"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="transaction-table-section">
-                                <table id="myTable" class="transaction-table table table-bordered">
-                                    <thead>
-                                        <tr>
-                                            <th>NO</th>
-                                            <th>REF/NO</th>
-                                            <th style="width: 200px;">DATE</th>
-                                            <th style="width: 135px;">PARTICULARS</th>
-                                            <th style="width: 250px;">TRX AMOUNT</th>
-                                            <th style="width: 150px;" class="th">DUE AMOUNT</th>
-                                            <th style="width: 150px;" class="th">AGE</th>
-                                            <th>X</th>
-                                            <th>AMOUNT</th>
-                                        </tr>
-                                    </thead>
-
-                                    <tbody class="tbody">
-                                        <asp:Repeater ID="rptTransactions" runat="server">
+                                <asp:GridView ID="gvTransactions" runat="server" CssClass="transaction-table table table-bordered" AutoGenerateColumns="false">
+                                    <Columns>
+                                        <asp:BoundField DataField="No" HeaderText="NO" />
+                                        <asp:BoundField DataField="RefNo" HeaderText="REF/NO" />
+                                        <asp:BoundField DataField="Date" HeaderText="DATE" DataFormatString="{0:yyyy-MM-dd}" />
+                                        <asp:BoundField DataField="Particulars" HeaderText="PARTICULARS" />
+                                        <asp:BoundField DataField="trxNetAm" HeaderText="TRX AMOUNT" DataFormatString="{0:N2}" />
+                                        <asp:BoundField DataField="trxDueAm" HeaderText="DUE AMOUNT" DataFormatString="{0:N2}" />
+                                        <asp:BoundField DataField="Age" HeaderText="AGE" />
+                                        <asp:BoundField DataField="Amount" HeaderText="AMOUNT" />
+                                        <asp:TemplateField HeaderText="Select">
                                             <ItemTemplate>
-                                                <tr>
-                                                    <td><%# Eval("No") %></td>
-                                                    <td><%# Eval("RefNo") %></td>
-                                                    <td><%# Eval("Date", "{0:yyyy-MM-dd}") %></td>
-                                                    <td><%# Eval("Particulars") %></td>
-                                                    <td><%# Eval("AtrxNetAm", "{0:N2}") %></td>
-                                                    <td><%# Eval("AtrxDueAm", "{0:N2}") %></td>
-                                                    <td><%# Eval("Age") %></td>
-                                                    <td><%# Eval("X") %></td>
-                                                    <td><%# Eval("Amount") %></td>
-                                                    <td>
-                                                        <asp:CheckBox ID="chkBox" runat="server" onclick="updateCheckedAmount(this)" />
-                                                        <asp:HiddenField ID="hdnDueAmount" runat="server" Value='<%# Eval("AtrxDueAm") %>' />
-                                                    </td>
-
-                                                    <td></td>
-                                                </tr>
+                                                <asp:CheckBox ID="chkBox" runat="server" onclick="updateCheckedAmount(this)" />
+                                                <asp:HiddenField ID="hdnDueAmount" runat="server" Value='<%# Eval("AtrxDueAm") %>' />
                                             </ItemTemplate>
-                                        </asp:Repeater>
-                                    </tbody>
-                                </table>
+                                        </asp:TemplateField>
+                                    </Columns>
+                                </asp:GridView>
                                 <asp:HiddenField ID="hdnCheckedPayments" runat="server" />
                             </div>
                             
                             <div class="action-buttons">
                                 <asp:Button ID="btnSave" runat="server" Text="Save" CssClass="btn btn-primary" Style="background-color: #B71D1D; border-color: #B71D1D; color: white;" />
-                                <button type="button" class="btn" data-dismiss="modal" style="background-color: #D9D9D9;">Cancel</button>
+                                <asp:Button ID="btnCancel" runat="server" Text="Cancel" CssClass="btn" Style="background-color: #D9D9D9;" />
                             </div>
                         </div>
                     </div>
