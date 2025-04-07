@@ -15,6 +15,15 @@ namespace Silva_Motors.Pages.VendorTransaction
     {
 
         /// <summary>
+        /// btnAdd control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAdd;
+
+        /// <summary>
         /// ddlVendor control.
         /// </summary>
         /// <remarks>
@@ -87,6 +96,15 @@ namespace Silva_Motors.Pages.VendorTransaction
         protected global::System.Web.UI.WebControls.TextBox txtGRMDate;
 
         /// <summary>
+        /// gvItems control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvItems;
+
+        /// <summary>
         /// txtTotalQUantity control.
         /// </summary>
         /// <remarks>
@@ -132,6 +150,60 @@ namespace Silva_Motors.Pages.VendorTransaction
         protected global::System.Web.UI.WebControls.TextBox TextGrandTotal;
 
         /// <summary>
+        /// itemCode control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox itemCode;
+
+        /// <summary>
+        /// description control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox description;
+
+        /// <summary>
+        /// gvModalTable control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvModalTable;
+
+        /// <summary>
+        /// quentity control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox quentity;
+
+        /// <summary>
+        /// unitPrice control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox unitPrice;
+
+        /// <summary>
+        /// amount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox amount;
+
+        /// <summary>
         /// btnSave control.
         /// </summary>
         /// <remarks>
@@ -139,19 +211,5 @@ namespace Silva_Motors.Pages.VendorTransaction
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSave;
-
-        /// <summary>
-        /// Master property.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated property.
-        /// </remarks>
-        public new Silva_Motors.SiteMaster Master
-        {
-            get
-            {
-                return ((Silva_Motors.SiteMaster)(base.Master));
-            }
-        }
     }
 }

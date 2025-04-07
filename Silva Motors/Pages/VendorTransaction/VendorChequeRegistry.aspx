@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="VendorChequeRegistry.aspx.cs" Inherits="Silva_Motors.Pages.VendorTransaction.VendorChequeRegistry" %>
+﻿<%@ Page Title="" Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="VendorChequeRegistry.aspx.cs" Inherits="Silva_Motors.Pages.VendorTransaction.VendorChequeRegistry" %> 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -24,15 +24,15 @@
                                     <div class="form-group mb-4">
                                         <div class="form-check mb-4">
                                             <asp:RadioButton ID="rbAllCheque" runat="server" GroupName="radioOptions" Checked="true" />
-                                            <label class="form-check-label ml-4" for="<%= rbAllCheque.ClientID %>">All Cheques</label>
+                                            <asp:Label ID="lblAllCheque" runat="server" CssClass="form-check-label ml-4" AssociatedControlID="rbAllCheque" Text="All Cheques"></asp:Label>
                                         </div>
                                         <div class="form-check mb-4">
                                             <asp:RadioButton ID="rbChequeInHand" runat="server" GroupName="radioOptions" />
-                                            <label class="form-check-label ml-4" for="<%= rbChequeInHand.ClientID %>">Cheque In Hand</label>
+                                            <asp:Label ID="lblChequeInHand" runat="server" CssClass="form-check-label ml-4" AssociatedControlID="rbChequeInHand" Text="Cheque In Hand"></asp:Label>
                                         </div>
                                         <div class="form-check mb-4">
                                             <asp:RadioButton ID="rbChequeRealized" runat="server" GroupName="radioOptions" />
-                                            <label class="form-check-label ml-4" for="<%= rbChequeRealized.ClientID %>">Cheque Realized</label>
+                                            <asp:Label ID="lblChequeRealized" runat="server" CssClass="form-check-label ml-4" AssociatedControlID="rbChequeRealized" Text="Cheque Realized"></asp:Label>
                                         </div>
                                     </div>
                                 </div>
@@ -73,7 +73,6 @@
                                         <asp:BoundField DataField="Status" HeaderText="STATUS" />
                                         <asp:BoundField DataField="Vendor" HeaderText="VENDOR" />
                                         <asp:BoundField DataField="Amount" HeaderText="AMOUNT" />
-
                                     </Columns>
                                     <HeaderStyle BackColor="Black" ForeColor="White" />
                                     <RowStyle BackColor="#e0e0e0" />

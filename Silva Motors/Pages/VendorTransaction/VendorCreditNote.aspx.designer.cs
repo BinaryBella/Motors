@@ -87,6 +87,15 @@ namespace Silva_Motors.Pages.VendorTransaction
         protected global::System.Web.UI.WebControls.TextBox txt_Description;
 
         /// <summary>
+        /// descriptionError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label descriptionError;
+
+        /// <summary>
         /// txt_Amount control.
         /// </summary>
         /// <remarks>
@@ -96,6 +105,24 @@ namespace Silva_Motors.Pages.VendorTransaction
         protected global::System.Web.UI.WebControls.TextBox txt_Amount;
 
         /// <summary>
+        /// amountError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label amountError;
+
+        /// <summary>
+        /// chkReturnCash control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkReturnCash;
+
+        /// <summary>
         /// btnSave control.
         /// </summary>
         /// <remarks>
@@ -103,6 +130,15 @@ namespace Silva_Motors.Pages.VendorTransaction
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSave;
+
+        /// <summary>
+        /// btnCancel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCancel;
 
         /// <summary>
         /// hdnSaveStatus control.
