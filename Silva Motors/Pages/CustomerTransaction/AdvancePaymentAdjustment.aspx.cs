@@ -35,6 +35,36 @@ namespace Silva_Motors.Pages.CustomerTransaction
                 // Example: Modify rows if needed (e.g., add styling or calculations)
             }
         }
+
+        //protected void btnAdd_Click(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+               
+        //        // Your existing save logic here
+        //        bool success = true; // Replace with your actual save operation result
+
+        //        if (success)
+        //        {
+        //            // Set success message for SweetAlert2
+        //            hfSuccessMessage.Value = brandId > 0
+        //                ? "Brand updated successfully!"
+        //                : "Brand added successfully!";
+
+        //        }
+        //        else
+        //        {
+        //            // Set error message for SweetAlert2
+        //            hfErrorMessage.Value = "Operation failed. Please try again.";
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        // Set error message with exception details
+        //        hfErrorMessage.Value = "An error occurred: " + ex.Message;
+        //        // Consider logging the exception as well
+        //    }
+        //}
     }
 
     public class Transaction
@@ -46,4 +76,7 @@ namespace Silva_Motors.Pages.CustomerTransaction
         public DateTime Date { get; set; }
         public decimal Amount { get; set; }
     }
+
+   
+
 }

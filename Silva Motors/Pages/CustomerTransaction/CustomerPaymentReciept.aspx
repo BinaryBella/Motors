@@ -52,12 +52,12 @@
 
                                 <div class="column">
                                     <div class="form-group">
-                                        <label>Total Due Amount</label>
-                                        <asp:TextBox ID="txt_CustomerTotalDueBal" runat="server" CssClass="form-control" ReadOnly="true"></asp:TextBox>
+                                        <asp:Label ID="lblTotalDueAmount" runat="server" Text="Total Due Amount" CssClass="form-label" />
+                                        <asp:TextBox ID="txt_CustomerTotalDueBal" runat="server" CssClass="form-control" ReadOnly="true" />
                                     </div>
                                     <div class="form-group">
-                                        <label>Remaining Balance</label>
-                                        <asp:TextBox ID="txt_remaining_balance" runat="server" CssClass="form-control" ReadOnly="true"></asp:TextBox>
+                                        <asp:Label ID="lblRemainingBalance" runat="server" Text="Remaining Balance" CssClass="form-label" />
+                                        <asp:TextBox ID="txt_remaining_balance" runat="server" CssClass="form-control" ReadOnly="true" />
                                     </div>
                                     <div class="form-group">
                                         <label>Reciept Balance</label>
@@ -67,50 +67,28 @@
                             </div>
 
                             <div class="transaction-table-section">
-                                <table id="myTable" class="transaction-table table table-bordered">
-                                    <thead>
-                                        <tr>
-                                            <th>NO</th>
-                                            <th>REF/NO</th>
-                                            <th style="width: 200px;">DATE</th>
-                                            <th style="width: 135px;">PARTICULARS</th>
-                                            <th style="width: 250px;">TRX AMOUNT</th>
-                                            <th style="width: 150px;" class="th">DUE AMOUNT</th>
-                                            <th style="width: 150px;" class="th">AGE</th>
-                                            <th>X</th>
-                                            <th>AMOUNT</th>
-                                        </tr>
-                                    </thead>
+                             
+                                <div class="transaction-table-section">
+                                    <asp:GridView ID="gvTransactions" runat="server" CssClass="customers-table table table-bordered" AutoGenerateColumns="False">
+                                        <Columns>
+                                            <asp:BoundField DataField="No" HeaderText="NO" />
+                                            <asp:BoundField DataField="RefNo" HeaderText="REF/NO" />
+                                            <asp:BoundField DataField="Date" HeaderText="DATE" />
+                                            <asp:BoundField DataField="Particulars" HeaderText="PARTICULARS" />
+                                            <asp:BoundField DataField="AtrxNetAm" HeaderText="TRX AMOUNT" />
+                                            <asp:BoundField DataField="AtrxDueAm" HeaderText="DUE AMOUNT" />
+                                            <asp:BoundField DataField="Age" HeaderText="AGE" SortExpression="Age" />
+                                            <asp:TemplateField HeaderText="X"></asp:TemplateField>
+                                            <asp:BoundField DataField="Amount" HeaderText="AMOUNT" />
+                                        </Columns>
+                                    </asp:GridView>
+                                </div>
 
-                                    <tbody class="tbody">
-                                        <asp:Repeater ID="rptTransactions" runat="server">
-                                            <ItemTemplate>
-                                                <tr>
-                                                    <td><%# Eval("No") %></td>
-                                                    <td><%# Eval("RefNo") %></td>
-                                                    <td><%# Eval("Date", "{0:yyyy-MM-dd}") %></td>
-                                                    <td><%# Eval("Particulars") %></td>
-                                                    <td><%# Eval("AtrxNetAm", "{0:N2}") %></td>
-                                                    <td><%# Eval("AtrxDueAm", "{0:N2}") %></td>
-                                                    <td><%# Eval("Age") %></td>
-                                                    <td><%# Eval("X") %></td>
-                                                    <td><%# Eval("Amount") %></td>
-                                                    <td>
-                                                        <asp:CheckBox ID="chkBox" runat="server" onclick="updateCheckedAmount(this)" />
-                                                        <asp:HiddenField ID="hdnDueAmount" runat="server" Value='<%# Eval("AtrxDueAm") %>' />
-                                                    </td>
-
-                                                    <td></td>
-                                                </tr>
-                                            </ItemTemplate>
-                                        </asp:Repeater>
-                                    </tbody>
-                                </table>
                                 <asp:HiddenField ID="hdnCheckedPayments" runat="server" />
                             </div>
                             <div class="action-buttons">
                                 <asp:Button ID="btnSave" runat="server" Text="Save" CssClass="btn btn-primary" Style="background-color: #B71D1D; border-color: #B71D1D; color: white;" />
-                                <button type="button" class="btn" data-dismiss="modal" style="background-color: #D9D9D9;">Cancel</button>
+                               <asp:Button ID="btnCancel" runat="server" CssClass="btn" Text="Cancel" OnClientClick="$('#addInvoiceModal').modal('hide'); return false;" Style="background-color: #D9D9D9;" />
                             </div>
                         </div>
                     </div>

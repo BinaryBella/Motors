@@ -15,9 +15,11 @@
             <div class="row align-items-center">
                 <div class="col d-flex justify-content-between align-items-center">
                     <div class="header h4">ADVANCE PAYMENT ADJUSTMENT</div>
-                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#addpaymentModal">
+                    <%-- <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#addpaymentModal">
                         Add
-                    </button>
+                    </button>--%>
+                    <asp:Button ID="btnAdd" runat="server" Text="Add" CssClass="btn btn-danger"
+                        OnClientClick="return false;" data-bs-toggle="modal" data-bs-target="#addpaymentModal" />
                 </div>
             </div>
         </div>
@@ -94,25 +96,25 @@
                                 <div class="row mt-3">
                                     <div class="col-md-2">
                                         <div class="form-group">
-                                            <label>Total Good Amount</label>
+                                            <asp:Label ID="lblTotalGoodAmount" runat="server" Text="Total Good Amount"></asp:Label>
                                             <asp:TextBox ID="txtTotalGoodAmount" CssClass="form-control" runat="server" />
                                         </div>
                                     </div>
                                     <div class="col-md-2">
                                         <div class="form-group">
-                                            <label>Total Paid</label>
+                                            <asp:Label ID="lblTotalPaid" runat="server" Text="Total Paid"></asp:Label>
                                             <asp:TextBox ID="txtTotalPaid" CssClass="form-control" runat="server" />
                                         </div>
                                     </div>
                                     <div class="col-md-2">
                                         <div class="form-group">
-                                            <label>Due Balance</label>
+                                            <asp:Label ID="lblDueBalance" runat="server" Text="Due Balance"></asp:Label>
                                             <asp:TextBox ID="txtDueBalance" CssClass="form-control" runat="server" />
                                         </div>
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <label>Valid Days</label>
+                                            <asp:Label ID="lblValidDays" runat="server" Text="Valid Days"></asp:Label>
                                             <asp:TextBox ID="txtValidDays" CssClass="form-control" runat="server" />
                                         </div>
                                     </div>

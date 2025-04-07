@@ -10,12 +10,8 @@
                     <div class="header h4">CUSTOMER GOODS RETURN</div>
                 </div>
                 <div class="col-6 d-flex justify-content-end">
-                    <button type="button" class="btn btn-danger me-2" data-bs-toggle="modal" data-bs-target="#addGrnModal">
-                        ADD
-                    </button>
-                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#printEndModal">
-                        END PRINT
-                    </button>
+                    <asp:Button ID="btnAdd" runat="server" CssClass="btn btn-danger me-2" Text="ADD" data-bs-toggle="modal" data-bs-target="#addGrnModal" />
+                    <asp:Button ID="btnEndPrint" runat="server" CssClass="btn btn-danger" Text="END PRINT" data-bs-toggle="modal" data-bs-target="#printEndModal" />
                 </div>
             </div>
         </div>
@@ -76,43 +72,46 @@
 
         <div class="row mt-3">
             <div class="col-12">
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th>CODE</th>
-                            <th>ITEM-DESC</th>
-                            <th>QTY</th>
-                            <th>UNIT PRICE</th>
-                            <th>AMOUNT</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <input type="text" class="form-control" value="A001" /></td>
-                            <td>
-                                <input type="text" class="form-control" value="Item 1" /></td>
-                            <td>
-                                <input type="number" class="form-control" value="2" /></td>
-                            <td>
-                                <input type="number" class="form-control" step="0.01" value="50.00" /></td>
-                            <td>
-                                <input type="text" class="form-control" value="95.00" readonly /></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input type="text" class="form-control" value="A002" /></td>
-                            <td>
-                                <input type="text" class="form-control" value="Item 2" /></td>
-                            <td>
-                                <input type="number" class="form-control" value="1" /></td>
-                            <td>
-                                <input type="number" class="form-control" step="0.01" value="30.00" /></td>
-                            <td>
-                                <input type="text" class="form-control" value="27.00" readonly /></td>
-                        </tr>
-                    </tbody>
-                </table>
+                <asp:GridView ID="gvGoodreturnItems" runat="server" CssClass="table table-bordered" AutoGenerateColumns="False"
+                    ShowFooter="True">
+                    <Columns>
+
+                        <asp:TemplateField HeaderText="CODE">
+                            <ItemTemplate>
+                                <asp:TextBox ID="txtCode" runat="server" CssClass="form-control" Text='<%# Eval("Code") %>' />
+                            </ItemTemplate>
+                        </asp:TemplateField>
+
+
+                        <asp:TemplateField HeaderText="ITEM-DESC">
+                            <ItemTemplate>
+                                <asp:TextBox ID="txtDesc" runat="server" CssClass="form-control" Text='<%# Eval("Description") %>' />
+                            </ItemTemplate>
+                        </asp:TemplateField>
+
+
+                        <asp:TemplateField HeaderText="QTY">
+                            <ItemTemplate>
+                                <asp:TextBox ID="txtQty" runat="server" CssClass="form-control" Text='<%# Eval("Qty") %>' TextMode="Number" />
+                            </ItemTemplate>
+                        </asp:TemplateField>
+
+
+                        <asp:TemplateField HeaderText="UNIT PRICE">
+                            <ItemTemplate>
+                                <asp:TextBox ID="txtUnitPrice" runat="server" CssClass="form-control" Text='<%# Eval("UnitPrice") %>' TextMode="Number" Step="0.01" />
+                            </ItemTemplate>
+                        </asp:TemplateField>
+
+
+                        <asp:TemplateField HeaderText="AMOUNT">
+                            <ItemTemplate>
+                                <asp:TextBox ID="txtAmount" runat="server" CssClass="form-control" Text='<%# Eval("Amount") %>' ReadOnly="True" />
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                    </Columns>
+                </asp:GridView>
+
             </div>
         </div>
 
@@ -156,31 +155,31 @@
             <div class="row mt-3">
                 <div class="col-md-2">
                     <div class="form-group">
-                        <label>Total Quantity</label>
+                        <asp:Label ID="lblTotalQuantity" runat="server" Text="Total Quantity" AssociatedControlID="txtTotalQUantity" />
                         <asp:TextBox ID="txtTotalQUantity" CssClass="form-control" runat="server" />
                     </div>
                 </div>
                 <div class="col-md-2">
                     <div class="form-group">
-                        <label>Discount</label>
+                        <asp:Label ID="lblDiscount" runat="server" Text="Discount" AssociatedControlID="txtDiscount" />
                         <asp:TextBox ID="txtDiscount" CssClass="form-control" runat="server" />
                     </div>
                 </div>
                 <div class="col-md-2">
                     <div class="form-group">
-                        <label>Disc. Amount</label>
+                        <asp:Label ID="lblDiscAmount" runat="server" Text="Disc. Amount" AssociatedControlID="txtDiscAmount" />
                         <asp:TextBox ID="txtDiscAmount" CssClass="form-control" runat="server" />
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="form-group">
-                        <label>Total</label>
+                        <asp:Label ID="lblTotal" runat="server" Text="Total" AssociatedControlID="txtTotal" />
                         <asp:TextBox ID="txtTotal" CssClass="form-control" runat="server" />
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="form-group">
-                        <label>Grand Total Rs.</label>
+                        <asp:Label ID="lblGrandTotal" runat="server" Text="Grand Total Rs." AssociatedControlID="TextGrandTotal" />
                         <asp:TextBox ID="TextGrandTotal" CssClass="form-control" runat="server" />
                     </div>
                 </div>
@@ -203,53 +202,50 @@
                         <h6 class="fw-bold">Item Details</h6>
                         <div class="col-md-4">
                             <div class="mb-2">
-                                <input type="text" class="form-control" id="itemCode" name="itemCode" placeholder="Item Code">
+                                <asp:TextBox ID="txtItemCode" runat="server" CssClass="form-control" Placeholder="Item Code"></asp:TextBox>
                             </div>
                         </div>
                         <div class="col-md-8">
                             <div class="mb-2">
-                                <input class="form-control" id="description" name="description" rows="2" placeholder="Description">
+                                <asp:TextBox ID="txtDescription" runat="server" CssClass="form-control" Placeholder="Description" TextMode="MultiLine" Rows="2"></asp:TextBox>
                             </div>
                         </div>
                         <div class="table-responsive mb-4">
-                            <table class="table table-bordered table-hover" id="grnItemsTable">
-                                <thead class="table-light">
-                                    <tr>
-                                        <th>Code</th>
-                                        <th>Description</th>
-                                        <th>Qty</th>
-                                        <th>Price</th>
-                                        <th>Amount</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <!-- Table data will be populated dynamically -->
-                                </tbody>
-                            </table>
+                            <asp:GridView ID="grnItemsGrid" runat="server" CssClass="table table-bordered table-hover" AutoGenerateColumns="False">
+                                <HeaderStyle CssClass="table-light" />
+                                <Columns>
+                                    <asp:BoundField DataField="Code" HeaderText="Code" />
+                                    <asp:BoundField DataField="Description" HeaderText="Description" />
+                                    <asp:BoundField DataField="Qty" HeaderText="Qty" />
+                                    <asp:BoundField DataField="Price" HeaderText="Price" />
+                                    <asp:BoundField DataField="Amount" HeaderText="Amount" />
+                                </Columns>
+                            </asp:GridView>
+
                         </div>
                         <div class="col-md-4">
                             <div class="mb-2">
-                                <label for="quentity" class="form-label">Quantity</label>
-                                <input type="text" class="form-control" id="quentity" name="quentity">
+                                <asp:Label ID="lblQuantity" runat="server" Text="Quantity" AssociatedControlID="txtQuantity" CssClass="form-label" />
+                                <asp:TextBox ID="txtQuantity" runat="server" CssClass="form-control"></asp:TextBox>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="mb-2">
-                                <label for="unitPrice" class="form-label">Unit Price</label>
-                                <input type="text" class="form-control" id="unitPrice" name="unitPrice">
+                                <asp:Label ID="lblUnitPrice" runat="server" Text="Unit Price" AssociatedControlID="txtUnitPrice" CssClass="form-label" />
+                                <asp:TextBox ID="txtUnitPrice" runat="server" CssClass="form-control"></asp:TextBox>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="mb-2">
-                                <label for="amount" class="form-label">Amount</label>
-                                <input type="text" class="form-control" id="amount" name="amount">
+                                <asp:Label ID="lblAmount" runat="server" Text="Amount" AssociatedControlID="txtAmount" CssClass="form-label" />
+                                <asp:TextBox ID="txtAmount" runat="server" CssClass="form-control"></asp:TextBox>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <asp:Button ID="btnSave" runat="server" Text="Save" CssClass="btn btn-primary" Style="background-color: #B71D1D; border-color: #B71D1D;" OnClientClick="return validateForm();" />
-                    <button type="button" class="btn" data-dismiss="modal" style="background-color: #D9D9D9;">Cancel</button>
+                   <asp:Button ID="btnCancel" runat="server" CssClass="btn" Text="Cancel" OnClientClick="$('#addInvoiceModal').modal('hide'); return false;" Style="background-color: #D9D9D9;" />
                 </div>
             </div>
         </div>
@@ -263,53 +259,49 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="printEndModalLabel">End Print</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <asp:LinkButton ID="CloseButton" runat="server" CssClass="btn-close" aria-label="Close" OnClientClick="return false;" data-bs-dismiss="modal"></asp:LinkButton>
                 </div>
                 <div class="modal-body">
                     <div class="table-responsive mb-4">
-                        <table class="table table-bordered table-hover" id="printTable">
-                            <thead class="table-light">
-                                <tr>
-                                    <th>No</th>
-                                    <th>Ref/No</th>
-                                    <th>Date</th>
-                                    <th>Particulars</th>
-                                    <th>Trx Amount</th>
-                                    <th>Due Amount</th>
-                                    <th>Age</th>
-                                    <th>X</th>
-                                    <th>Amount</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <!-- Table data will be populated dynamically -->
-                            </tbody>
-                        </table>
+                        <asp:Table ID="printTable" runat="server" CssClass="table table-bordered table-hover">
+                            <asp:TableHeaderRow CssClass="table-light">
+                                <asp:TableHeaderCell>No</asp:TableHeaderCell>
+                                <asp:TableHeaderCell>Ref/No</asp:TableHeaderCell>
+                                <asp:TableHeaderCell>Date</asp:TableHeaderCell>
+                                <asp:TableHeaderCell>Particulars</asp:TableHeaderCell>
+                                <asp:TableHeaderCell>Trx Amount</asp:TableHeaderCell>
+                                <asp:TableHeaderCell>Due Amount</asp:TableHeaderCell>
+                                <asp:TableHeaderCell>Age</asp:TableHeaderCell>
+                                <asp:TableHeaderCell>X</asp:TableHeaderCell>
+                                <asp:TableHeaderCell>Amount</asp:TableHeaderCell>
+                            </asp:TableHeaderRow>
+                            <%-- Table data will be populated dynamically --%>
+                        </asp:Table>
                     </div>
                     <div class="row">
                         <div class="col-md-4">
                             <div class="mb-2">
-                                <label for="totaldueamount" class="form-label">Total Due Amount</label>
-                                <input type="text" class="form-control" id="totaldueamount" name="TotalDueAmount">
+                                <asp:Label ID="Label1" runat="server" CssClass="form-label" AssociatedControlID="totaldueamount">Total Due Amount</asp:Label>
+                                <asp:TextBox ID="totaldueamount" runat="server" CssClass="form-control" name="TotalDueAmount"></asp:TextBox>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="mb-2">
-                                <label for="remainingbalance" class="form-label">Remaining Balance</label>
-                                <input type="text" class="form-control" id="remainingbalance" name="RemainingBalance">
+                                <asp:Label ID="Label2" runat="server" CssClass="form-label" AssociatedControlID="remainingbalance">Remaining Balance</asp:Label>
+                                <asp:TextBox ID="remainingbalance" runat="server" CssClass="form-control" name="RemainingBalance"></asp:TextBox>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="mb-2">
-                                <label for="cnbalance" class="form-label">C/N Balance</label>
-                                <input type="text" class="form-control" id="cnbalance" name="CNBalance">
+                                <asp:Label ID="Label3" runat="server" CssClass="form-label" AssociatedControlID="cnbalance">C/N Balance</asp:Label>
+                                <asp:TextBox ID="cnbalance" runat="server" CssClass="form-control" name="CNBalance"></asp:TextBox>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <asp:Button ID="Button1" runat="server" Text="Save" CssClass="btn btn-primary" Style="background-color: #B71D1D; border-color: #B71D1D;" OnClientClick="return validateForm();" />
-                    <button type="button" class="btn" data-dismiss="modal" style="background-color: #D9D9D9;">Cancel</button>
+                    <asp:Button ID="Button2" runat="server" Text="Cancel" CssClass="btn" Style="background-color: #D9D9D9;" OnClientClick="return false;" data-dismiss="modal" />
                 </div>
             </div>
         </div>

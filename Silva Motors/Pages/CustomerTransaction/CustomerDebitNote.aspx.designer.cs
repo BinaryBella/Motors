@@ -96,6 +96,15 @@ namespace Silva_Motors.Pages.CustomerTransaction
         protected global::System.Web.UI.WebControls.TextBox txt_Amount;
 
         /// <summary>
+        /// returnCash control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox returnCash;
+
+        /// <summary>
         /// btnSave control.
         /// </summary>
         /// <remarks>
@@ -103,6 +112,15 @@ namespace Silva_Motors.Pages.CustomerTransaction
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSave;
+
+        /// <summary>
+        /// btnCancel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCancel;
 
         /// <summary>
         /// hdnSaveStatus control.

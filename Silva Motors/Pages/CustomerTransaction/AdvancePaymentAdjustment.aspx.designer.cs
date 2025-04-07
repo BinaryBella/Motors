@@ -15,6 +15,15 @@ namespace Silva_Motors.Pages.CustomerTransaction
     {
 
         /// <summary>
+        /// btnAdd control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAdd;
+
+        /// <summary>
         /// txt_SearchCustomerId control.
         /// </summary>
         /// <remarks>
@@ -177,6 +186,15 @@ namespace Silva_Motors.Pages.CustomerTransaction
         protected global::System.Web.UI.WebControls.HiddenField hdnCheckedPayments;
 
         /// <summary>
+        /// lblTotalGoodAmount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTotalGoodAmount;
+
+        /// <summary>
         /// txtTotalGoodAmount control.
         /// </summary>
         /// <remarks>
@@ -184,6 +202,15 @@ namespace Silva_Motors.Pages.CustomerTransaction
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtTotalGoodAmount;
+
+        /// <summary>
+        /// lblTotalPaid control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTotalPaid;
 
         /// <summary>
         /// txtTotalPaid control.
@@ -195,6 +222,15 @@ namespace Silva_Motors.Pages.CustomerTransaction
         protected global::System.Web.UI.WebControls.TextBox txtTotalPaid;
 
         /// <summary>
+        /// lblDueBalance control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDueBalance;
+
+        /// <summary>
         /// txtDueBalance control.
         /// </summary>
         /// <remarks>
@@ -202,6 +238,15 @@ namespace Silva_Motors.Pages.CustomerTransaction
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDueBalance;
+
+        /// <summary>
+        /// lblValidDays control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblValidDays;
 
         /// <summary>
         /// txtValidDays control.
