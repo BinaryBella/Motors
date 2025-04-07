@@ -19,22 +19,22 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group mb-3">
-                                <label class="form-label">Select Customer</label>
+                                  <asp:Label runat="server" CssClass="form-label" AssociatedControlID="txt_SearchCustomerId">Select Customer</asp:Label>
                                 <asp:DropDownList ID="txt_SearchCustomerId" CssClass="form-control select-customer" runat="server"
                                     AutoPostBack="true">
                                 </asp:DropDownList>
                             </div>
                             <div class="customer-info">
                                 <div class="form-group mb-2">
-                                    <label class="form-label">Customer Name</label>
+                                    <asp:Label runat="server" CssClass="form-label" AssociatedControlID="txt_CustomerName">Customer Name</asp:Label>
                                     <asp:TextBox ID="txt_CustomerName" runat="server" CssClass="form-control" ReadOnly="true"></asp:TextBox>
                                 </div>
                                 <div class="form-group mb-2">
-                                    <label class="form-label">Address</label>
+                                   <asp:Label runat="server" CssClass="form-label" AssociatedControlID="txt_CustomerAdd1">Address</asp:Label>
                                     <asp:TextBox ID="txt_CustomerAdd1" runat="server" CssClass="form-control" ReadOnly="true"></asp:TextBox>
                                 </div>
                                 <div class="form-group mb-2">
-                                    <label class="form-label">Contact</label>
+                                    <asp:Label runat="server" CssClass="form-label" AssociatedControlID="txt_Contact1">Contact</asp:Label>
                                     <asp:TextBox ID="txt_Contact1" runat="server" CssClass="form-control" ReadOnly="true"></asp:TextBox>
                                 </div>
                             </div>
@@ -42,16 +42,16 @@
 
                         <div class="col-md-6">
                             <div class="form-group mb-3">
-                                <label class="form-label">Total Due Amount</label>
+                                <asp:Label runat="server" CssClass="form-label" AssociatedControlID="TextBox4">Total Due Amount</asp:Label>
                                 <asp:TextBox ID="TextBox4" runat="server" CssClass="form-control" ReadOnly="true"></asp:TextBox>
                             </div>
                             <div class="customer-info">
                                 <div class="form-group mb-2">
-                                    <label class="form-label">Remaining Balance</label>
+                                    <asp:Label runat="server" CssClass="form-label" AssociatedControlID="TextBox1">Remaining Balance</asp:Label>
                                     <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control" ReadOnly="true"></asp:TextBox>
                                 </div>
                                 <div class="form-group mb-2">
-                                    <label class="form-label">Date</label>
+                                    <asp:Label runat="server" CssClass="form-label" AssociatedControlID="date">Date</asp:Label>
                                     <asp:TextBox ID="date" runat="server" CssClass="form-control" ReadOnly="true"></asp:TextBox>
                                 </div>
                             </div>
@@ -61,7 +61,7 @@
                     <div class="row mt-4">
                         <div class="col-md-6">
                             <div class="form-group mb-3">
-                                <label class="form-label">Description</label>
+                               <asp:Label runat="server" CssClass="form-label" AssociatedControlID="txt_Description">Description</asp:Label>
                                 <asp:TextBox ID="txt_Description" runat="server" CssClass="form-control" placeholder="Description..."
                                     onkeydown="handleDescriptionKeyDown(event)"></asp:TextBox>
                             </div>
@@ -69,7 +69,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group mb-3">
-                                <label class="form-label">Amount</label>
+                                <asp:Label runat="server" CssClass="form-label" AssociatedControlID="txt_Amount">Amount</asp:Label>
                                 <asp:TextBox ID="txt_Amount" runat="server" CssClass="form-control" placeholder="Enter amount..."
                                     oninput="calculateNewBalance()" onkeydown="handleAmountKeyDown(event)"></asp:TextBox>
                             </div>
@@ -77,15 +77,15 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group mb-3 mt-5">
-                                <input type="checkbox" id="returnCash" class="form-check-input">
-                                <label for="returnCash" class="form-check-label">Return Money As Cash</label>
+                                 <asp:CheckBox ID="returnCash" runat="server" CssClass="form-check-input" />
+                                <asp:Label runat="server" AssociatedControlID="returnCash" CssClass="form-check-label">Return Money As Cash</asp:Label>
                             </div>
                         </div>
                     </div>
 
                     <div class="action-buttons mt-4">
                         <asp:Button ID="btnSave" runat="server" Text="Save" CssClass="btn btn-primary" Style="background-color: #B71D1D; border-color: #B71D1D; color: white;" />
-                        <button type="button" class="btn" data-dismiss="modal" style="background-color: #D9D9D9;">Cancel</button>
+                       <asp:Button ID="btnCancel" runat="server" Text="Cancel" CssClass="btn" Style="background-color: #D9D9D9;" OnClientClick="return false;" data-dismiss="modal" />
                     </div>
                 </div>
             </div>

@@ -114,6 +114,15 @@ namespace Silva_Motors.Pages.CustomerTransaction
         protected global::System.Web.UI.WebControls.TextBox txtCreditCard;
 
         /// <summary>
+        /// lblTotalDueAmount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTotalDueAmount;
+
+        /// <summary>
         /// txt_CustomerTotalDueBal control.
         /// </summary>
         /// <remarks>
@@ -121,6 +130,15 @@ namespace Silva_Motors.Pages.CustomerTransaction
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_CustomerTotalDueBal;
+
+        /// <summary>
+        /// lblRemainingBalance control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblRemainingBalance;
 
         /// <summary>
         /// txt_remaining_balance control.
@@ -141,13 +159,13 @@ namespace Silva_Motors.Pages.CustomerTransaction
         protected global::System.Web.UI.WebControls.TextBox txt_total_recieptbalance;
 
         /// <summary>
-        /// rptTransactions control.
+        /// gvTransactions control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptTransactions;
+        protected global::System.Web.UI.WebControls.GridView gvTransactions;
 
         /// <summary>
         /// hdnCheckedPayments control.
@@ -166,6 +184,15 @@ namespace Silva_Motors.Pages.CustomerTransaction
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSave;
+
+        /// <summary>
+        /// btnCancel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCancel;
 
         /// <summary>
         /// hdnSaveStatus control.
